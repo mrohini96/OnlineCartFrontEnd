@@ -10,6 +10,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { AboutwebsiteComponent } from './aboutwebsite/aboutwebsite.component';
 
 import { FilterPipe} from './filter.pipe';
+import { AppRoutingModule } from './/app-routing.module';
 @NgModule({
   declarations: [
    AppComponent,
@@ -21,7 +22,8 @@ import { FilterPipe} from './filter.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
