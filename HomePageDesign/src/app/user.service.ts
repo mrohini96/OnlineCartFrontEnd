@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Products } from './products';
-import { User } from './user';
+// import { User } from './user';
+// import { HTTP } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
- 
-  /*myData(user:User) {
-    if (user.userName == 'Rohini' && user.password == '12345' ){
+  constructor() { }
+
+  myData(userObj) {
+    if (userObj.name == 'Rohini' && userObj.pswd == '12345' ){
       alert("login successful");
     }
     
-  } */
-  myData(){
-    alert("success");
   }
-  constructor() { }
+
 }

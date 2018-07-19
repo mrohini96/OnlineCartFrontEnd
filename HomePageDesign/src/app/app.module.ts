@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { UserService } from './user.service';
 import { AppComponent } from './app.component';
 
 import { HomepageheaderComponent } from './homepageheader/homepageheader.component';
@@ -27,7 +27,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
