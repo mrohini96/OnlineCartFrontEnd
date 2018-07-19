@@ -11,18 +11,12 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./homepageheader.component.css']
 })
 export class HomepageheaderComponent implements OnInit {
-  //someProperty:string = '';
- // form: FormGroup;
+ 
 
-  constructor(private user:UserService) { }
+  constructor() { }
   ngOnInit() {
-  // this.someProperty = this.user.myData();
+ 
   }
-  onSubmit() {
-   
- //  if (this.form.valid) {
-  //this.user.myData(this.form.value);
-  alert("login successful");
-   }
+ 
  } 
 

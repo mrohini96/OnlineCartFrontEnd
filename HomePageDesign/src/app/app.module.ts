@@ -11,6 +11,7 @@ import { AboutwebsiteComponent } from './aboutwebsite/aboutwebsite.component';
 
 import { FilterPipe} from './filter.pipe';
 import { AppRoutingModule } from './/app-routing.module';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
    AppComponent,
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './/app-routing.module';
    SearchproductComponent,
    CategoriesComponent,
    AboutwebsiteComponent,
-   FilterPipe
+   FilterPipe,
+   LoginComponent
   ],
   imports: [
     BrowserModule,

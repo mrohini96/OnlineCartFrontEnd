@@ -1,12 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}
   </h1>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4" style="background-color:white;"><nav>
+          <a><b>OnlineCart</b></a> 
+          </nav></div>
+      <div class="col-sm-4" style="background-color:white;"><nav>
+        <a routerLink="/homepageheader">login</a>
+      </nav></div>
+      <div class="col-sm-4" style="background-color:white;">
+          <nav>
+              <a routerLink="/homepageheader">Signup</a>
+            </nav>
+      </div>
+    </div>
+  </div>
+  
+  
 
-
-<app-homepageheader></app-homepageheader> <br>
+<router-outlet></router-outlet>
+<br>
 <app-searchproduct></app-searchproduct>
 <app-categories></app-categories>
 <app-aboutwebsite></app-aboutwebsite>
+
+

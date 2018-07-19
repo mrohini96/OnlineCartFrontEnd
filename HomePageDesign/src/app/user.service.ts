@@ -7,11 +7,14 @@ import { User } from './user';
 })
 export class UserService {
  
-  myData(user:User) {
+  /*myData(user:User) {
     if (user.userName == 'Rohini' && user.password == '12345' ){
       alert("login successful");
     }
     
+  } */
+  myData(){
+    alert("success");
   }
   constructor() { }
 }
