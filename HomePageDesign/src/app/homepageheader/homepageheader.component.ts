@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import {UserService} from '../user.service';
+//import {UserService} from '../user.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-homepageheader',
@@ -12,9 +12,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class HomepageheaderComponent implements OnInit {
  
-
-  constructor() { }
-
+  constructor () { }
   validate:boolean = false;
   userJson={"name": "", "pswd": "" };
   userList = [
@@ -39,9 +37,8 @@ export class HomepageheaderComponent implements OnInit {
     }
    }) 
     }
-  ngOnInit() {
+ ngOnInit() {
  
   }
- 
- } 
-
+  
+}
