@@ -12,6 +12,7 @@ import { AboutwebsiteComponent } from './aboutwebsite/aboutwebsite.component';
 import { FilterPipe} from './filter.pipe';
 import { AppRoutingModule } from './/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { HttpModule} from '@angular/http';
 @NgModule({
   declarations: [
    AppComponent,
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
