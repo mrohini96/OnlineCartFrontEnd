@@ -1,14 +1,165 @@
-  
-<div class="signin-content">
-    <div *ngIf="!validate"> 
-        <h4>Please login to continue</h4>
-       <input type="text" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
-       <input type="password"  name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
-       <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
-       <button type="reset">clear</button>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Cart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+      
+    }
+    
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron" >
+  <div class="container text-center">
+    <h1>Online Store</h1>      
+    <p>Mission, Vission & Values</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     
+      <img src = "../assets/logo.png" alt="icon" height="45px"/>
     </div>
-    <div *ngIf="validate">
-      Welcome {{userJson.name}} !
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+       
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+              <li><a routerLink="/homepageheader"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li (click)="showLogin=!showLogin;"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+
+      <div *ngIf="showLogin" style="display:block; color: white">
+        <div *ngIf="!validate"> 
+          <h4>Please login to continue</h4>
+         <input type="text" class="dropdown-item" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
+         <input type="password" class="dropdown-item" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
+         <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
+         <button type="reset">clear</button>
+      </div>
+      <div *ngIf="validate">
+        Welcome {{userJson.name}} !
+      </div>
+
+      </div>
+     
     </div>
- </div>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="true">    
+  <div *ngSwitchCase="switchPage === 'page1'">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>   
+
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading" background-color>BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+
+<br><br>
+  </div>
+
+  <div *ngSwitchCase="switchPage === 'page2'">
+    <h1>Welcome to 2nd page</h1>
+  </div>
+
+  <div *ngSwitchCase="switchPage === 'page3'">
+    <h1>Welcome to 3rd page</h1>
+  </div>
+
+  <div *ngSwitchDefault>
+    <p>default</p>
+</div>
+
+</div>   <br>
+
+
+
+<footer class="container-fluid text-center">
+  <p>Online Store Copyright</p>  
+ <!-- <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>-- >
+</footer>
+
+</body>
+</html>
+
+
+
+<!--
+  <app-searchproduct></app-searchproduct>
+<app-categories></app-categories>
+<app-aboutwebsite></app-aboutwebsite>
+-->
  
+
+
