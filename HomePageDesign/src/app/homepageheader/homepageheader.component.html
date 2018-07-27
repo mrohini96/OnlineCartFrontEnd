@@ -48,8 +48,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-       
+       <li (click)="movecategories()"><a routerLink="/categories">Categories</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -57,6 +56,8 @@
               <li (click)="showLogin=!showLogin;"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li (click)="logout()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+
       </ul>
 
       <div *ngIf="showLogin" style="display:block; color: white">
@@ -79,60 +80,140 @@
 
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'">
-    <div class="col-sm-4">
+
+
+    
+
+    <div class="col-sm-3">
       <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Sculcandy Earphones</div>
+        <div class="panel-body"><img src="../assets/image_02.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $100</pre><a href="#">see more about product....</a></div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-3"> 
       <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">HP USB</div>
+        <div class="panel-body"><img src="../assets/image_03.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $5560</pre><a href="#">see more about product....</a></div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-3"> 
       <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Sandisk 64GB USB</div>
+        <div class="panel-body"><img src="../assets/image_04.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $5670</pre><a href="#">see more about product....</a></div>
       </div>
     </div>   
 
-    <div class="col-sm-4">
+    <div class="col-sm-3">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Lipstick </div>
+          <div class="panel-body"><img src="../assets/FashionImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+        </div>
+      </div>
+
+    <div class="col-sm-3">
       <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">JBL Earphones</div>
+        <div class="panel-body"><img src="../assets/image_05.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-3"> 
       <div class="panel panel-primary">
-        <div class="panel-heading" background-color>BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Lenovo Desktop</div>
+        <div class="panel-body"><img src="../assets/image_06.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+
+    <div class="col-sm-3">
       <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Juice Maker</div>
+        <div class="panel-body"><img src="../assets/HomeAppliancesImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+      </div>
+    </div>
+
+    <div class="col-sm-3"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Dell Laptop</div>
+        <div class="panel-body"><img src="../assets/image_07.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><pre>Price $9650</pre><a href="#">see more about product....</a></div>
       </div>
     </div>
 
 <br><br>
-  </div>
+<a (click)="imagepage2()" >
+  See more....
+</a></div>
+
+  <div *ngSwitchCase="switchPage === 'page6'">
+      <pre>
+       <p>This page should show the 2nd page product image.
+        Add remaining images here 
+       </p>
+      </pre> 
+
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Compact </div>
+            <div class="panel-body"><img src="../assets/FashionImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Aquagaurd Purifier</div>
+              <div class="panel-body"><img src="../assets/HomeAppliancesImg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+              <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+              <div class="panel panel-primary">
+                <div class="panel-heading">Red Lipstick </div>
+                <div class="panel-body"><img src="../assets/FashionImg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+              </div>
+            </div>
+
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Mixer</div>
+            <div class="panel-body"><img src="../assets/HomeAppliancesImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+          </div>
+        </div>
+
+     </div>
 
   <div *ngSwitchCase="switchPage === 'page2'">
-    <h1>Welcome to 2nd page</h1>
+    <h1>My Acoount</h1>
   </div>
 
   <div *ngSwitchCase="switchPage === 'page3'">
-    <h1>Welcome to 3rd page</h1>
+    <h1>My Cart</h1>
   </div>
+
+  <div *ngSwitchCase="switchPage === 'page4'">
+      <app-categories></app-categories>
+    </div>
+
+    <div *ngSwitchCase="switchPage === 'page5'">
+       <pre>
+        <p>You have been logged out.
+          Thank you for using our website</p>
+       </pre> 
+      </div>
+
+
+      
+
 
   <div *ngSwitchDefault>
     <p>default</p>
@@ -143,11 +224,11 @@
 
 
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
- <!-- <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
-  </form>-- >
+  <p>Online Store Copyright 
+      Copyright 2017-2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license<span class="glyphicon glyphicon-copyright-mark"></span></p>    
+
 </footer>
 
 </body>

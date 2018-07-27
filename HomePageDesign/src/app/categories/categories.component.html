@@ -1,3 +1,4 @@
+<div class="col-sm-6">
 <h2><b>Categories </b></h2>
 <ul class="products">
   <li *ngFor="let product of products"
@@ -6,15 +7,129 @@
     <span class="badge">{{product.id}}</span> {{product.name}}
   </li>
 </ul>
-
-<div *ngIf="selectedproduct">
-
-  <h2>{{selectedproduct.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedproduct.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedproduct.name" placeholder="name">
-    </label>
-  </div>
-
 </div>
+
+<div class="col-sm-6">
+<div *ngIf="selectedproduct">
+   <span style="margin-left:50%" >
+      <h2 style="color: blue">{{selectedproduct.name | uppercase}}</h2>
+   </span>
+
+
+   <div *ngIf="selectedproduct.name=='Electronics'">
+      <div class="col-sm-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">JBL Earphones</div>
+            <div class="panel-body"><img src="../assets/image_05.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+          </div>
+        </div>
+
+        <div class="col-sm-6"> 
+            <div class="panel panel-primary">
+              <div class="panel-heading">Lenovo Desktop</div>
+              <div class="panel-body"><img src="../assets/image_06.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+              <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
+            </div>
+          </div>
+   </div>
+
+   <div *ngIf="selectedproduct.name=='Fashion'">
+      <div class="col-sm-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">JBL Earphones</div>
+            <div class="panel-body"><img src="../assets/FashionImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+          </div>
+        </div>
+        <div class="col-sm-6"> 
+          <div class="panel panel-primary">
+            <div class="panel-heading">Lenovo Desktop</div>
+            <div class="panel-body"><img src="../assets/FashionImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
+          </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedproduct.name=='Furniture'">
+        <div class="col-sm-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">JBL Earphones</div>
+              <div class="panel-body"><img src="../assets/furnitureimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+              <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+            </div>
+          </div>
+          <div class="col-sm-6"> 
+            <div class="panel panel-primary">
+              <div class="panel-heading">Lenovo Desktop</div>
+              <div class="panel-body"><img src="../assets/furnitureimg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+              <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
+            </div>
+          </div>
+      </div>
+
+
+
+      <div *ngIf="selectedproduct.name=='Grocery'">
+          <div class="col-sm-6">
+              <div class="panel panel-primary">
+                <div class="panel-heading">JBL Earphones</div>
+                <div class="panel-body"><img src="../assets/groceryimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+              </div>
+            </div>
+            <div class="col-sm-6"> 
+              <div class="panel panel-primary">
+                <div class="panel-heading">Lenovo Desktop</div>
+                <div class="panel-body"><img src="../assets/groceryimg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
+              </div>
+            </div>
+        </div>
+
+
+
+          <div *ngIf="selectedproduct.name=='HomeAppliances'">
+              <div class="col-sm-6">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">JBL Earphones</div>
+                    <div class="panel-body"><img src="../assets/HomeAppliancesImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+                  </div>
+                </div>
+                <div class="col-sm-6"> 
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">Lenovo Desktop</div>
+                    <div class="panel-body"><img src="../assets/HomeAppliancesImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
+                  </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="selectedproduct.name=='GoGreen'">
+                <div class="col-sm-6">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">JBL Earphones</div>
+                      <div class="panel-body"><img src="../assets/gogreenimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                      <div class="panel-footer"><pre>Price $5067</pre><a href="#">see more about product....</a></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6"> 
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Lenovo Desktop</div>
+                      <div class="panel-body"><img src="../assets/gogreenimg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                      <div class="panel-footer"><pre>Price $5000</pre><a href="#">see more about product....</a></div>
+                    </div>
+                  </div>
+              </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
