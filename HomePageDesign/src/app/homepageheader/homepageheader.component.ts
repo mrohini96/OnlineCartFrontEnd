@@ -5,7 +5,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 //import { Observable } from 'rxjs';
 
-
+import {Products} from '../products';
+import {PRODUCTS} from '../mockproduct';
 
 
 @Component({
@@ -14,6 +15,7 @@ import {UserService} from '../user.service';
   styleUrls: ['./homepageheader.component.css']
 })
 export class HomepageheaderComponent implements OnInit {
+  products = PRODUCTS;
   validate:boolean = false;
   switchPage = "page1";
   private url=" ";
@@ -22,23 +24,29 @@ export class HomepageheaderComponent implements OnInit {
   constructor (private http :Http, private user:UserService) { 
     console.log("hello this header's constructor");
     this.onSubmit();
+
     let test = this.user.myApiCall();
-    console.log(test);
+    
+
   }
+  showLogin: boolean = false;
 
   userJson={"name": "", "pswd": "" };
   userList = [
     {
       "name": "Satya",
-      "pswd": "hi"
+      "pswd": "hi",
+      "email": "satya.g@gmail.com"
     },
     {
       "name": "Rohini",
-      "pswd": "12345"
+      "pswd": "12345",
+      "Email": "rohini@gmail.com"
     },
     {
       "name": "Nivedita",
-      "pswd": "1234"
+      "pswd": "1234",
+      "Email": "nivedita@gmail.com"
     }
   ];
   
@@ -63,6 +71,11 @@ export class HomepageheaderComponent implements OnInit {
 
   }
 
+  showUserDetails(){
+    this.showLogin = !this.showLogin;
+
+
+  }
   imagepage2(){
     this.switchPage= "page6";
 
@@ -72,6 +85,7 @@ export class HomepageheaderComponent implements OnInit {
    this.userList.forEach((user) => {
     if (this.userJson.name == user.name && this.userJson.pswd == user.pswd ){
       this.validate = true;
+      this.user.userDetails = user;
     }
    }) 
     }

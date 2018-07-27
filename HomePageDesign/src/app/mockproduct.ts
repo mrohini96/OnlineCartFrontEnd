@@ -1,0 +1,28 @@
+import { Products } from './products';
+
+export const PRODUCTS: Products[] = [
+  { ProductId: 1,categoryId:1,title:"JBL Earphones",price:1200,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 2,categoryId:1,title:"JBL Earphones",price:1000,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 3,categoryId:1,title:"JBL Earphones",price:160,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 4,categoryId:1,title:"JBL Earphones",price:1040,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 5,categoryId:2,title:"JBL Earphones",price:180,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 6,categoryId:2,title:"JBL Earphones",price:500,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 7,categoryId:2,title:"JBL Earphones",price:600,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 8,categoryId:2,title:"JBL Earphones",price:700,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 9,categoryId:3,title:"JBL Earphones",price:780,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 10,categoryId:3,title:"JBL Earphones",price:890,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 11,categoryId:3,title:"JBL Earphones",price:340,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 12,categoryId:3,title:"JBL Earphones",price:790,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 13,categoryId:4,title:"JBL Earphones",price:1000,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 14,categoryId:4,title:"JBL Earphones",price:1040,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 15,categoryId:4,title:"JBL Earphones",price:1040,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 16,categoryId:4,title:"JBL Earphones",price:170,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 17,categoryId:5,title:"JBL Earphones",price:190,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 18,categoryId:5,title:"JBL Earphones",price:400,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 19,categoryId:5,title:"JBL Earphones",price:300,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 20,categoryId:5,title:"JBL Earphones",price:700,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 21,categoryId:6,title:"JBL Earphones",price:1200,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 22,categoryId:6,title:"JBL Earphones",price:1600,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 23,categoryId:6,title:"JBL Earphones",price:1800,desc:"JBL",image:"../assets/image_05.jpg"},
+  { ProductId: 24,categoryId:6,title:"JBL Earphones",price:1800,desc:"JBL",image:"../assets/image_05.jpg"},
+];

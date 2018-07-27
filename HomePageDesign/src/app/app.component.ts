@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  cons
   title = 'Online Shopping Cart';
+
+  ngOnInit(){
+
+  }
   
 }

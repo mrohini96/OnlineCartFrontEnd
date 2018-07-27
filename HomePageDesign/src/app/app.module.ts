@@ -5,23 +5,27 @@ import { UserService } from './user.service';
 import { AppComponent } from './app.component';
 
 import { HomepageheaderComponent } from './homepageheader/homepageheader.component';
-import { SearchproductComponent } from './searchproduct/searchproduct.component';
+
 import { CategoriesComponent } from './categories/categories.component';
 import { AboutwebsiteComponent } from './aboutwebsite/aboutwebsite.component';
 
 import { FilterPipe} from './filter.pipe';
-import { AppRoutingModule } from './/app-routing.module';
-import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+
 import { HttpModule} from '@angular/http';
+import { ProductFilterPipe } from './product-filter.pipe';
 @NgModule({
   declarations: [
    AppComponent,
    HomepageheaderComponent,
-   SearchproductComponent,
+   
    CategoriesComponent,
    AboutwebsiteComponent,
    FilterPipe,
-   LoginComponent
+   
+   ProductFilterPipe,
+   
+   
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
-import { Products } from './products';
+import { Categories1 } from './categories1';
 
-export const PRODUCTS: Products[] = [
+export const CATEGORIES1: Categories1[] = [
   { id: 1, name: 'Electronics' },
   { id: 2, name: 'Fashion' },
   { id: 3, name: 'Furniture' },

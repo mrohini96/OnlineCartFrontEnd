@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Products } from './products';
+//import { Categories } from './categories';
 //import 'rxjs/add/operator/catch';
 // import { User } from './user';
 import { Http, Response } from '@angular/http';
@@ -13,6 +13,7 @@ import { map } from "rxjs/operators"
 })
 export class UserService {
   constructor(private http: Http) { }
+  userDetails: any;
 
   myApiCall(): Observable<any>{
     return this.http.get(
@@ -36,9 +37,6 @@ export class UserService {
       .catch(this.handleError);
   
   }*/
-
-
-
 
   myData(userObj) {
     if (userObj.name == 'Rohini' && userObj.pswd == '12345' ){
