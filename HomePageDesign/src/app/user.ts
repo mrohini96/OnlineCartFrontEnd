@@ -5,4 +5,7 @@ export interface User{
     password: string;
   }
  
- 
+export interface UserResponse {
+    status: number;
+    responseMessage: string;
+}

@@ -8,19 +8,25 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators"
 
+import {UserResponse} from './user';
+
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UserService {
   constructor(private http: Http) { }
   userDetails: any;
 
-  myApiCall(): Observable<any>{
+  myApiCall(): Observable<UserResponse>{
+    console.log("inside myApiCall Service");
     return this.http.get(
-      "http://localhost:8080/onlinecart-1.0/onlinecart/loginuserget?name=Rohini@gmail.com&password=1234")
-      .pipe(map(res => res.json()));
-      // .map(res => res.json());
+      "http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
+    //  .pipe(map(res => res.json()));
+       .pipe(map(res =><UserResponse>res.json()));
      // (map((response: any) => response.json()));
+    //console.log("inside myApiCall Service");
   }
 
 

@@ -7,33 +7,48 @@ import {UserService} from '../user.service';
 import {Products} from '../products';
 import {PRODUCTS} from '../mockproduct';
 
+import { UserResponse } from '../user';
+
 
 @Component({
   selector: 'app-homepageheader',
   templateUrl: './homepageheader.component.html',
   styleUrls: ['./homepageheader.component.css']
 })
+
+
+
 export class HomepageheaderComponent implements OnInit {
   products = PRODUCTS;
   validate:boolean = false;
   switchPage = "page1";
   private url=" ";
-  data : any= {};
-
+  data : Object;
+  userResp:UserResponse;
   constructor (private http :Http, private user:UserService) { 
     console.log("hello this header's constructor");
     this.onSubmit();
     
-    console.log("before my api");
+   /* console.log("before my api");
     let test = this.user.myApiCall();
     console.log("after my api");
 
     console.log(test);
-    console.log("after test");
-
+    console.log("after test"  +this.userResp);
+*/
+  }
+  
+  myApiCall() : void{
+    this.user.myApiCall()
+             .subscribe(
+                 data => this.userResp= data,
+                error => console.log("Error :: " + error),
+              
+             )
+   console.log("inside myApiCall homepageheader " +this.userResp);
   }
   showLogin: boolean = false;
-
+s
   userJson={"name": "", "pswd": "" };
   userList = [
     {
@@ -92,8 +107,16 @@ export class HomepageheaderComponent implements OnInit {
     }
    }) 
     }
- ngOnInit() {
 
+
+ ngOnInit() {
+  console.log("Inside OnInit");
+ // console.log("before MyApp call");
+  let test = this.myApiCall();
+  console.log("printing test data "+test);
+  console.log(this.myApiCall());
+ // console.log("After MyApp call " +this.userResp);
+ 
   }
   
 }
