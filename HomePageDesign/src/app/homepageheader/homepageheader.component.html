@@ -80,22 +80,6 @@
 
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'">
-   <!-- <div class="col-sm-3">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Sculcandy Earphones</div>
-        <div class="panel-body"><img src="../assets/image_02.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">
-              <i style="font-size:15px" class="fa">&#xf155;</i>100
-                <a href="#">
-                    <div class="glyphicon glyphicon-shopping-cart" style="margin-left: 160px; font-size:20px"></div>
-                </a>  <br>
-         <span>
-         <a href="#"><p>see more...</p></a>
-         
-         </span> 
-        </div> 
-      </div>
-    </div> -->
 
     <div class="col-sm-3" *ngFor="let product of products"> 
       <div class="panel panel-primary">
@@ -107,201 +91,17 @@
                   <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
               </a>  <br>
         <a href="#"><p>see more...</p></a>
-      </div>      </div>
+      </div>     
+     </div>
     </div>
-
-    <!--
-    <div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Sandisk 64GB USB</div>
-        <div class="panel-body"><img src="../assets/image_04.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">
-            <i style="font-size:15px" class="fa">&#xf155;</i>100
-              <a href="#">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-              </a>  <br>
-        <a href="#"><p>see more...</p></a>
-      </div>      </div>
-    </div>   
-
-    <div class="col-sm-3">
-        <div class="panel panel-primary">
-          <div class="panel-heading">Lipstick </div>
-          <div class="panel-body"><img src="../assets/FashionImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-          <div class="panel-footer">
-              <i style="font-size:15px" class="fa">&#xf155;</i>100
-                <a href="#">
-                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                </a>  <br>
-          <a href="#"><p>see more...</p></a>
-        </div>        </div>
-      </div>
-
-    <div class="col-sm-3">
-      <div class="panel panel-primary">
-        <div class="panel-heading">JBL Earphones</div>
-        <div class="panel-body"><img src="../assets/image_05.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">
-            <i style="font-size:15px" class="fa">&#xf155;</i>100
-              <a href="#">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-              </a>  <br>
-        <a href="#"><p>see more...</p></a>
-      </div>      </div>
-    </div>
-    <div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Lenovo Desktop</div>
-        <div class="panel-body"><img src="../assets/image_06.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">
-            <i style="font-size:15px" class="fa">&#xf155;</i>100
-              <a href="#">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-              </a>  <br>
-        <a href="#"><p>see more...</p></a>
-      </div>      </div>
-    </div>
-
-    <div class="col-sm-3">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Juice Maker</div>
-        <div class="panel-body"><img src="../assets/HomeAppliancesImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">
-            <i style="font-size:15px" class="fa">&#xf155;</i>100
-              <a href="#">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-              </a>  <br>
-        <a href="#"><p>see more...</p></a>
-      </div>      </div>
-    </div>
-
-    <div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Dell Laptop</div>
-        <div class="panel-body"><img src="../assets/image_07.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">
-            <i style="font-size:15px" class="fa">&#xf155;</i>100
-              <a href="#">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-              </a>  <br>
-        <a href="#"><p>see more...</p></a>
-      </div>      
-    </div>
-    </div>
-
 <br><br>
 <a (click)="imagepage2()" >
   See more....
 </a></div>
 
   <div *ngSwitchCase="switchPage === 'page6'">
-
-      <div class="col-sm-3">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Compact </div>
-            <div class="panel-body"><img src="../assets/FashionImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">
-                <i style="font-size:15px" class="fa">&#xf155;</i>100
-                  <a href="#">
-                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                  </a>  <br>
-            <a href="#"><p>see more...</p></a>
-          </div>          </div>
-      </div>
-
-        <div class="col-sm-3">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Aquagaurd Purifier</div>
-              <div class="panel-body"><img src="../assets/HomeAppliancesImg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:15px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-        </div>
-
-
-          <div class="col-sm-3">
-              <div class="panel panel-primary">
-                <div class="panel-heading">Red Lipstick </div>
-                <div class="panel-body"><img src="../assets/FashionImg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:15px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>              </div>
-          </div>
-
-        <div class="col-sm-3">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Mixer</div>
-            <div class="panel-body"><img src="../assets/HomeAppliancesImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">
-                <i style="font-size:15px" class="fa">&#xf155;</i>100
-                  <a href="#">
-                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                  </a>  <br>
-            <a href="#"><p>see more...</p></a>
-          </div>          </div>
-        </div>
-
-        <div class="col-sm-3">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Sofa</div>
-              <div class="panel-body"><img src="../assets/furnitureimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:15px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-        </div>
-        <div class="col-sm-3"> 
-            <div class="panel panel-primary">
-              <div class="panel-heading">Kellogg's Oats</div>
-              <div class="panel-body"><img src="../assets/groceryimg4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:15px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-        </div>
-
-        <div class="col-sm-3">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Salad Keeper</div>
-              <div class="panel-body"><img src="../assets/HomeAppliancesImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:15px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-          </div>
-
-          <div class="col-sm-3">
-              <div class="panel panel-primary">
-                <div class="panel-heading">Go Green Shirt</div>
-                <div class="panel-body"><img src="../assets/gogreenimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:15px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>              </div>
-            </div>
-          -->
-     </div>
-
+<p> This is econd page of images</p>
+  </div>
   <div *ngSwitchCase="switchPage === 'page2'">
     <h1>My Acoount</h1>
     <label> User Name: </label>

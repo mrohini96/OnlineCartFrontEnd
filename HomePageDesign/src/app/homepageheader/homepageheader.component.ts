@@ -4,7 +4,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 import {UserService} from '../user.service';
 //import { Observable } from 'rxjs';
-
 import {Products} from '../products';
 import {PRODUCTS} from '../mockproduct';
 

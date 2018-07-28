@@ -21,12 +21,10 @@ export class UserService {
       .pipe(map(res => res.json()));
       // .map(res => res.json());
      // (map((response: any) => response.json()));
-
   }
 
 
   /*saveAsupPref(url,params): Observable<any>{
-
     let _urlParams = new URLSearchParams();
     for(let element in params) {
       _urlParams.append(element,params[element]);
