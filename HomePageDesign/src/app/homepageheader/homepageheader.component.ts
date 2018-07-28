@@ -24,9 +24,13 @@ export class HomepageheaderComponent implements OnInit {
   constructor (private http :Http, private user:UserService) { 
     console.log("hello this header's constructor");
     this.onSubmit();
-
-    let test = this.user.myApiCall();
     
+    console.log("before my api");
+    let test = this.user.myApiCall();
+    console.log("after my api");
+
+    console.log(test);
+    console.log("after test");
 
   }
   showLogin: boolean = false;
