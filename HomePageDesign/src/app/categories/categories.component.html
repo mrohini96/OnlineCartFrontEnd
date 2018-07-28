@@ -4,7 +4,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-<div class="col-sm-3">
+<div class="col-sm-4">
   <br>
 <h2><b>Categories </b></h2>
 <ul class="categories1">
@@ -16,357 +16,125 @@
 </ul>
 </div>
 
-<div class="col-sm-9">
-<div *ngIf="selectedcategory1">
-   <span style="margin-left:50%" >
-      <h2 style="color: blue">{{selectedcategory1.name | uppercase}}</h2>
-   </span>
-
-   <div *ngIf="selectedcategory1.name=='Electronics'">
-      <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">JBL Earphones</div>
-            <div class="panel-body"><img src="../assets/image_05.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">
-                <i style="font-size:15px" class="fa">&#xf155;</i>100
-                  <a href="#">
-                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 140px; font-size:20px"></div>
-                  </a>  <br>
-            <a href="#"><p>see more...</p></a>
-          </div>     
+<div class="col-sm-8">
+  <div *ngIf="selectedcategory1">
+        <span style="margin-left:50%" >
+           <h2 style="color: blue">{{selectedcategory1.name | uppercase}}</h2>
+        </span>
+  </div> 
+  
+  <div *ngIf="selectedcategory1.name=='Electronics'" >
+    <div class="col-sm-3" *ngFor="let product of products"> 
+        <div *ngIf="product.categoryId =='1'">
+           <div class="panel panel-primary">
+             <div class="panel-heading">{{product.title}}</div>
+             <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+             <div class="panel-footer">
+                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                   <a href="#">
+                       <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
+                   </a>  <br>
+             <a href="#"><p>see more...</p></a>
+           </div>     
+          </div>
+         </div>
          </div>
         </div>
 
-        <div class="col-sm-4"> 
-            <div class="panel panel-primary">
-              <div class="panel-heading">Lenovo Desktop</div>
-              <div class="panel-body"><img src="../assets/image_06.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:10px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-          </div>
-          <div class="col-sm-4"> 
-              <div class="panel panel-primary">
-                <div class="panel-heading">Sandisk Pendrive</div>
-                <div class="panel-body"><img src="../assets/image_03.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:10px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>              </div>
-            </div>
-
-            <div class="col-sm-4"> 
-                <div class="panel panel-primary">
-                  <div class="panel-heading">Sandisk Memory Card</div>
-                  <div class="panel-body"><img src="../assets/image_04.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                  <div class="panel-footer">
-                      <i style="font-size:10px" class="fa">&#xf155;</i>100
-                        <a href="#">
-                            <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                        </a>  <br>
-                  <a href="#"><p>see more...</p></a>
-                </div>                </div>
-              </div>
-<a href="categories.component.html" >see more.. </a>
-
-   </div>
-
-
-   <div *ngIf="selectedcategory1.name=='Fashion'">
-      <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">Makeup Kit</div>
-            <div class="panel-body"><img src="../assets/FashionImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">
-                <i style="font-size:10px" class="fa">&#xf155;</i>100
-                  <a href="#">
-                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                  </a>  <br>
-            <a href="#"><p>see more...</p></a>
-          </div>          </div>
-        </div>
-
-        <div class="col-sm-4"> 
-          <div class="panel panel-primary">
-            <div class="panel-heading">Lakme Makeup Kit</div>
-            <div class="panel-body"><img src="../assets/FashionImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">
-                <i style="font-size:10px" class="fa">&#xf155;</i>100
-                  <a href="#">
-                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                  </a>  <br>
-            <a href="#"><p>see more...</p></a>
-          </div>          </div>
-        </div>
-
-        <div class="col-sm-4"> 
-            <div class="panel panel-primary">
-              <div class="panel-heading">Lipstick</div>
-              <div class="panel-body"><img src="../assets/FashionImg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:10px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-          </div>
-
-          <div class="col-sm-4"> 
-              <div class="panel panel-primary">
-                <div class="panel-heading">Jacket</div>
-                <div class="panel-body"><img src="../assets/FashionImg4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:10px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>             
-            </div>
-            </div>
-            <a href="categories.component.html" >see more.. </a>
-
-    </div>
-
-
-
-    <div *ngIf="selectedcategory1.name=='Furniture'">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Sofa</div>
-              <div class="panel-body"><img src="../assets/furnitureimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:10px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-          </div>
-
-          <div class="col-sm-4"> 
-            <div class="panel panel-primary">
-              <div class="panel-heading">Wooden Dining Table</div>
-              <div class="panel-body"><img src="../assets/furnitureimg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-              <div class="panel-footer">
-                  <i style="font-size:10px" class="fa">&#xf155;</i>100
-                    <a href="#">
-                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                    </a>  <br>
-              <a href="#"><p>see more...</p></a>
-            </div>            </div>
-          </div>
-
-          <div class="col-sm-4"> 
-              <div class="panel panel-primary">
-                <div class="panel-heading">Wooden Drawer</div>
-                <div class="panel-body"><img src="../assets/furnitureimg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:10px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>              </div>
-            </div>
-
-            <div class="col-sm-4"> 
-                <div class="panel panel-primary">
-                  <div class="panel-heading">Rest Chair</div>
-                  <div class="panel-body"><img src="../assets/furnitureimg4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                  <div class="panel-footer">
-                      <i style="font-size:10px" class="fa">&#xf155;</i>100
-                        <a href="#">
-                            <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                        </a>  <br>
-                  <a href="#"><p>see more...</p></a>
-                </div>                </div>
-              </div>
-              <a href="categories.component.html" >see more.. </a>
-
-      </div>
-
-
-      <div *ngIf="selectedcategory1.name=='Grocery'">
-          <div class="col-sm-4">
-              <div class="panel panel-primary">
-                <div class="panel-heading">Saffola Oil</div>
-                <div class="panel-body"><img src="../assets/groceryimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:10px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>              </div>
-            </div>
-
-            <div class="col-sm-4"> 
-              <div class="panel panel-primary">
-                <div class="panel-heading">Tide plus+</div>
-                <div class="panel-body"><img src="../assets/groceryimg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">
-                    <i style="font-size:10px" class="fa">&#xf155;</i>100
-                      <a href="#">
-                          <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                      </a>  <br>
-                <a href="#"><p>see more...</p></a>
-              </div>              </div>
-            </div>
-
-            <div class="col-sm-4"> 
-                <div class="panel panel-primary">
-                  <div class="panel-heading">Surf Excel</div>
-                  <div class="panel-body"><img src="../assets/groceryimg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                  <div class="panel-footer">
-                      <i style="font-size:10px" class="fa">&#xf155;</i>100
-                        <a href="#">
-                            <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                        </a>  <br>
-                  <a href="#"><p>see more...</p></a>
-                </div>                </div>
-              </div>
-
-              <div class="col-sm-4"> 
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">Kellogg's Oats</div>
-                    <div class="panel-body"><img src="../assets/groceryimg4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">
-                        <i style="font-size:10px" class="fa">&#xf155;</i>100
-                          <a href="#">
-                              <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                          </a>  <br>
-                    <a href="#"><p>see more...</p></a>
-                  </div>                  </div>
-              </div>
-                <a href="categories.component.html" >see more.. </a>
-        </div>
-
-
-
-          <div *ngIf="selectedcategory1.name=='HomeAppliances'">
-              <div class="col-sm-4">
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">Salad Keeper</div>
-                    <div class="panel-body"><img src="../assets/HomeAppliancesImg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">
-                        <i style="font-size:10px" class="fa">&#xf155;</i>100
-                          <a href="#">
-                              <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                          </a>  <br>
-                    <a href="#"><p>see more...</p></a>
-                  </div>                  </div>
-                </div>
-
-                <div class="col-sm-4"> 
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">Mixer</div>
-                    <div class="panel-body"><img src="../assets/HomeAppliancesImg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">
-                        <i style="font-size:10px" class="fa">&#xf155;</i>100
-                          <a href="#">
-                              <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                          </a>  <br>
-                    <a href="#"><p>see more...</p></a>
-                  </div>                  </div>
-                </div>
-
-                <div class="col-sm-4"> 
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">Aquagaurd Purifier</div>
-                    <div class="panel-body"><img src="../assets/HomeAppliancesImg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">
-                        <i style="font-size:10px" class="fa">&#xf155;</i>100
-                          <a href="#">
-                              <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                          </a>  <br>
-                    <a href="#"><p>see more...</p></a>
-                  </div>                  </div>
-                </div>
-
-                <div class="col-sm-4"> 
-                    <div class="panel panel-primary">
-                      <div class="panel-heading">Juice Maker</div>
-                      <div class="panel-body"><img src="../assets/HomeAppliancesImg4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                      <div class="panel-footer">
-                          <i style="font-size:10px" class="fa">&#xf155;</i>100
-                            <a href="#">
-                                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                            </a>  <br>
-                      <a href="#"><p>see more...</p></a>
-                    </div>                    </div>
-                </div>
-                <a href="categories.component.html" >see more.. </a>
-
-            </div>
-
-
-            <div *ngIf="selectedcategory1.name=='GoGreen'">
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                      <div class="panel-heading">Go Green Shirt</div>
-                      <div class="panel-body"><img src="../assets/gogreenimg1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                      <div class="panel-footer">
-                          <i style="font-size:10px" class="fa">&#xf155;</i>100
-                            <a href="#">
-                                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                            </a>  <br>
-                      <a href="#"><p>see more...</p></a>
-                    </div>                    </div>
+  
+        <div *ngIf="selectedcategory1.name=='Fashion'">
+            <div class="col-sm-3" *ngFor="let product of products"> 
+                <div *ngIf="product.categoryId =='2'">
+                   <div class="panel panel-primary">
+                     <div class="panel-heading">{{product.title}}</div>
+                     <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                     <div class="panel-footer">
+                         <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                           <a href="#">
+                               <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
+                           </a>  <br>
+                     <a href="#"><p>see more...</p></a>
+                   </div>     
                   </div>
-
-                  <div class="col-sm-4"> 
-                    <div class="panel panel-primary">
-                      <div class="panel-heading">Go Green Plants</div>
-                      <div class="panel-body"><img src="../assets/gogreenimg2.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                      <div class="panel-footer">
-                          <i style="font-size:10px" class="fa">&#xf155;</i>100
-                            <a href="#">
-                                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                            </a>  <br>
-                      <a href="#"><p>see more...</p></a>
-                    </div>                    </div>
-                  </div>
-                  <div class="col-sm-4"> 
-                      <div class="panel panel-primary">
-                        <div class="panel-heading">Plant Seeds</div>
-                        <div class="panel-body"><img src="../assets/gogreenimg3.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                        <div class="panel-footer">
-                            <i style="font-size:10px" class="fa">&#xf155;</i>100
-                              <a href="#">
-                                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                              </a>  <br>
-                        <a href="#"><p>see more...</p></a>
-                      </div>                      </div>
+                 </div>
+                 </div>
+           </div> 
+              
+           
+           <div *ngIf="selectedcategory1.name=='Furniture'">
+              <div class="col-sm-3" *ngFor="let product of products"> 
+                  <div *ngIf="product.categoryId =='3'">
+                     <div class="panel panel-primary">
+                       <div class="panel-heading">{{product.title}}</div>
+                       <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                       <div class="panel-footer">
+                           <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                             <a href="#">
+                                 <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
+                             </a>  <br>
+                       <a href="#"><p>see more...</p></a>
+                     </div>     
                     </div>
+                   </div>
+                   </div>
+             </div>  
+             
+             <div *ngIf="selectedcategory1.name== 'Grocery'">
+                <div class="col-sm-3" *ngFor="let product of products"> 
+                    <div *ngIf="product.categoryId =='4'">
+                       <div class="panel panel-primary">
+                         <div class="panel-heading">{{product.title}}</div>
+                         <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                         <div class="panel-footer">
+                             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                               <a href="#">
+                                   <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
+                               </a>  <br>
+                         <a href="#"><p>see more...</p></a>
+                       </div>     
+                      </div>
+                     </div>
+                     </div>
+               </div>    
 
-                    <div class="col-sm-4"> 
-                        <div class="panel panel-primary">
-                          <div class="panel-heading">Whole Foods</div>
-                          <div class="panel-body"><img src="../assets/gogreenimg4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                          <div class="panel-footer">
-                              <i style="font-size:10px" class="fa">&#xf155;</i>100
-                                <a href="#">
-                                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                                </a>  <br>
-                          <a href="#"><p>see more...</p></a>
-                        </div>                        </div>
-                    </div>
-                    <a href="categories.component.html" >see more.. </a>
 
-              </div>
-    </div>
+               <div *ngIf="selectedcategory1.name=='HomeAppliances'">
+                  <div class="col-sm-3" *ngFor="let product of products"> 
+                      <div *ngIf="product.categoryId =='5'">
+                         <div class="panel panel-primary">
+                           <div class="panel-heading">{{product.title}}</div>
+                           <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                           <div class="panel-footer">
+                               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                                 <a href="#">
+                                     <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
+                                 </a>  <br>
+                           <a href="#"><p>see more...</p></a>
+                         </div>     
+                        </div>
+                       </div>
+                       </div>
+                 </div>    
+
+                 <div *ngIf="selectedcategory1.name=='GoGreen'">
+                    <div class="col-sm-3" *ngFor="let product of products"> 
+                        <div *ngIf="product.categoryId =='6'">
+                           <div class="panel panel-primary">
+                             <div class="panel-heading">{{product.title}}</div>
+                             <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                             <div class="panel-footer">
+                                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                                   <a href="#">
+                                       <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
+                                   </a>  <br>
+                             <a href="#"><p>see more...</p></a>
+                           </div>     
+                          </div>
+                         </div>
+                         </div>
+                   </div>    
 
 </div>
-
 
 
 

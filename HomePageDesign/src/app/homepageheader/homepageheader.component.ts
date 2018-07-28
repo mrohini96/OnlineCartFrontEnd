@@ -29,10 +29,10 @@ export class HomepageheaderComponent implements OnInit {
     console.log("hello this header's constructor");
     this.onSubmit();
     
+
    /* console.log("before my api");
     let test = this.user.myApiCall();
     console.log("after my api");
-
     console.log(test);
     console.log("after test"  +this.userResp);
 */
@@ -107,7 +107,6 @@ s
     }
    }) 
     }
-
 
  ngOnInit() {
   console.log("Inside OnInit");

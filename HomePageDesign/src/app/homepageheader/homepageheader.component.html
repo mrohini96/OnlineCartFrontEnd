@@ -79,33 +79,51 @@
 </nav>
 
 <div class="container" [ngSwitch]="true">    
-  <div *ngSwitchCase="switchPage === 'page1'">
-      
-          
+  <div *ngSwitchCase="switchPage === 'page1'" >
+
 
     <div class="col-sm-3" *ngFor="let product of products"> 
+        <div *ngIf="product.categoryId=='1' || product.categoryId=='2' || product.categoryId=='3' ">
       <div class="panel panel-primary">
-        <div class="panel-heading">{{product.title}}</div>
-        <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading">{{product.title}} {{product.ProductId}}</div>
+        <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:150%" alt="Image"></div>
         <div class="panel-footer">
             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
               <a href="#">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
+                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:20px"></div>
               </a>  <br>
         <a href="#"><p>see more...</p></a>
       </div>     
      </div>
     </div>
+  </div>
+
 <br><br>
 <a (click)="imagepage2()" >
-    See more....
-  </a>
+    next page...
+</a>
 
 </div>
 
   <div *ngSwitchCase="switchPage === 'page6'">
-<p> This is econd page of images</p>
+    
+      <div class="col-sm-3" *ngFor="let product of products"> 
+          <div *ngIf=" product.categoryId=='4' || product.categoryId=='5' || product.categoryId=='6'">
+        <div class="panel panel-primary">
+          <div class="panel-heading">{{product.title}} {{product.ProductId}}</div>
+          <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">
+              <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                <a href="#">
+                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
+                </a>  <br>
+          <a href="#"><p>see more...</p></a>
+        </div>     
+       </div>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchCase="switchPage === 'page2'">
     <h1>My Acoount</h1>
     <label> User Name: </label>
