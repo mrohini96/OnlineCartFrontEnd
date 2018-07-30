@@ -92,7 +92,9 @@
               <a href="#">
                   <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:20px"></div>
               </a>  <br>
-        <a href="#"><p>see more...</p></a>
+              <a (click)="productPage()" >
+                  seeeeee more
+              </a>
       </div>     
      </div>
     </div>
@@ -117,7 +119,10 @@
                 <a href="#">
                     <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
                 </a>  <br>
-          <a href="#"><p>see more...</p></a>
+        
+         <a (click)="productPage()" >
+            seeeeee more
+        </a>
         </div>     
        </div>
       </div>
@@ -145,35 +150,21 @@
       </div>
 
 
-      
+      <div *ngSwitchCase="switchPage === 'page7'">
+          <app-productpage></app-productpage>
+        </div>    
 
 
-  <div *ngSwitchDefault>
+<div *ngSwitchDefault>
     <p>default</p>
 </div>
 
-</div>   <br>
-
-
-
-<footer class="container-fluid text-center">
-  <p>Online Store Copyright 
-      Copyright 2017-2018 Google Inc. All Rights Reserved.
-      Use of this source code is governed by an MIT-style license that
-      can be found in the LICENSE file at http://angular.io/license<span class="glyphicon glyphicon-copyright-mark"></span></p>    
-
-</footer>
-
+</div>  
+<br>
 </body>
 </html>
 
-
-
 <!--
-  <app-searchproduct></app-searchproduct>
-<app-categories></app-categories>
-<app-aboutwebsite></app-aboutwebsite>
-
 this is icon for wishlist
 <a href="#"><div class="glyphicon glyphicon-bookmark"  style="margin-left:70px;"></div></a>
 -->

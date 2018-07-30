@@ -7,23 +7,29 @@ import { AppComponent } from './app.component';
 import { HomepageheaderComponent } from './homepageheader/homepageheader.component';
 
 import { CategoriesComponent } from './categories/categories.component';
-import { AboutwebsiteComponent } from './aboutwebsite/aboutwebsite.component';
+
 
 import { FilterPipe} from './filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule} from '@angular/http';
 import { ProductFilterPipe } from './product-filter.pipe';
+import { FooterComponent } from './footer/footer.component';
+import { ProductpageComponent } from './productpage/productpage.component';
 @NgModule({
   declarations: [
    AppComponent,
    HomepageheaderComponent,
    
    CategoriesComponent,
-   AboutwebsiteComponent,
+  
    FilterPipe,
    
    ProductFilterPipe,
+   
+   FooterComponent,
+   
+   ProductpageComponent,
    
    
   ],

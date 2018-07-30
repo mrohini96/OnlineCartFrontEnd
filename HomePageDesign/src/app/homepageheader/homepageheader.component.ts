@@ -99,6 +99,10 @@ s
 
   }
 
+  productPage(){
+    this.switchPage= "page7";
+  }
+
   onSubmit() {
    this.userList.forEach((user) => {
     if (this.userJson.name == user.name && this.userJson.pswd == user.pswd ){
