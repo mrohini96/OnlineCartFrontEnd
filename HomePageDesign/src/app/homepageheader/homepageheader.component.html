@@ -53,7 +53,7 @@
         
       </ul> 
       <ul class="nav navbar-nav navbar-right">
-              <li><a routerLink="/homepageheader"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
+              <li (click)="signUpPage()"><a routerLink="/homepageheader"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
               <li (click)="showUserDetails()"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
@@ -154,7 +154,9 @@
           <app-productpage></app-productpage>
         </div>    
 
-
+        <div *ngSwitchCase="switchPage === 'page8'">
+            <app-register></app-register>
+          </div>   
 <div *ngSwitchDefault>
     <p>default</p>
 </div>

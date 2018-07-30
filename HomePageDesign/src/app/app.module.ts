@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { UserService } from './user.service';
 import { AppComponent } from './app.component';
 
@@ -16,6 +16,8 @@ import { HttpModule} from '@angular/http';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { FooterComponent } from './footer/footer.component';
 import { ProductpageComponent } from './productpage/productpage.component';
+import { RegisterComponent } from './register/register.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
    AppComponent,
@@ -31,13 +33,18 @@ import { ProductpageComponent } from './productpage/productpage.component';
    
    ProductpageComponent,
    
+   RegisterComponent,
+   
+   CartComponent,
+   
    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

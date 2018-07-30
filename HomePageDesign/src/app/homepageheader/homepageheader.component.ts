@@ -103,6 +103,11 @@ s
     this.switchPage= "page7";
   }
 
+signUpPage(){
+  this.switchPage= "page8";
+}
+
+
   onSubmit() {
    this.userList.forEach((user) => {
     if (this.userJson.name == user.name && this.userJson.pswd == user.pswd ){

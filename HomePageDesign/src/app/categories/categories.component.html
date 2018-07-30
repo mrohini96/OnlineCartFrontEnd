@@ -28,7 +28,7 @@
 <div class="container" [ngSwitch]="true">    
  <div *ngSwitchCase="switchPage === 'page1'" >
   <div *ngIf="selectedcategory1.name=='Electronics'" >
-    <div class="col-sm-3" *ngFor="let product of products"> 
+    <div class="col-sm-4" *ngFor="let product of products"> 
         <div *ngIf="product.categoryId =='1'">
            <div class="panel panel-primary">
              <div class="panel-heading">{{product.title}}</div>
