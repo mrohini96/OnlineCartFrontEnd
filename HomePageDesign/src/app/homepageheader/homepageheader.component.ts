@@ -133,7 +133,7 @@ goBack(){
    }) 
     }
 
-    addToCart(productObj :Products):void{
+   addToCart(productObj :Products):void{
     console.log("this is addtocart() in homepageheader");
  
     this.products2= productObj;
