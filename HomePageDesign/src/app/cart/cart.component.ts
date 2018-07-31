@@ -9,7 +9,7 @@ import { PRODUCTS } from '../mockproduct';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-   productObj=PRODUCTS;
+ //  productObj=PRODUCTS;
   constructor() { }
 
   ngOnInit() {
