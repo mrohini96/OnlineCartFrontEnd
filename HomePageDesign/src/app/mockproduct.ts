@@ -4,7 +4,7 @@ export const PRODUCTS: Products[] = [
   { ProductId: 1,categoryId:1,title:"JBL Earphones",price:1200,desc:"JBL",image:"../assets/image_05.jpg"},
   { ProductId: 2,categoryId:1,title:"Lenovo Desktop",price:1000,desc:"Lenovo Desktop",image:"../assets/image_06.jpg"},
   { ProductId: 3,categoryId:1,title:"Sandisk Pendrive",price:160,desc:"Sandisk Pendrive",image:"../assets/image_03.jpg"},
-  { ProductId: 4,categoryId:1,title:"Sandisk Memory Card",price:1040,desc:"Sandisk Memory Card",image:"../assets/image_04.jpg"},
+  { ProductId: 4,categoryId:1,title:"MemoryCard",price:1040,desc:"Sandisk Memory Card",image:"../assets/image_04.jpg"},
   
   { ProductId: 5,categoryId:2,title:"Makeup Kit",price:180,desc:"Makeup Kit",image:"../assets/FashionImg1.jpg"},
   { ProductId: 6,categoryId:2,title:"Lakme Makeup Kit",price:500,desc:"Lakme Makeup Kit",image:"../assets/FashionImg2.jpg"},
@@ -12,7 +12,7 @@ export const PRODUCTS: Products[] = [
   { ProductId: 8,categoryId:2,title:"Jacket",price:700,desc:"Jacket",image:"../assets/FashionImg4.jpg"},
   
   { ProductId: 9,categoryId:3,title:"Sofa",price:780,desc:"Sofa",image:"../assets/furnitureimg1.jpg"},
-  { ProductId: 10,categoryId:3,title:"Wooden Dining Table",price:890,desc:"Wooden Dining Table",image:"../assets/furnitureimg2.jpg"},
+  { ProductId: 10,categoryId:3,title:"Dining Table",price:890,desc:"Wooden Dining Table",image:"../assets/furnitureimg2.jpg"},
   { ProductId: 11,categoryId:3,title:"Wooden Drawer",price:340,desc:"Wooden Drawer",image:"../assets/furnitureimg3.jpg"},
   { ProductId: 12,categoryId:3,title:"Rest Chair",price:790,desc:"Rest Chair",image:"../assets/furnitureimg4.jpg"},
   

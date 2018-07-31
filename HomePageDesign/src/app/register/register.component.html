@@ -31,7 +31,7 @@
           </div>
         </fieldset>
   
-        <fieldset class="form-group ">
+        <fieldset class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" placeholder="Password" minlength='6' formControlName="password">
           <div class='form-text error' *ngIf="registrationForm.controls.password.touched">
@@ -57,10 +57,11 @@
       
      <!-- <pre>{{registrationForm.value | json}}</pre> -->
     </div>
-    <div *ngIf="register">
-        Registration Successful! <br>
-        Please login to continue. <br>
-        Thank you! <br>
+      <div *ngIf="register">
+        <h2>Registration Successful! </h2><br>
+      <h4>Please login to continue.<br>
+        Thank you!</h4> 
+        <br>
       </div>
   </div>
   

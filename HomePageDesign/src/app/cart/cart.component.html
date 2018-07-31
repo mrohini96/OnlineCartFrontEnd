@@ -1,6 +1,7 @@
 
 <h1>My Cart</h1>
 
+
 <br><br><div class="container">
     <div class="row">
         <div class="col-md-9">
@@ -29,6 +30,13 @@
                 </tbody>
             </table>
         </div>
+
+       
+
+        <p>THis is before calling cartService </p>
+        <div *ngFor="let item of CartService.cartItem"> {{item}} </div>
+        <p>THis is after calling cartService </p>
+
         <div class="col-md-3">
             <button class="btn btn-block">continue</button>
             <button class="btn btn-block">continue</button>
@@ -37,11 +45,10 @@
     </div>
 </div>
 
-
-
-<!-- 
+<!--
 <input type="checkbox" class="catagory_list_checkbox" 
 (click)="resize(data.id, catagoryDetail.id);
 addToCart(data.id,catagoryDetail.id,data.fullName,catagoryDetail.title)" 
 [value]="catagoryDetail.id" [attr.id]="'catagoryId'+catagoryDetail.id">
 -->
+

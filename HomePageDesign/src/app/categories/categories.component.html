@@ -28,7 +28,7 @@
 <div class="container" [ngSwitch]="true">    
  <div *ngSwitchCase="switchPage === 'page1'" >
   <div *ngIf="selectedcategory1.name=='Electronics'" >
-    <div class="col-sm-4" *ngFor="let product of products"> 
+    <div class="col-sm-2" *ngFor="let product of products"> 
         <div *ngIf="product.categoryId =='1'">
            <div class="panel panel-primary">
              <div class="panel-heading">{{product.title}}</div>
@@ -36,10 +36,10 @@
              <div class="panel-footer">
                  <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
                    <a href="#">
-                       <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
+                       <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
                    </a>  <br>
                    <a (click)="productPage()" >
-                      seeeeee more
+                      see more
                   </a>
            </div>     
           </div>
@@ -49,7 +49,7 @@
 
   
         <div *ngIf="selectedcategory1.name=='Fashion'">
-            <div class="col-sm-3" *ngFor="let product of products"> 
+            <div class="col-sm-2" *ngFor="let product of products"> 
                 <div *ngIf="product.categoryId =='2'">
                    <div class="panel panel-primary">
                      <div class="panel-heading">{{product.title}}</div>
@@ -60,7 +60,7 @@
                                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
                            </a>  <br>
                            <a (click)="productPage()" >
-                              seeeeee more
+                              see more
                           </a>
                    </div>     
                   </div>
@@ -70,7 +70,7 @@
               
            
            <div *ngIf="selectedcategory1.name=='Furniture'">
-              <div class="col-sm-3" *ngFor="let product of products"> 
+              <div class="col-sm-2" *ngFor="let product of products"> 
                   <div *ngIf="product.categoryId =='3'">
                      <div class="panel panel-primary">
                        <div class="panel-heading">{{product.title}}</div>
@@ -81,7 +81,7 @@
                                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
                              </a>  <br>
                              <a (click)="productPage()" >
-                                seeeeee more
+                                see more
                             </a>
                      </div>     
                     </div>
@@ -90,7 +90,7 @@
              </div>  
              
              <div *ngIf="selectedcategory1.name== 'Grocery'">
-                <div class="col-sm-3" *ngFor="let product of products"> 
+                <div class="col-sm-2" *ngFor="let product of products"> 
                     <div *ngIf="product.categoryId =='4'">
                        <div class="panel panel-primary">
                          <div class="panel-heading">{{product.title}}</div>
@@ -101,7 +101,7 @@
                                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
                                </a>  <br>
                                <a (click)="productPage()" >
-                                  seeeeee more
+                                  see more
                               </a>
                        </div>     
                       </div>
@@ -111,7 +111,7 @@
 
 
                <div *ngIf="selectedcategory1.name=='HomeAppliances'">
-                  <div class="col-sm-3" *ngFor="let product of products"> 
+                  <div class="col-sm-2" *ngFor="let product of products"> 
                       <div *ngIf="product.categoryId =='5'">
                          <div class="panel panel-primary">
                            <div class="panel-heading">{{product.title}}</div>
@@ -122,7 +122,7 @@
                                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
                                  </a>  <br>
                                  <a (click)="productPage()" >
-                                    seeeeee more
+                                    see more
                                 </a>
                          </div>     
                         </div>
@@ -131,7 +131,7 @@
                  </div>    
 
                  <div *ngIf="selectedcategory1.name=='GoGreen'">
-                    <div class="col-sm-3" *ngFor="let product of products"> 
+                    <div class="col-sm-2" *ngFor="let product of products"> 
                         <div *ngIf="product.categoryId =='6'">
                            <div class="panel panel-primary">
                              <div class="panel-heading">{{product.title}}</div>
@@ -142,7 +142,7 @@
                                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
                                    </a>  <br>
                                    <a (click)="productPage()" >
-                                      seeeeee more
+                                      see more
                                   </a>
                            </div>     
                           </div>

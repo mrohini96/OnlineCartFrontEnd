@@ -16,18 +16,6 @@ export class CartComponent implements OnInit {
 
 
 /*
- addToCart(id, catagoryId, fullName, catTitle){
-    var currentUserObj = <any>{};
-    var self = this;
-    var sum;
-    currentUserObj[id] = {};    
-    currentUserObj[id].participantid = id;
-    currentUserObj[id].participantName = fullName;
-
-   // console.log(fullName)
-    this.cart.cartItems[id] = {};
-
-
 saveCart() {
       if (window.localStorage) {
         console.log("tfgb",this.cart);

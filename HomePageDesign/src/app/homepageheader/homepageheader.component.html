@@ -52,21 +52,21 @@
       </ul> 
       <ul class="nav navbar-nav navbar-right">
               <li (click)="signUpPage()"><a routerLink="/homepageheader"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
-              <li (click)="showUserDetails()"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li (click)="showUserDetails()" *ngIf="!showLogin"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
         <li (click)="logout()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
 
       <div *ngIf="showLogin" style="display:block; color: white">
-        <div *ngIf="!validate"> 
+        <div *ngIf="!validate && !userloggedin"> 
           <h4>Please login to continue</h4>
          <input type="text" class="dropdown-item" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
          <input type="password" class="dropdown-item" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
          <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
          <button type="reset">clear</button>
       </div>
-      <div *ngIf="validate">
+      <div *ngIf="validate && userloggedin">
         Welcome {{userJson.name}} !
       </div>
 
@@ -79,19 +79,18 @@
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'" >
 
-
     <div class="col-sm-3" *ngFor="let product of products"> 
         <div *ngIf="product.categoryId=='1' || product.categoryId=='2' || product.categoryId=='3' ">
       <div class="panel panel-primary">
-        <div class="panel-heading">{{product.title}} {{product.ProductId}}</div>
-        <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:150%" alt="Image"></div>
+        <div class="panel-heading">{{product.title}} </div>
+        <div class="panel-body"><img src="{{product.image}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
         <div class="panel-footer">
             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
               <a (click)="moveCart()" routerLink="/homepageheader">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:20px"></div>
+                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:18px"></div>
               </a>  <br>
               <a (click)="productPage()" >
-                  seeeeee more
+                  see more...
               </a>
       </div>     
      </div>
@@ -102,7 +101,6 @@
 <a (click)="imagepage2()" >
     next page...
 </a>
-
 </div>
 
   <div *ngSwitchCase="switchPage === 'page6'">
@@ -110,22 +108,25 @@
       <div class="col-sm-3" *ngFor="let product of products"> 
           <div *ngIf=" product.categoryId=='4' || product.categoryId=='5' || product.categoryId=='6'">
         <div class="panel panel-primary">
-          <div class="panel-heading">{{product.title}} {{product.ProductId}}</div>
+          <div class="panel-heading">{{product.title}} </div>
           <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">
               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
 
-                <a href="#">
-                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 160px; font-size:20px"></div>
-                </a>  <br>
-        
+              <a  (click)="addToCart(product)">
+                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:18px"></div>
+               
+            </a> <br>
          <a (click)="productPage()" >
-            seeeeee more
+            see more..
         </a>
         </div>     
        </div>
       </div>
     </div>
+    <a (click)="goBack()" >
+       previous_page
+    </a>
   </div>
 
   <div *ngSwitchCase="switchPage === 'page2'">
@@ -168,4 +169,7 @@
 <!--
 this is icon for wishlist
 <a href="#"><div class="glyphicon glyphicon-bookmark"  style="margin-left:70px;"></div></a>
+
+
+(click)="addToCart(product.ProductID,product.categoryId,product.title,product.price,product.image,product.desc)"
 -->
