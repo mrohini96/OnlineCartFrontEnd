@@ -37,6 +37,7 @@ export class CartComponent implements OnInit {
 
 
 /*
+
 saveCart() {
       if (window.localStorage) {
         console.log("tfgb",this.cart);
