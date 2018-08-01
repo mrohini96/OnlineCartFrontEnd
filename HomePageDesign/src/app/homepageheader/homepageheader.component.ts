@@ -136,10 +136,9 @@ goBack(){
    addToCart(productObj :Products):void{
     console.log("this is addtocart() in homepageheader");
  
-    this.products2= productObj;
-    console.log("this is using prodobj  "+this.products2.title);
+    console.log("this is using prodobj  "+productObj .title);
    
-    this.cartObj.addToCartService(this.products2);
+    this.cartObj.addToCartService(productObj);
   
     }
 

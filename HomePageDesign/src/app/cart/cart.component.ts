@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {CartService} from '../cart.service';
 import { PRODUCTS } from '../mockproduct';
+import {Products} from '../products';
 
 @Component({
   selector: 'app-cart',
@@ -10,10 +11,27 @@ import { PRODUCTS } from '../mockproduct';
 })
 export class CartComponent implements OnInit {
  //  productObj=PRODUCTS;
-  constructor() { }
+  cartItems2=PRODUCTS;
+  cartItems: Products[] = [];
 
-  ngOnInit() {
+  constructor(private cartObj:CartService) {}
+
+    getItemsForCart(): void {
+    console.log("this is before getItemsForCart()");
+    this.cartItems = this.cartObj.getSelectedItems();
+    console.log("this is after getItemsForCart()");
+}
+  ngOnInit(): void {
+    this.getItemsForCart();
   }
+
+  removeItemFromCart(productObj : Products): void {
+  console.log("this is before  removeItemFromCart()");
+  console.log("Item removed is "+productObj.title);
+  this.cartObj.removeItem(productObj);
+  console.log("this is after removeItemFromCart()");
+}
+
 
 }
 
