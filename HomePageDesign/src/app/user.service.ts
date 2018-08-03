@@ -22,11 +22,12 @@ export class UserService {
   myApiCall(): Observable<UserResponse>{
     console.log("inside myApiCall Service");
     return this.http.get(
-      "http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
+      "http://localhost:8080/onlinecart/product/categories"
+     )
     //  .pipe(map(res => res.json()));
        .pipe(map(res =><UserResponse>res.json()));
      // (map((response: any) => response.json()));
-    //console.log("inside myApiCall Service");
+    //console.log("inside myApiCall Service");  "http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234"
   }
 
 

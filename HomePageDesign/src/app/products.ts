@@ -10,4 +10,6 @@ export class Products{
   desc: string;
   //	Path	to	small	image
   image: string;
+  // Available Quantity
+  availableQauntity: number;
 }
