@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductpageComponent } from './productpage/productpage.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 @NgModule({
   declarations: [
    AppComponent,
@@ -36,6 +37,8 @@ import { CartComponent } from './cart/cart.component';
    RegisterComponent,
    
    CartComponent,
+   
+   WishlistComponent,
    
    
   ],

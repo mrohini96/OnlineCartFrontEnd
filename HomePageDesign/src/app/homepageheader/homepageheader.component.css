@@ -1,3 +1,11 @@
+.selected {
+  background-color: rgb(221, 220, 201) !important;
+  color: rgba(8, 0, 0, 0.993);
+}
+.hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
 mat-card {
   max-width: 400px;
   margin: 2em auto;

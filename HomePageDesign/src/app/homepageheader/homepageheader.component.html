@@ -54,6 +54,7 @@
               <li (click)="showUserDetails()" *ngIf="!showLogin"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li (click)="moveWishList()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
         <li (click)="logout()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
 
@@ -77,8 +78,7 @@
 
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'" >
-
-    <div class="col-sm-3" *ngFor="let product of products"> 
+    <div class="col-sm-3" *ngFor="let product of products"  [class.selected]="product === products2" (click)="productPage(product)"> 
         <div *ngIf="product.categoryId=='1' || product.categoryId=='2' || product.categoryId=='3' ">
       <div class="panel panel-primary">
         <div class="panel-heading">{{product.title}} </div>
@@ -86,20 +86,45 @@
         <div class="panel-footer">
             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
               <a (click)="moveCart()" routerLink="/homepageheader">
-                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:18px"></div>
-              </a>  <br>
-              <a (click)="productPage()" >
-                  see more...
+              <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:130px; font-size:18px"></div>
               </a>
+              <a (click)="moveWishList()" routerLink="/homepageheader">
+              <div class="glyphicon glyphicon-bookmark" style="margin-left:10px; font-size:18px"></div>
+              </a>
+
+              
+<!--  <a (click)="productPage()" >
+                  see more...
+              </a> -->
       </div>     
      </div>
     </div>
   </div>
-
 <br><br>
 <a (click)="imagepage2()" >
     next page...
 </a>
+<div *ngIf="products2">
+<h1>{{products2.title| uppercase}} Details</h1> <br>
+<div col-sm-12>
+<img src="{{products2.image}}" alt="{{products2.title}} | image"> <br>
+<label> Product Description:
+    <span >{{products2.desc}}</span>
+</label><br>
+
+<label> Price:
+<i style="font-size:15px" class="fa">&#xf155;</i>{{products2.price}}
+</label><br>
+
+<label> Available Qauntity:
+    <span>{{products2.availableQauntity}}</span>
+</label><br>
+</div>
+
+<!--<input [(ngModel)]="products2.title" placeholder="title"> <br>
+<input [(ngModel)]="products2.price" placeholder="title"> <br>
+<input [(ngModel)]="products2.availableQauntity" placeholder="title"> -->
+</div>
 </div>
 
   <div *ngSwitchCase="switchPage === 'page6'">
@@ -111,11 +136,16 @@
           <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">
               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
-
-              <a  (click)="addToCart(product)">
+              <a (click)="addToCart(product)" routerLink="/homepageheader">
+                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:130px; font-size:18px"></div>
+                </a>
+                <a (click)="moveWishList()" routerLink="/homepageheader">
+                <div class="glyphicon glyphicon-bookmark" style="margin-left:10px; font-size:18px"></div>
+                </a>
+           <!--   <a  (click)="addToCart(product)">
                   <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:160px; font-size:18px"></div> 
               </a> <br> 
-          <!--
+          
           <div >
             <button type="button" (click)="addToCart(product)" style="margin-left:160px">AddtoCart</button>
           </div> 
@@ -140,6 +170,10 @@
   <div *ngSwitchCase="switchPage === 'page3'">
     <app-cart></app-cart>
   </div>
+
+  <div *ngSwitchCase="switchPage === 'page9'">
+      <app-wishlist></app-wishlist>
+    </div>
 
   <div *ngSwitchCase="switchPage === 'page4'">
       <app-categories></app-categories>

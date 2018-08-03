@@ -88,7 +88,12 @@ export class HomepageheaderComponent implements OnInit {
 
   }
 
+  moveWishList(){
 
+    this.switchPage="page9"
+  
+    }
+  
   movePage(){
     this.switchPage = "page2";
   }
@@ -110,11 +115,15 @@ export class HomepageheaderComponent implements OnInit {
     this.switchPage= "page6";
 
   }
-
-  productPage(){
+  productPage(products3 :Products){
+    this.products2=products3;
+    console.log("this is product title "+this.products2.title);
+   // this.switchPage= "page7";
+  }
+ /* productPage(){
     this.switchPage= "page7";
   }
-
+*/
 signUpPage(){
   this.switchPage= "page8";
 }
