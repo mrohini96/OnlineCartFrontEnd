@@ -10,6 +10,9 @@ import {PRODUCTS} from '../mockproduct';
 import { UserResponse } from '../user';
 
 import { CartService } from '../cart.service';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-homepageheader',
@@ -27,8 +30,9 @@ export class HomepageheaderComponent implements OnInit {
   switchPage = "page1";
   userloggedin :boolean=false;
   private url=" ";
-  data : Object;
+  data : any= {}
   userResp:UserResponse;
+  result: any;
  
   title: string;
   price : any;
@@ -49,9 +53,16 @@ export class HomepageheaderComponent implements OnInit {
     console.log(test);
     console.log("after test"  +this.userResp);
 */
+
+
+this.user.myApiCall().subscribe(res=>{
+  console.log(JSON.stringify(res) +"test")
+  this.result = res;
   }
 
- 
+);
+  }
+ /*
   myApiCall() : void{
     this.user.myApiCall()
              .subscribe(
@@ -61,6 +72,7 @@ export class HomepageheaderComponent implements OnInit {
              )
    console.log("inside myApiCall homepageheader " +this.userResp);
   }
+*/
   showLogin: boolean = false;
 
   userJson={"name": "", "pswd": "" };
@@ -131,16 +143,14 @@ signUpPage(){
 goBack(){
   this.switchPage= "page1";
 }
-  onSubmit() {
-   this.userList.forEach((user) => {
-    if (this.userJson.name == user.name && this.userJson.pswd == user.pswd ){
-      this.validate = true;
-      this.user.userDetails = user;
-      this.userloggedin=true;
-     
-    }
-   }) 
-    }
+onSubmit() {
+  this.userList.forEach((user) => {
+   if (this.userJson.name == user.name && this.userJson.pswd == user.pswd ){
+     this.validate = true;
+     this.user.userDetails = user;
+   }
+  }) 
+   }
 
    addToCart(productObj :Products):void{
     console.log("this is addtocart() in homepageheader");
@@ -153,13 +163,11 @@ goBack(){
 
  ngOnInit() {
   
-  console.log("Inside OnInit");
+ // console.log("Inside OnInit");
  // console.log("before MyApp call");
-  let test = this.myApiCall();
-  console.log("printing test data "+test);
-  console.log(this.myApiCall());
+ // let test = this.myApiCall();
+  //console.log("printing test data "+test);
+ // console.log(this.myApiCall());
  // console.log("After MyApp call " +this.userResp);
- 
   }
-  
 }

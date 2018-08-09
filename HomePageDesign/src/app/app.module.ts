@@ -19,6 +19,9 @@ import { ProductpageComponent } from './productpage/productpage.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+
+
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
    AppComponent,
@@ -47,7 +50,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     FormsModule,
     AppRoutingModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

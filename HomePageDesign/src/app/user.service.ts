@@ -5,33 +5,42 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 //import { map } from 'rxjs/add/operator/map';
 //import 'rxjs/Rx';
-import { Observable } from 'rxjs';
-import { map } from "rxjs/operators"
+// import { Observable } from 'rxjs';
+// import { map } from "rxjs/operators"
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {UserResponse} from './user';
 
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class UserService {
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
   userDetails: any;
 
-  myApiCall(): Observable<UserResponse>{
-    console.log("inside myApiCall Service");
-    return this.http.get(
-      "http://localhost:8080/onlinecart/product/categories"
-     )
-    //  .pipe(map(res => res.json()));
-       .pipe(map(res =><UserResponse>res.json()));
+  // myApiCall(): Observable<any>{
+  //   return this.http.get(
+  //     "http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
+  //     //.map(res => res.json());
+  //     //.pipe(map(res => res.json()));
+       
+  //    // (map((response: any) => response.json()));
+
+  // }
+
+  myApiCall() {
+    let header= new HttpHeaders({})
+    return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/login?name=Rohini@gmail.com&password=1234")
+      //"http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
+      //.map(res => res.json());
+      //.pipe(map(res => res.json()));
+       
      // (map((response: any) => response.json()));
-    //console.log("inside myApiCall Service");  "http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234"
+
   }
 
 
   /*saveAsupPref(url,params): Observable<any>{
+
     let _urlParams = new URLSearchParams();
     for(let element in params) {
       _urlParams.append(element,params[element]);
