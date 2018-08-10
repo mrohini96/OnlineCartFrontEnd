@@ -10,6 +10,7 @@ import {PRODUCTS} from '../mockproduct';
 import { UserResponse } from '../user';
 
 import { CartService } from '../cart.service';
+import {WishlistService} from '../wishlist.service';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -26,7 +27,7 @@ export class HomepageheaderComponent implements OnInit {
   products = PRODUCTS;
   products2 :Products;
   storeItems: Products[] = [];
-  
+
   validate:boolean = false;
   validateDetails:boolean = false; 
   switchPage = "page1";
@@ -45,7 +46,7 @@ export class HomepageheaderComponent implements OnInit {
   
 
 
-  constructor (private http :Http, private user:UserService,private cartObj:CartService) { 
+  constructor (private http :Http, private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService) { 
     console.log("hello this header's constructor");
    // this.onSubmit();
     
@@ -176,6 +177,7 @@ onSubmit() {
 */
 getStoreItems(): void {
   this.storeItems = this.cartObj. getItemsForCart();
+  this.storeItems=this.wishlistObj.getItemsForWishlist();
 }
 
 addToCart(id:number):void{
@@ -183,6 +185,11 @@ console.log("this is addtocart() in homepageheader");
 this.cartObj.addToCartService(id);
 
 }
+addToWishlist(id:number):void{
+  console.log("this is addtowishlist() in homepageheader");   
+  this.wishlistObj.addToWishlistService(id);
+  
+  }
  ngOnInit() {
   this.getStoreItems();
  // console.log("Inside OnInit");

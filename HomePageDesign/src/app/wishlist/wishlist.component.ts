@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PRODUCTS } from '../mockproduct';
+import {Products} from '../products';
+import {WishlistService} from '../wishlist.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishlistComponent implements OnInit {
 
-  constructor() { }
+  wishlistItems: Products[] = [];
 
-  ngOnInit() {
+  constructor(private wishlistObj:WishlistService) {}
+
+    getItemsForWishlist(): void {
+    console.log("this is before getItemsForWishlist()");
+    this.wishlistItems = this.wishlistObj.getSelectedItems();
+    console.log("this is after getItemsForWishlist()");
+}
+
+  ngOnInit(): void {
+    this.getItemsForWishlist();
   }
+
+  removeItemFromWishlist(id : number): void {
+  console.log("this is before  removeItemFromWishlist()");
+  this.wishlistObj.removeItem(id);
+  console.log("this is after removeItemFromWishlist()");
+}
 
 }
