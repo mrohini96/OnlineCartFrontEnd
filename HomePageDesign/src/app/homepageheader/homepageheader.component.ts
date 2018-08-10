@@ -27,13 +27,14 @@ export class HomepageheaderComponent implements OnInit {
   products2 :Products;
 
   validate:boolean = false;
+  validateDetails:boolean = false; 
   switchPage = "page1";
   userloggedin :boolean=false;
   private url=" ";
   data : any= {}
   userResp:UserResponse;
   result: any;
- 
+  result2 : any;
   title: string;
   price : any;
   image: any;
@@ -45,7 +46,7 @@ export class HomepageheaderComponent implements OnInit {
 
   constructor (private http :Http, private user:UserService,private cartObj:CartService) { 
     console.log("hello this header's constructor");
-    this.onSubmit();
+   // this.onSubmit();
     
    /* console.log("before my api");
     let test = this.user.myApiCall();
@@ -55,9 +56,14 @@ export class HomepageheaderComponent implements OnInit {
 */
 
 
-this.user.myApiCall().subscribe(res=>{
+ this.user.myApiCall().subscribe(res=>{
   console.log(JSON.stringify(res) +"test")
   this.result = res;
+  this.result2=JSON.stringify(res)
+  let status=this.result.status;
+  let message=this.result.message;
+  console.log("status is:"+status+"message is :"+message);
+  
   }
 
 );
@@ -143,15 +149,30 @@ signUpPage(){
 goBack(){
   this.switchPage= "page1";
 }
-onSubmit() {
-  this.userList.forEach((user) => {
-   if (this.userJson.name == user.name && this.userJson.pswd == user.pswd ){
-     this.validate = true;
-     this.user.userDetails = user;
-   }
-  }) 
-   }
 
+onSubmit() {
+  console.log("status is:"+this.result.status);
+  //this.userList.forEach((user) => {
+ //  if (this.userJson.name == user.name && this.userJson.pswd == user.pswd && this.result.status=="true"){
+  //   this.validate = true;
+   //  this.user.userDetails = user;
+  // }
+ // }) 
+ if (this.result.status=="true"){
+  this.validate = true;
+ }
+ else{
+   this.validateDetails=true;
+ }
+   } 
+
+/*
+onSubmit() {
+   if (this.result.status=="true"){
+     this.validate = true;
+   }
+   }
+*/
    addToCart(productObj :Products):void{
     console.log("this is addtocart() in homepageheader");
  

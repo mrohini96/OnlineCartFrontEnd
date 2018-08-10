@@ -66,10 +66,13 @@
          <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
          <button type="reset">clear</button>     
         </div>
-      <div *ngIf="validate && userloggedin">
-        Welcome {{userJson.name}} !
-      </div>
-
+        <div *ngIf="validate">   
+          Welcome
+       <!--  <div *ngIf="validate && userloggedin">Welcome {{userJson.name}} ! -->
+         </div>
+         <div *ngIf="validateDetails">   
+            Please provide valid details!
+          </div>
       </div>
      
     </div>
