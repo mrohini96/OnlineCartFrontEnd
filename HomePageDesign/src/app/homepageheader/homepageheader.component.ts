@@ -12,6 +12,7 @@ import { UserResponse } from '../user';
 import { CartService } from '../cart.service';
 import {WishlistService} from '../wishlist.service';
 import { HttpClient } from '@angular/common/http';
+import { ProductService } from '../product.service';
 
 
 
@@ -24,6 +25,9 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class HomepageheaderComponent implements OnInit {
+  // getProducts(): any {
+  //   throw new Error("Method not implemented.");
+  //}
   products = PRODUCTS;
   products2 :Products;
   storeItems: Products[] = [];
@@ -46,7 +50,7 @@ export class HomepageheaderComponent implements OnInit {
   
 
 
-  constructor (private http :Http, private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService) { 
+  constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService) { 
     console.log("hello this header's constructor");
    // this.onSubmit();
     
@@ -56,7 +60,6 @@ export class HomepageheaderComponent implements OnInit {
     console.log(test);
     console.log("after test"  +this.userResp);
 */
-
 
   this.user.myApiCall().subscribe(res=>{
   console.log(JSON.stringify(res) +"test")
@@ -69,6 +72,26 @@ export class HomepageheaderComponent implements OnInit {
   }
 );
 
+  }
+
+
+  getProducts():void{
+
+    console.log("This is getProducts()");
+    this.productObj.myApiCallProduct().subscribe(res=>{
+    console.log(JSON.stringify(res) +"test")
+    this.result = res;
+    var status=this.result.status;
+    var message=this.result.message
+    console.log("status is="+status+"Message is="+message);
+    var productJson=this.result.products;
+    console.log(productJson);
+    for(var i in productJson){
+      console.log(productJson[i].productId);
+      console.log(productJson[i].productName);
+    }
+    }
+  );
   }
  /*
   myApiCall() : void{
@@ -191,12 +214,8 @@ addToWishlist(id:number):void{
   
   }
  ngOnInit() {
+  this.getProducts();
   this.getStoreItems();
- // console.log("Inside OnInit");
- // console.log("before MyApp call");
- // let test = this.myApiCall();
-  //console.log("printing test data "+test);
- // console.log(this.myApiCall());
- // console.log("After MyApp call " +this.userResp);
+ 
   }
 }
