@@ -11,7 +11,7 @@ import {Products} from '../products';
 })
 export class CartComponent implements OnInit {
  //  productObj=PRODUCTS;
-  cartItems2=PRODUCTS;
+ 
   cartItems: Products[] = [];
 
   constructor(private cartObj:CartService) {}
@@ -21,16 +21,18 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartObj.getSelectedItems();
     console.log("this is after getItemsForCart()");
 }
+
   ngOnInit(): void {
     this.getItemsForCart();
   }
 
-  removeItemFromCart(productObj : Products): void {
+  removeItemFromCart(id : number): void {
   console.log("this is before  removeItemFromCart()");
-  console.log("Item removed is "+productObj.title);
-  this.cartObj.removeItem(productObj);
+  this.cartObj.removeItem(id);
   console.log("this is after removeItemFromCart()");
 }
+
+
 
 
 }

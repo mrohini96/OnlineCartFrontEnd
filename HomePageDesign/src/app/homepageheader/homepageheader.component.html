@@ -88,7 +88,7 @@
         <div class="panel-body"><img src="{{product.image}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
         <div class="panel-footer">
             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
-              <a (click)="moveCart()" routerLink="/homepageheader">
+              <a (click)="addToCart(product.ProductId)" routerLink="/homepageheader">
               <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:130px; font-size:18px"></div>
               </a>
               <a (click)="moveWishList()" routerLink="/homepageheader">
@@ -139,7 +139,7 @@
           <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">
               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
-              <a (click)="addToCart(product)" routerLink="/homepageheader">
+              <a (click)="addToCart(product.ProductId)" routerLink="/homepageheader">
                 <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:130px; font-size:18px"></div>
                 </a>
                 <a (click)="moveWishList()" routerLink="/homepageheader">

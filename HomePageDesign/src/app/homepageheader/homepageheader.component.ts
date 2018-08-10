@@ -25,7 +25,8 @@ import { HttpClient } from '@angular/common/http';
 export class HomepageheaderComponent implements OnInit {
   products = PRODUCTS;
   products2 :Products;
-
+  storeItems: Products[] = [];
+  
   validate:boolean = false;
   validateDetails:boolean = false; 
   switchPage = "page1";
@@ -173,17 +174,17 @@ onSubmit() {
    }
    }
 */
-   addToCart(productObj :Products):void{
-    console.log("this is addtocart() in homepageheader");
- 
-    console.log("this is using prodobj  "+productObj .title);
-   
-    this.cartObj.addToCartService(productObj);
-  
-    }
+getStoreItems(): void {
+  this.storeItems = this.cartObj. getItemsForCart();
+}
 
+addToCart(id:number):void{
+console.log("this is addtocart() in homepageheader");   
+this.cartObj.addToCartService(id);
+
+}
  ngOnInit() {
-  
+  this.getStoreItems();
  // console.log("Inside OnInit");
  // console.log("before MyApp call");
  // let test = this.myApiCall();

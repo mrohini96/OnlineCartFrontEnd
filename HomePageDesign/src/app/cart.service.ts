@@ -9,39 +9,38 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-    CartObj:CartComponent;
-    cartobj1:CartService;
-    cartItem :Products[] = [];
+   
     selectedItems:Products[] = [];
-    productObj1 : Products;
+  
+
+    getItemsForCart():Products[]  {
+     return PRODUCTS;
+
+    }
 
       getSelectedItems():Products[] {
       return this.selectedItems;
         }	
     
 
-     addToCartService(productObj : Products){
-      console.log("this is cart service");
-      console.log("this is from Cart Service"+productObj.title);
-      this.cartItem.push(productObj);
-      console.log("Item is Pushed");
-     // this.add(productObj);
+     addToCartService(id:number){
+      console.log("inside addtocart service");
+      let item = PRODUCTS.find(ob => ob.ProductId === id);
+      if (this.selectedItems.indexOf(item) < 0) {	   
+       this.selectedItems.push(item);
+       
+    }
      }
 
 
-     removeItem(productObj : Products): void {
-     console.log("in service removeItem()");
-     console.log("Removing item from cart "+productObj.title);
-     //this.selectedItems=productObj
-     // let item = this.selectedItems.find(ob => ob.productObj1 === productObj);
-     // let itemIndex = this.selectedItems.indexOf(item);
-     // this.selectedItems.splice(itemIndex, 1);
-      let itemIndex=productObj.ProductId;
-     // this.productObj1.splice(0, 1);
+     removeItem(id:number): void {
+      let item = this.selectedItems.find(ob => ob.ProductId === id);
+      let itemIndex = this.selectedItems.indexOf(item);
+        this.selectedItems.splice(itemIndex, 1);
+         // this.productObj1.splice(0, 1);
       console.log("iTEM HAS been removed");
-    }
-  constructor() { 
-
-  }
+     }
+    
+  
 }
 

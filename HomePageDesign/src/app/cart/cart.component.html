@@ -35,7 +35,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr *ngFor="let item of cartItems2">
+                                        <tr *ngFor="let item of cartItems">
                                             <th	scope="row">{{item.title}}</th>
                                             <td> {{item.price}}</td>
                                             <td> <select (change)="filterForeCasts($event.target.value)">
@@ -45,7 +45,7 @@
                                                     </option>
                                                 </select></td>
                                             <td>{{item.desc}}</td>
-                                            <td><button type="button" class="btn btn-default btn-sm" (click)="removeItemFromCart(item)">
+                                            <td><button type="button" class="btn btn-default btn-sm" (click)="removeItemFromCart(item.ProductId)">
                                                     <span class="glyphicon glyphicon-remove"></span>Remove 
                                             </button></td>
                                             <td><button class="btn btn-block">Buy</button></td>
