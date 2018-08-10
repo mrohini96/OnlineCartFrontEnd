@@ -53,7 +53,7 @@
               <li (click)="signUpPage()"><a routerLink="/homepageheader"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
               <li (click)="showUserDetails()" *ngIf="!showLogin"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">5</span></li>
         <li (click)="moveWishList()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
         <li (click)="logout()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
@@ -74,7 +74,6 @@
             Please provide valid details!
           </div>
       </div>
-     
     </div>
   </div>
 </nav>
@@ -96,7 +95,7 @@
               </a>
 
               
-<!--  <a (click)="productPage()" >
+<!--  <a (click)="productPage()" >s
                   see more...
               </a> -->
       </div>     
@@ -205,8 +204,3 @@
 <br>
 </body>
 </html>
-
-<!--
-this is icon for wishlist
-<a href="#"><div class="glyphicon glyphicon-bookmark"  style="margin-left:70px;"></div></a>
--->

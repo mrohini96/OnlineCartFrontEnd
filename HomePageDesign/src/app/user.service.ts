@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import { Categories } from './categories';
 //import 'rxjs/add/operator/catch';
 // import { User } from './user';
 import { Http, Response } from '@angular/http';
@@ -44,8 +43,7 @@ export class UserService {
      
 
   }
-
-
+  
   /*saveAsupPref(url,params): Observable<any>{
 
     let _urlParams = new URLSearchParams();

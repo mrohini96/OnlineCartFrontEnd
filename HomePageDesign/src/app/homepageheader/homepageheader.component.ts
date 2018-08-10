@@ -58,7 +58,7 @@ export class HomepageheaderComponent implements OnInit {
 */
 
 
- this.user.myApiCall().subscribe(res=>{
+  this.user.myApiCall().subscribe(res=>{
   console.log(JSON.stringify(res) +"test")
   this.result = res;
   this.result2=JSON.stringify(res)
@@ -67,8 +67,8 @@ export class HomepageheaderComponent implements OnInit {
   console.log("status is:"+status+"message is :"+message);
   
   }
-
 );
+
   }
  /*
   myApiCall() : void{

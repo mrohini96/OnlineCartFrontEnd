@@ -59,3 +59,9 @@ width:100%;
 .panel-heading{
 background-color: #007bff
 }
+
+.badge-notify{
+  background:rgb(0, 102, 255);
+  position:relative;
+  top:0px;
+ }

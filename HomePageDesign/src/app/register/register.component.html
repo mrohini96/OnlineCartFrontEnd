@@ -50,13 +50,20 @@
     
         
         
-        <button class='btn btn-primary' type='submit' [disabled]='!registrationForm.valid'>Submit Registration Form</button>
+        <button class='btn btn-primary' type='submit' [disabled]='!registrationForm.valid'(click)="onSubmit()">Submit Registration Form</button>
       </ul>
      
       </form>
       
      <!-- <pre>{{registrationForm.value | json}}</pre> -->
     </div>
+      <div *ngIf="validate">   
+        Welcome
+     <!--  <div *ngIf="validate && userloggedin">Welcome {{userJson.name}} ! -->
+       </div>
+       <div *ngIf="validateDetails">   
+          Please provide valid details!
+        </div>
       <div *ngIf="register">
         <h2>Registration Successful! </h2><br>
       <h4>Please login to continue.<br>
