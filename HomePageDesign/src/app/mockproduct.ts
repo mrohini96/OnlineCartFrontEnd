@@ -1,6 +1,7 @@
 import { Products } from './products';
+export var PRODUCTS : Products[];
 
-export const PRODUCTS: Products[] = [
+/*export const PRODUCTS: Products[] = [
   { ProductId: 1,categoryId:1,title:"JBL Earphones",price:1200,desc:"JBL",image:"assets/image_05.jpg",availableQauntity:11},
   { ProductId: 2,categoryId:1,title:"Lenovo Desktop",price:1000,desc:"Lenovo Desktop",image:"assets/image_06.jpg",availableQauntity:11},
   { ProductId: 3,categoryId:1,title:"Sandisk Pendrive",price:160,desc:"Sandisk Pendrive",image:"assets/image_03.jpg",availableQauntity:11},
@@ -31,3 +32,4 @@ export const PRODUCTS: Products[] = [
   { ProductId: 23,categoryId:6,title:"Plant Seeds",price:1800,desc:"Plant Seeds",image:"assets/gogreenimg3.jpg",availableQauntity:11},
   { ProductId: 24,categoryId:6,title:"Whole Foods",price:1800,desc:"Whole Foods",image:"assets/gogreenimg4.jpg",availableQauntity:11},
 ];
+*/

@@ -28,7 +28,8 @@ export class HomepageheaderComponent implements OnInit {
   // getProducts(): any {
   //   throw new Error("Method not implemented.");
   //}
-  products = PRODUCTS;
+  productsJsonArray = PRODUCTS;
+
   products2 :Products;
   storeItems: Products[] = [];
 
@@ -86,13 +87,15 @@ export class HomepageheaderComponent implements OnInit {
     console.log("status is="+status+"Message is="+message);
     var productJson=this.result.products;
     console.log(productJson);
-    for(var i in productJson){
-      console.log(productJson[i].productId);
-      console.log(productJson[i].productName);
+    this.productsJsonArray=productJson;
+    for(var i in this.productsJsonArray){
+      console.log(this.productsJsonArray[i].productId);
+    //  console.log(this.productsJsonArray[i].productName);
     }
     }
   );
   }
+
  /*
   myApiCall() : void{
     this.user.myApiCall()
