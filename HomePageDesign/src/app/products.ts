@@ -1,6 +1,6 @@
 export class Products{
   //[x: string]: Products;
-  ProductId: number;					//	Ref	on	category	belongs	to
+  productId: number;					//	Ref	on	category	belongs	to
   categoryId: number;
   //	The	title
   title: string;
