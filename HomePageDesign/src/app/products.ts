@@ -1,15 +1,17 @@
 export class Products{
-  //[x: string]: Products;
-  productId: number;					//	Ref	on	category	belongs	to
-  categoryId: number;
-  //	The	title
-  title: string;
+  //  Product Id
+  productId: number;					
+  //  categoryId: number;
+  //	Product Name
+  productName: string;
   //	Price
-  price: number;
-  //	Description
-  desc: string;
+  productPrice: number;
+  //  Category name
+  categoryName: string;
+  //	Product Description
+  productDesc: string;
   //	Path	to	small	image
-  image: string;
+  productImage: string;
   // Available Quantity
-  availableQauntity: number;
+  availableQuantity: number;
 }

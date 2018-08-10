@@ -29,12 +29,12 @@
  <div *ngSwitchCase="switchPage === 'page1'" >
   <div *ngIf="selectedcategory1.name=='Electronics'" >
     <div class="col-sm-2" *ngFor="let product of products"> 
-        <div *ngIf="product.categoryId =='1'">
+        <div *ngIf="product.categoryName =='Electronics'">
            <div class="panel panel-primary">
-             <div class="panel-heading">{{product.title}}</div>
-             <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+             <div class="panel-heading">{{product.productName}}</div>
+             <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
              <div class="panel-footer">
-                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
                    <a href="#">
                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
                    </a>  <br>
@@ -50,12 +50,12 @@
   
         <div *ngIf="selectedcategory1.name=='Fashion'">
             <div class="col-sm-2" *ngFor="let product of products"> 
-                <div *ngIf="product.categoryId =='2'">
+                <div *ngIf="product.categoryName =='Fashion'">
                    <div class="panel panel-primary">
-                     <div class="panel-heading">{{product.title}}</div>
-                     <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                     <div class="panel-heading">{{product.productName}}</div>
+                     <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                      <div class="panel-footer">
-                         <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                         <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
                            <a href="#">
                                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
                            </a>  <br>
@@ -71,12 +71,12 @@
            
            <div *ngIf="selectedcategory1.name=='Furniture'">
               <div class="col-sm-2" *ngFor="let product of products"> 
-                  <div *ngIf="product.categoryId =='3'">
+                  <div *ngIf="product.categoryName =='Furniture'">
                      <div class="panel panel-primary">
-                       <div class="panel-heading">{{product.title}}</div>
-                       <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                       <div class="panel-heading">{{product.productName}}</div>
+                       <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                        <div class="panel-footer">
-                           <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                           <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
                              <a href="#">
                                  <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
                              </a>  <br>
@@ -91,12 +91,12 @@
              
              <div *ngIf="selectedcategory1.name== 'Grocery'">
                 <div class="col-sm-2" *ngFor="let product of products"> 
-                    <div *ngIf="product.categoryId =='4'">
+                    <div *ngIf="product.categoryName =='Grocery'">
                        <div class="panel panel-primary">
-                         <div class="panel-heading">{{product.title}}</div>
-                         <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                         <div class="panel-heading">{{product.productName}}</div>
+                         <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                          <div class="panel-footer">
-                             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
                                <a href="#">
                                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
                                </a>  <br>
@@ -112,12 +112,12 @@
 
                <div *ngIf="selectedcategory1.name=='HomeAppliances'">
                   <div class="col-sm-2" *ngFor="let product of products"> 
-                      <div *ngIf="product.categoryId =='5'">
+                      <div *ngIf="product.categoryName =='HomeAppliances'">
                          <div class="panel panel-primary">
-                           <div class="panel-heading">{{product.title}}</div>
-                           <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                           <div class="panel-heading">{{product.productName}}</div>
+                           <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                            <div class="panel-footer">
-                               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
                                  <a href="#">
                                      <div class="glyphicon glyphicon-shopping-cart"  style="margin-left: 60px; font-size:20px"></div>
                                  </a>  <br>
@@ -132,12 +132,12 @@
 
                  <div *ngIf="selectedcategory1.name=='GoGreen'">
                     <div class="col-sm-2" *ngFor="let product of products"> 
-                        <div *ngIf="product.categoryId =='6'">
+                        <div *ngIf="product.categoryName =='GoGreen'">
                            <div class="panel panel-primary">
-                             <div class="panel-heading">{{product.title}}</div>
-                             <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                             <div class="panel-heading">{{product.productName}}</div>
+                             <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                              <div class="panel-footer">
-                                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+                                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
                                    <a href="#">
                                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:60px; font-size:20px"></div>
                                    </a>  <br>
@@ -151,8 +151,6 @@
                   </div>
 
 </div>
-
-
 <div *ngSwitchCase="switchPage === 'page7'">
     <app-productpage></app-productpage>
 </div>    

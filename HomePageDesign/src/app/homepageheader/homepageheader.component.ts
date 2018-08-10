@@ -28,7 +28,7 @@ export class HomepageheaderComponent implements OnInit {
   // getProducts(): any {
   //   throw new Error("Method not implemented.");
   //}
-  productsJsonArray = PRODUCTS;
+  public productsJsonArray = PRODUCTS;
 
   products2 :Products;
   storeItems: Products[] = [];
@@ -88,9 +88,12 @@ export class HomepageheaderComponent implements OnInit {
     var productJson=this.result.products;
     console.log(productJson);
     this.productsJsonArray=productJson;
+    console.log("before for loop");
     for(var i in this.productsJsonArray){
       console.log(this.productsJsonArray[i].productId);
-    //  console.log(this.productsJsonArray[i].productName);
+      console.log(this.productsJsonArray[i].productName);
+      this.productsJsonArray[i].productImage="assets/"+this.productsJsonArray[i].productImage;
+      console.log(this.productsJsonArray[i].productImage);
     }
     }
   );
@@ -163,7 +166,8 @@ export class HomepageheaderComponent implements OnInit {
   }
   productPage(products3 :Products){
     this.products2=products3;
-    console.log("this is product title "+this.products2.title);
+    console.log("this is product title "+this.products2.productName
+  );
    // this.switchPage= "page7";
   }
  /* productPage(){

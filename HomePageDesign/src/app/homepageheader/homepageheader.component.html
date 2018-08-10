@@ -80,13 +80,13 @@
 
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'" >
-    <div class="col-sm-3" *ngFor="let product of products"  [class.selected]="product === products2" (click)="productPage(product)"> 
-        <div *ngIf="product.categoryId=='1' || product.categoryId=='2' || product.categoryId=='3' ">
+    <div class="col-sm-3" *ngFor="let product of productsJsonArray"  [class.selected]="product === products2" (click)="productPage(product)"> 
+        <div *ngIf="product.categoryName=='Electronics' || product.categoryName=='Fashion' || product.categoryName=='Furniture' ">
       <div class="panel panel-primary">
-        <div class="panel-heading">{{product.title}} </div>
-        <div class="panel-body"><img src="{{product.image}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
+        <div class="panel-heading">{{product.productName}} </div>
+        <div class="panel-body"><img src="{{product.productImage}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
         <div class="panel-footer">
-            <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+            <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
               <a (click)="addToCart(product.ProductId)" routerLink="/homepageheader">
               <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:130px; font-size:18px"></div>
               </a>
@@ -131,13 +131,13 @@
 
   <div *ngSwitchCase="switchPage === 'page6'">
     
-      <div class="col-sm-3" *ngFor="let product of products"> 
-          <div *ngIf=" product.categoryId=='4' || product.categoryId=='5' || product.categoryId=='6'">
+      <div class="col-sm-3" *ngFor="let product of productsJsonArray"> 
+        <div *ngIf=" product.categoryName=='Grocery' || product.categoryName=='HomeAppliances' || product.categoryName=='GoGreen'">
         <div class="panel panel-primary">
-          <div class="panel-heading">{{product.title}} </div>
-          <div class="panel-body"><img src="{{product.image}}" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-heading">{{product.productName}} </div>
+          <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">
-              <i style="font-size:15px" class="fa">&#xf155;</i>{{product.price}}
+              <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
               <a (click)="addToCart(product.ProductId)" routerLink="/homepageheader">
                 <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:130px; font-size:18px"></div>
                 </a>
@@ -178,8 +178,8 @@
     </div>
 
   <div *ngSwitchCase="switchPage === 'page4'">
-      <app-categories></app-categories>
-    </div>
+      <app-categories [products]="productsJsonArray" ></app-categories>
+    </div> 
 
     <div *ngSwitchCase="switchPage === 'page5'">
        <pre>

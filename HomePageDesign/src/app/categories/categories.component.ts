@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 //import {Categories} from '../categories';
 //import {CATEGORIES} from '../mock-categories';
 import {CATEGORIES1} from '../mock-categories1';
 import {Categories1} from '../categories1';
-
 import {PRODUCTS} from '../mockproduct';
 @Component({
   selector: 'app-categories',
@@ -12,7 +11,7 @@ import {PRODUCTS} from '../mockproduct';
 })
 export class CategoriesComponent implements OnInit {
    categories1 = CATEGORIES1;
-   products = PRODUCTS;
+   @Input() products =PRODUCTS;
    selectedcategory1: Categories1;
 
   switchPage = "page1";
