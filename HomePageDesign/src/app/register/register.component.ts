@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
   validate:boolean = false;
   validateDetails:boolean = false; 
   data : any= {}
+  status:any;
+  message:any;
   //userResp:UserResponse;
   result: any;
   result2 : any;
@@ -39,27 +41,31 @@ export class RegisterComponent implements OnInit {
    submitRegistration(value: Object): void {
 
     console.log("This is submitRegistration()");
-    this.registerObj.myApiCall().subscribe(res=>{
-    console.log(JSON.stringify(res) +"test")
-    this.result = res;
-    this.result2=JSON.stringify(res)
-    let status=this.result.status;
-    let message=this.result.message;
-    console.log("status is:"+status+"message is :"+message);
-    
-    }
-  );
-  if (this.result.status=="true"){
-    this.validate = true;
-   }
-   else{
-     this.validateDetails=true;
-   }
+   
     console.log(value);
     console.log("Registration successful")
     this.register=true;
   }
   
+  onSubmit(){
+    this.registerObj.myApiCall().subscribe(res=>{
+    console.log(JSON.stringify(res) +"test")
+    this.result = res;
+    //this.result2=JSON.stringify(res)
+    this.status=this.result.status;
+    this.message=this.result.message;
+    console.log("status is: "+this.status+"message is : "+this.message);
+    
+    }
+  );
+  if (this.result.status=="false"){
+    this.validate = true;
+   }
+   else{
+     this.validateDetails=true;
+   }
+}
+
   ngOnInit() {
   }
 

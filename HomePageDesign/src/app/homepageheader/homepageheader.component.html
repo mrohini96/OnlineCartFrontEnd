@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Online Cart</title>
@@ -59,7 +59,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'" >
     <div class="col-sm-3" *ngFor="let product of productsJsonArray"  [class.selected]="product === products2" (click)="productPage(product)"> 
@@ -145,7 +145,7 @@
        previous_page
     </a>
   </div>
-
+<!--
   <div *ngSwitchCase="switchPage === 'page2'">
     <h1>My Acoount</h1>
     <label> User Name: </label>
@@ -185,8 +185,5 @@
 <div *ngSwitchDefault>
     <p>default</p>
 </div>
-
+-->
 </div>  
-<br>
-</body>
-</html>

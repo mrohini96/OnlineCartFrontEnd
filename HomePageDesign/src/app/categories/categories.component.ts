@@ -8,6 +8,7 @@ import { CategoryService } from '../category.service';
 
 import { HttpClient } from '@angular/common/http';
 import { Http } from '../../../node_modules/@angular/http';
+import { ProductService } from '../product.service';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -16,11 +17,36 @@ import { Http } from '../../../node_modules/@angular/http';
 export class CategoriesComponent implements OnInit {
    //categories1 = CATEGORIES1;
    public categoriesJsonArray=CATEGORIES1;
-   @Input() products =PRODUCTS;
+  // @Input() products =PRODUCTS;
    selectedcategory1: Categories1;
    switchPage = "page1";
    result: any;
-  constructor(private http :Http,private categoryObj:CategoryService) { }
+   public productsJsonArray = PRODUCTS;
+  constructor(private http :Http,private categoryObj:CategoryService,private productObj:ProductService) { }
+
+  getProducts():void{
+
+    console.log("This is getProducts()");
+    this.productObj.myApiCallProduct().subscribe(res=>{
+    console.log(JSON.stringify(res) +"test")
+    this.result = res;
+    var status=this.result.status;
+    var message=this.result.message
+    console.log("status is="+status+"Message is="+message);
+    var productJson=this.result.products;
+    console.log(productJson);
+    this.productsJsonArray=productJson;
+    console.log("before for loop");
+    for(var i in this.productsJsonArray){
+      console.log(this.productsJsonArray[i].productId);
+      console.log(this.productsJsonArray[i].productName);
+      this.productsJsonArray[i].productImage="assets/"+this.productsJsonArray[i].productImage;
+      console.log(this.productsJsonArray[i].productImage);
+    }
+    }
+  );
+  }
+
 
   getCategories():void{
     console.log("This is getCategories()");
@@ -56,6 +82,7 @@ export class CategoriesComponent implements OnInit {
   // }
 
   ngOnInit() {
+    this.getProducts();
     this.getCategories();
   }
 
