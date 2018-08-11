@@ -51,33 +51,15 @@
       </ul> 
       <ul class="nav navbar-nav navbar-right">
               <li (click)="signUpPage()"><a routerLink="/homepageheader"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
-              <li (click)="showUserDetails()" *ngIf="!showLogin"><a routerLink="/homepageheader" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li (click)="showUserDetails()" *ngIf="!showLogin"><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li (click)="movePage()"><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
         <li (click)="moveCart()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">5</span></li>
         <li (click)="moveWishList()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
         <li (click)="logout()" ><a  routerLink="/homepageheader" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
-
-      <div *ngIf="showLogin" style="display:block; color: white">
-        <div *ngIf="!validate && !userloggedin"> 
-         <h4>Please login to continue</h4>
-         <input type="text" class="dropdown-item" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
-         <input type="password" class="dropdown-item" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
-         <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
-         <button type="reset">clear</button>     
-        </div>
-        <div *ngIf="validate">   
-          Welcome {{userJson.name}}
-       <!--  <div *ngIf="validate && userloggedin">Welcome {{userJson.name}} ! -->
-         </div>
-         <div *ngIf="validateDetails">   
-            Please provide valid details!
-          </div>
-      </div>
     </div>
   </div>
 </nav>
-
 <div class="container" [ngSwitch]="true">    
   <div *ngSwitchCase="switchPage === 'page1'" >
     <div class="col-sm-3" *ngFor="let product of productsJsonArray"  [class.selected]="product === products2" (click)="productPage(product)"> 
@@ -195,7 +177,11 @@
 
         <div *ngSwitchCase="switchPage === 'page8'">
             <app-register></app-register>
-          </div>   
+          </div> 
+          <div *ngSwitchCase="switchPage === 'page10'">
+            <app-login></app-login>
+          </div>    
+          
 <div *ngSwitchDefault>
     <p>default</p>
 </div>

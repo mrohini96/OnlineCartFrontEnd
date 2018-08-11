@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+  <div *ngIf="!validate"> 
+   <h4>Please login to continue</h4>
+   <input type="text" class="dropdown-item" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
+   <input type="password" class="dropdown-item" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
+   <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
+   <button type="reset">clear</button>     
+  </div>
+  <div *ngIf="validate">   
+    Welcome {{userJson.name}}
+ <!--  <div *ngIf="validate && userloggedin">Welcome {{userJson.name}} ! style="display:block;color: white"-->
+  </div>
+ <div *ngIf="validateDetails">   
+      Please provide valid details!
+  </div>

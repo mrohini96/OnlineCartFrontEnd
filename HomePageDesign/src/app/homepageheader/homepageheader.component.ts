@@ -158,7 +158,8 @@ export class HomepageheaderComponent implements OnInit {
   }
 
   showUserDetails(){
-   this.showLogin = true;
+   //this.showLogin = true;
+   this.switchPage= "page10";
   }
   imagepage2(){
     this.switchPage= "page6";
