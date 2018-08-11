@@ -9,10 +9,10 @@
 <br>
 <h2><b>Categories </b></h2>
 <ul class="categories1">
-  <li *ngFor="let category1 of categories1"
+  <li *ngFor="let category1 of categoriesJsonArray"
     [class.selected]="category1 === selectedcategory1"
     (click)="onSelect(category1)">
-    <span class="badge">{{category1.id}}</span> {{category1.name}}
+    {{category1}}
   </li>
 </ul>
 </div>
@@ -20,14 +20,14 @@
 <div class="col-sm-8">
   <div *ngIf="selectedcategory1">
         <span style="margin-left:50%" >
-           <h2 style="color: blue">{{selectedcategory1.name | uppercase}}</h2>
+           <h2 style="color: blue">{{selectedcategory1 | uppercase}}</h2>
         </span>
   </div> 
 </div>
 
 <div class="container" [ngSwitch]="true">    
  <div *ngSwitchCase="switchPage === 'page1'" >
-  <div *ngIf="selectedcategory1.name=='Electronics'" >
+  <div *ngIf="selectedcategory1=='Electronics'" >
     <div class="col-sm-2" *ngFor="let product of products"> 
         <div *ngIf="product.categoryName =='Electronics'">
            <div class="panel panel-primary">
@@ -48,7 +48,7 @@
         </div>
 
   
-        <div *ngIf="selectedcategory1.name=='Fashion'">
+        <div *ngIf="selectedcategory1=='Fashion'">
             <div class="col-sm-2" *ngFor="let product of products"> 
                 <div *ngIf="product.categoryName =='Fashion'">
                    <div class="panel panel-primary">
@@ -69,7 +69,7 @@
            </div> 
               
            
-           <div *ngIf="selectedcategory1.name=='Furniture'">
+           <div *ngIf="selectedcategory1=='Furniture'">
               <div class="col-sm-2" *ngFor="let product of products"> 
                   <div *ngIf="product.categoryName =='Furniture'">
                      <div class="panel panel-primary">
@@ -89,7 +89,7 @@
                    </div>
              </div>  
              
-             <div *ngIf="selectedcategory1.name== 'Grocery'">
+             <div *ngIf="selectedcategory1== 'Grocery'">
                 <div class="col-sm-2" *ngFor="let product of products"> 
                     <div *ngIf="product.categoryName =='Grocery'">
                        <div class="panel panel-primary">
@@ -110,7 +110,7 @@
                </div>    
 
 
-               <div *ngIf="selectedcategory1.name=='HomeAppliances'">
+               <div *ngIf="selectedcategory1=='HomeAppliances'">
                   <div class="col-sm-2" *ngFor="let product of products"> 
                       <div *ngIf="product.categoryName =='HomeAppliances'">
                          <div class="panel panel-primary">
@@ -130,7 +130,7 @@
                        </div>
                  </div>    
 
-                 <div *ngIf="selectedcategory1.name=='GoGreen'">
+                 <div *ngIf="selectedcategory1=='GoGreen'">
                     <div class="col-sm-2" *ngFor="let product of products"> 
                         <div *ngIf="product.categoryName =='GoGreen'">
                            <div class="panel panel-primary">

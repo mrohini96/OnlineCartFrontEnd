@@ -35,7 +35,6 @@ export class UserService {
     console.log(url);
     return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/login?name=Rohini@gmail.com&password=1234")
     
-    
       //"http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
       //.map(res => res.json());
       //.pipe(map(res => res.json()));    
