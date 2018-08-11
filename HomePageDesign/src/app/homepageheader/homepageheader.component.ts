@@ -29,7 +29,6 @@ export class HomepageheaderComponent implements OnInit {
   //   throw new Error("Method not implemented.");
   //}
   public productsJsonArray = PRODUCTS;
-
   products2 :Products;
   storeItems: Products[] = [];
 
@@ -49,30 +48,9 @@ export class HomepageheaderComponent implements OnInit {
   pid:any;
   cid:any
   
-
-
   constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService) { 
-    console.log("hello this header's constructor");
-   // this.onSubmit();
-    
-   /* console.log("before my api");
-    let test = this.user.myApiCall();
-    console.log("after my api");
-    console.log(test);
-    console.log("after test"  +this.userResp);
-*/
-
-  this.user.myApiCall().subscribe(res=>{
-  console.log(JSON.stringify(res) +"test")
-  this.result = res;
-  this.result2=JSON.stringify(res)
-  let status=this.result.status;
-  let message=this.result.message;
-  console.log("status is:"+status+"message is :"+message);
-  
-  }
-);
-
+  console.log("hello this header's constructor");
+ 
   }
 
 
@@ -205,6 +183,18 @@ onSubmit() {
      this.validate = true;
    }
    }
+
+
+    this.user.myApiCall().subscribe(res=>{
+  console.log(JSON.stringify(res) +"test")
+  this.result = res;
+  this.result2=JSON.stringify(res)
+  let status=this.result.status;
+  let message=this.result.message;
+  console.log("status is:"+status+"message is :"+message);
+  }
+);
+
 */
 getStoreItems(): void {
   this.storeItems = this.cartObj. getItemsForCart();

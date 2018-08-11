@@ -29,7 +29,7 @@ export class UserService {
   myApiCall() {
 
     let header= new HttpHeaders({})
-    let url = 'http://localhost:8080/onlinecart-1.0/onlinecart/user/login?';
+    let url ='http://localhost:8080/onlinecart-1.0/onlinecart/user/login?';
     'name=Rohini@gmail.com' +
     '&password=1234';
     console.log(url);

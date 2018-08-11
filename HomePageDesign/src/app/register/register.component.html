@@ -1,13 +1,13 @@
 
 <div class='row con'>
-    <div class='col-xs-10'  *ngIf="!register" >
+    <div class='col-xs-10' *ngIf="!register && !isExistingUser">
       <h2>Registration Form</h2>
       <form [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && submitRegistration(registrationForm.value)" novalidate>
         
         <ul>
         <fieldset class="form-group">
           <label for="first-name">First Name</label>
-          <input type="text"  class="form-control" placeholder="First Name" formControlName="firstName">
+          <input type="text"  class="form-control" placeholder="First Name" formControlName="firstName" [(ngModel)]="userregister.firstname">
           <div class='form-text error' *ngIf='registrationForm.controls.firstName.touched'>
             <div *ngIf="registrationForm.controls.firstName.hasError('required')">First name is required.</div>
           </div>
@@ -15,7 +15,7 @@
   
         <fieldset class="form-group ">
           <label for="last-name">Last Name</label>
-          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" [(ngModel)]="userregister.lastname">
           <div class='form-text error' *ngIf='registrationForm.controls.lastName.touched'>
             <div *ngIf="registrationForm.controls.lastName.hasError('required')">Last name is required.</div>
           </div>
@@ -24,7 +24,7 @@
   
         <fieldset class="form-group">
           <label for="e-mail">E-Mail</label>
-          <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
+          <input type="email" class="form-control" placeholder="E-mail" formControlName="email" [(ngModel)]="userregister.name">
           <div class="form-text error" *ngIf="registrationForm.controls.email.touched">
             <div *ngIf="registrationForm.controls.email.hasError('required')">Email is required.</div>
             <div *ngIf="registrationForm.controls.email.hasError('invalidEmail')">Email is invalid.</div>
@@ -33,10 +33,10 @@
   
         <fieldset class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" placeholder="Password" minlength='6' formControlName="password">
+          <input type="password" class="form-control" placeholder="Password" minlength='6' formControlName="password" [(ngModel)]="userregister.password">
           <div class='form-text error' *ngIf="registrationForm.controls.password.touched">
             <div *ngIf="registrationForm.controls.password.hasError('required')">Password is required.</div>
-            <div *ngIf="registrationForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
+       <!--     <div *ngIf="registrationForm.controls.password.hasError('minlength')">Password isn't long enough.</div> -->
           </div>
         </fieldset>
     
@@ -50,7 +50,7 @@
     
         
         
-        <button class='btn btn-primary' type='submit' [disabled]='!registrationForm.valid'(click)="onSubmit()">Submit Registration Form</button>
+        <button class='btn btn-primary' type='submit' (click)="onSubmit()">Submit Registration Form</button>
       </ul>
      
       </form>
@@ -60,10 +60,18 @@
       
       <div *ngIf="register">
         <h2>Registration Successful! </h2><br>
-      <h4>Please login to continue.<br>
+        welcome {{userregister.firstname}}
+       <h4>Please login to continue.<br>
         Thank you!</h4> 
         <br>
       </div>
+
+      <div *ngIf="isExistingUser">
+        <h2>Registration UnSuccessful! </h2><br>
+       <h4>User already exists Please login to continue Thank you!</h4> 
+        <br>
+      </div>
+      
     </div>
   
   
