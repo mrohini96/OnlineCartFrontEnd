@@ -109,17 +109,17 @@
 <div *ngIf="products2">
 <h1>{{products2.title| uppercase}} Details</h1> <br>
 <div col-sm-12>
-<img src="{{products2.image}}" alt="{{products2.title}} | image"> <br>
+<img src="{{products2.productImage}}" alt="{{products2.productName}} | image"> <br>
 <label> Product Description:
-    <span >{{products2.desc}}</span>
+    <span >{{products2.productDesc}}</span>
 </label><br>
 
 <label> Price:
-<i style="font-size:15px" class="fa">&#xf155;</i>{{products2.price}}
+<i style="font-size:15px" class="fa">&#xf155;</i>{{products2.productPrice}}
 </label><br>
 
 <label> Available Qauntity:
-    <span>{{products2.availableQauntity}}</span>
+    <span>{{products2.availableQuantity}}</span>
 </label><br>
 </div>
 
