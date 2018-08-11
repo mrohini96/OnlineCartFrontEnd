@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../user.service';
 import { Http, Response } from '@angular/http';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   userJson={"name": "", "pswd": "" };
   cartJsonArray: any;
 
-  constructor (private http :Http,private user:UserService) { 
+  constructor (private http :Http,private user:UserService,private cartObj:CartService) { 
     console.log("hello this header's constructor");
 
   }
@@ -32,11 +33,9 @@ export class LoginComponent implements OnInit {
     status=this.result.status;
     var cartJson=this.result.cart;
     console.log(cartJson);
-    this.cartJsonArray=cartJson;;
-    console.log("Cart Id is="+this.cartJsonArray.cartId);
-    console.log("User Id is="+this.cartJsonArray.userId);
-    console.log("Cart Product Count Is="+this.cartJsonArray.cartProductCount);
-    console.log("Cart Total Price Is="+this.cartJsonArray.CartTotalPrice);
+    this.cartObj.getCartDetails(cartJson)
+    this.cartJsonArray=cartJson;
+    console.log("Cart Id is====="+this.cartJsonArray.cartId);
     console.log("status is:"+this.result.status+"message is :"+this.result.message);
     if (status=="true"){
     this.validate = true;

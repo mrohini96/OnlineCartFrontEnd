@@ -25,13 +25,9 @@ import { ProductService } from '../product.service';
 
 
 export class HomepageheaderComponent implements OnInit {
-  // getProducts(): any {
-  //   throw new Error("Method not implemented.");
-  //}
   public productsJsonArray = PRODUCTS;
-  products2 :Products;
+  productsArray :Products;
   storeItems: Products[] = [];
-
   validate:boolean = false;
   validateDetails:boolean = false; 
   switchPage = "page1";
@@ -40,19 +36,9 @@ export class HomepageheaderComponent implements OnInit {
   data : any= {}
   userResp:UserResponse;
   result: any;
-  result2 : any;
-  title: string;
-  price : any;
-  image: any;
-  desc :any;
-  pid:any;
-  cid:any
-  
   constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService) { 
   console.log("hello this header's constructor");
- 
   }
-
 
   getProducts():void{
 
@@ -77,17 +63,6 @@ export class HomepageheaderComponent implements OnInit {
   );
   }
 
- /*
-  myApiCall() : void{
-    this.user.myApiCall()
-             .subscribe(
-                 data => this.userResp= data,
-                error => console.log("Error :: " + error),
-              
-             )
-   console.log("inside myApiCall homepageheader " +this.userResp);
-  }
-*/
   showLogin: boolean = false;
 
   userJson={"name": "", "pswd": "" };
@@ -143,9 +118,9 @@ export class HomepageheaderComponent implements OnInit {
     this.switchPage= "page6";
 
   }
-  productPage(products3 :Products){
-    this.products2=products3;
-    console.log("this is product title "+this.products2.productName
+  productPage(productsArrayObj :Products){
+    this.productsArray=productsArrayObj;
+    console.log("this is product title "+this.productsArray.productName
   );
    // this.switchPage= "page7";
   }
@@ -177,25 +152,6 @@ onSubmit() {
  }
    } 
 
-/*
-onSubmit() {
-   if (this.result.status=="true"){
-     this.validate = true;
-   }
-   }
-
-
-    this.user.myApiCall().subscribe(res=>{
-  console.log(JSON.stringify(res) +"test")
-  this.result = res;
-  this.result2=JSON.stringify(res)
-  let status=this.result.status;
-  let message=this.result.message;
-  console.log("status is:"+status+"message is :"+message);
-  }
-);
-
-*/
 getStoreItems(): void {
   this.storeItems = this.cartObj. getItemsForCart();
   this.storeItems=this.wishlistObj.getItemsForWishlist();

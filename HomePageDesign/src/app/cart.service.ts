@@ -5,14 +5,30 @@ import {PRODUCTS} from './mockproduct';
 
 import { CartComponent } from './cart/cart.component';
 import { Observable, of } from 'rxjs';
+import { cart } from './cart';
+import {CART} from './mockcart';
+import { CartProductsArray } from './CartProducts';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-   
+    public cartJsonArray = CART;
+    public cartProductJsonArray= CartProductsArray;
     selectedItems:Products[] = [];
   
+        getCartDetails(cartJson){
+        console.log("Getting cart details-----");
+        this.cartJsonArray=cartJson.cart.cartProducts;
+       // this.cartProductJsonArray=cartJson.cart.cartProducts;
+        //this.cartJsonArray=cartJson.cart;
+        console.log("cart Id is ="+cartJson.cartId);
+        console.log("User Id is="+cartJson.userId);
+        console.log("Cart Product Count Is="+cartJson.cartProductCount);
+        console.log("Cart Total Price Is="+cartJson.CartTotalPrice);
+     //   console.log("Cart Id in CartProduct Is="+this.cartJsonArray.cartProducts.cartId);
 
+     // console.log("status is:"+this.result.status+"message is :"+this.result.message);
+    }
     getItemsForCart():Products[]  {
      return PRODUCTS;
 
