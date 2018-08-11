@@ -1,6 +1,6 @@
 
 <div class='row con'>
-    <div class='col-xs-8'  *ngIf="!register" >
+    <div class='col-xs-10'  *ngIf="!register" >
       <h2>Registration Form</h2>
       <form [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && submitRegistration(registrationForm.value)" novalidate>
         

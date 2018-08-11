@@ -13,14 +13,6 @@ export class RegisterService {
     'name=Rohini@gmail.com' +
     '&password=1234';
     console.log(url);
-    return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/register?name=Chinmaya@gmail.com&password=admin&firstname=Chinmaya&lastname=Pradhan")
-    
-    
-      //"http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
-      //.map(res => res.json());
-      //.pipe(map(res => res.json()));    
-     // (map((response: any) => response.json()));
-     
-
+    return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/register?name=Rohini@gmail.com&password=1234&firstname=Rohini&lastname=Mallewade")
   }
 }
