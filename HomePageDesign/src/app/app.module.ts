@@ -21,7 +21,8 @@ import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component'; 
 @NgModule({
   declarations: [
    AppComponent,
@@ -42,6 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
    CartComponent,
    
    WishlistComponent,
+   
+   LoginComponent,
    
    
   ],
