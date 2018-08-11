@@ -31,8 +31,6 @@ export class CartService {
        
     }
      }
-
-
      removeItem(id:number): void {
       let item = this.selectedItems.find(ob => ob.productId === id);
       let itemIndex = this.selectedItems.indexOf(item);
