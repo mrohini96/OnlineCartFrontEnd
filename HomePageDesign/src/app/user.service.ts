@@ -27,34 +27,15 @@ export class UserService {
   // }
 
   myApiCall() {
-
     let header= new HttpHeaders({})
-    let url ='http://localhost:8080/onlinecart-1.0/onlinecart/user/login?';
-    'name=Rohini@gmail.com' +
-    '&password=1234';
-    console.log(url);
+    let urlstart='http://localhost:8080/onlinecart-1.0/onlinecart/user/login?';
+  //  let url=urlstart+"name="+userlogin.name+"&password="+userlogin.password;
+    //console.log("Complete url is="+url);
+    //return this.http.get(url);
+   // console.log(url);
     return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/login?name=Rohini@gmail.com&password=1234")
-    
-      //"http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
-      //.map(res => res.json());
-      //.pipe(map(res => res.json()));    
-     // (map((response: any) => response.json()));
-     
-
-  }
-  
-  /*saveAsupPref(url,params): Observable<any>{
-
-    let _urlParams = new URLSearchParams();
-    for(let element in params) {
-      _urlParams.append(element,params[element]);
-    }
-    
-      return this.http.post( url, _urlParams )
-      .map(this.extractData)
-      .catch(this.handleError);
-  
-  }*/
+   }
+ 
 
   myData(userObj) {
     if (userObj.name == 'Rohini' && userObj.pswd == '12345' ){
@@ -63,4 +44,4 @@ export class UserService {
     
   }
 
-}
+ }
