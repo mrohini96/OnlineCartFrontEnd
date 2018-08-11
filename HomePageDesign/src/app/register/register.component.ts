@@ -49,7 +49,6 @@ export class RegisterComponent implements OnInit {
 
     onSubmit(){
     console.log("in onSubmit() function of RegisterComp")
-    var object="Rohini";
     console.log("First Name is="+this.userregister.firstname);
     this.registerObj.myApiCall(this.userregister).subscribe(res=>{
     console.log(JSON.stringify(res) +"test")

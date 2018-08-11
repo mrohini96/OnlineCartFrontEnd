@@ -1,4 +1,4 @@
-  <div *ngIf="!validate"> 
+  <div *ngIf="!validate && !validateDetails"> 
    <h4>Please login to continue</h4>
    <input type="text" class="dropdown-item" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
    <input type="password" class="dropdown-item" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>

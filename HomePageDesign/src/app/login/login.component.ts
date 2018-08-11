@@ -13,33 +13,35 @@ export class LoginComponent implements OnInit {
   validateDetails:boolean = false; 
   userloggedin :boolean=false;
   result: any;
-  result2 : any;
+  status:any;
+  message:any;
   userJson={"name": "", "pswd": "" };
 
   constructor (private http :Http,private user:UserService) { 
     console.log("hello this header's constructor");
 
   }
-  onSubmit():void{
-  this.user.myApiCall().subscribe(res=>{
+   onSubmit():void{
+    console.log("First Name is="+this.userJson.name);
+    console.log("this is before myapicall()");
+    this.user.myApiCall(this.userJson).subscribe(res=>{
     console.log(JSON.stringify(res) +"test")
     this.result = res;
-    this.result2=JSON.stringify(res)
-    let status=this.result.status;
-    let message=this.result.message;
-    console.log("status is:"+status+"message is :"+message);
-    console.log("status is:"+this.result.status);
-    if (this.result.status=="true"){
+    console.log("Result status is"+this.result.status);
+    status=this.result.status;
+    console.log("status is:"+this.result.status+"message is :"+this.result.message);
+    if (status=="true"){
     this.validate = true;
    }
     else{
-     //this.validateDetails=true;
-     this.validate = false;
+      this.validateDetails=true;
+     //this.validate = false;
    }
   }
 );
-}
 
+console.log("this is after myapicall()");
+}
   ngOnInit() {
   }
 

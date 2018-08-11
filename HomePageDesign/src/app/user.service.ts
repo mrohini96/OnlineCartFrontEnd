@@ -13,35 +13,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient) { }
-  userDetails: any;
-
-  // myApiCall(): Observable<any>{
-  //   return this.http.get(
-  //     "http://localhost:8080/onlinecart-1.0/user/login?name=Rohini@gmail.com&password=1234")
-  //     //.map(res => res.json());
-  //     //.pipe(map(res => res.json()));
-       
-  //    // (map((response: any) => response.json()));
-
-  // }
-
-  myApiCall() {
+    constructor(private http: HttpClient) { }
+    userDetails: any;
+    myApiCall(userlogin:any) {
+    console.log("Inside Login myapicall()");
+    console.log("Name Entered="+userlogin.name+"Password Entered="+userlogin.pswd);
     let header= new HttpHeaders({})
     let urlstart='http://localhost:8080/onlinecart-1.0/onlinecart/user/login?';
-  //  let url=urlstart+"name="+userlogin.name+"&password="+userlogin.password;
-    //console.log("Complete url is="+url);
-    //return this.http.get(url);
-   // console.log(url);
-    return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/login?name=Rohini@gmail.com&password=1234")
-   }
- 
-
-  myData(userObj) {
-    if (userObj.name == 'Rohini' && userObj.pswd == '12345' ){
-      alert("login successful");
+    let url=urlstart+"name="+userlogin.name+"&password="+userlogin.pswd;
+    console.log("Complete url is="+url);
+    return this.http.get(url);
+    //return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/login?name=Rohini@gmail.com&password=1234")
     }
     
   }
 
- }
+ 
