@@ -12,22 +12,24 @@ import { CartProductsArray } from './CartProducts';
   providedIn: 'root'
 })
 export class CartService {
-    public cartJsonArray = CART;
+    public cartJsonArray = cart;
     public cartProductJsonArray= CartProductsArray;
     selectedItems:Products[] = [];
   
         getCartDetails(cartJson){
         console.log("Getting cart details-----");
-        this.cartJsonArray=cartJson.cart.cartProducts;
-       // this.cartProductJsonArray=cartJson.cart.cartProducts;
-        //this.cartJsonArray=cartJson.cart;
-        console.log("cart Id is ="+cartJson.cartId);
-        console.log("User Id is="+cartJson.userId);
-        console.log("Cart Product Count Is="+cartJson.cartProductCount);
-        console.log("Cart Total Price Is="+cartJson.CartTotalPrice);
-     //   console.log("Cart Id in CartProduct Is="+this.cartJsonArray.cartProducts.cartId);
-
-     // console.log("status is:"+this.result.status+"message is :"+this.result.message);
+        //this.cartJsonArray=cartJson.cart.cartProducts;
+        this.cartJsonArray=cartJson;
+        this.cartProductJsonArray=cartJson.cartProducts;
+        console.log("cart Id is ="+this.cartJsonArray.cartId);
+        console.log("User Id is="+this.cartJsonArray.userId);
+        console.log("Cart Product Count Is="+this.cartJsonArray.cartProductCount);
+        console.log("Cart Total Price Is="+this.cartJsonArray.CartTotalPrice);
+        for(var i in this.cartProductJsonArray){
+          console.log("Cart ID from CartProducts Is===="+this.cartProductJsonArray[i].cartId);
+          console.log("Product Id from CartProducts Is===="+this.cartProductJsonArray[i].productId);
+          console.log("Product Quantity from CartProducts Is====="+this.cartProductJsonArray[i].productQuantity);
+        }
     }
     getItemsForCart():Products[]  {
      return PRODUCTS;

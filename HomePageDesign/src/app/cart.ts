@@ -6,5 +6,4 @@ export class cart {
    static cartProductCount:number;
    static CartTotalPrice:number
    static cartProducts : CartProductsArray;
- // static cartId: string;
    }

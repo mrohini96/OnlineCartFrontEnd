@@ -34,8 +34,6 @@ export class LoginComponent implements OnInit {
     var cartJson=this.result.cart;
     console.log(cartJson);
     this.cartObj.getCartDetails(cartJson)
-    this.cartJsonArray=cartJson;
-    console.log("Cart Id is====="+this.cartJsonArray.cartId);
     console.log("status is:"+this.result.status+"message is :"+this.result.message);
     if (status=="true"){
     this.validate = true;
