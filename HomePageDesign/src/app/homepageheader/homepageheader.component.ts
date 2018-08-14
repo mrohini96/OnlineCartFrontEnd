@@ -48,16 +48,15 @@ export class HomepageheaderComponent implements OnInit {
     this.result = res;
     var status=this.result.status;
     var message=this.result.message
-    console.log("status is="+status+"Message is="+message);
-    var productJson=this.result.products;
-    console.log(productJson);
-    this.productsJsonArray=productJson;
-    console.log("before for loop");
+    console.log("status of products is======"+status+"Message of products is====="+message);
+    this.productsJsonArray=this.result.products;
+    console.log("before for loop-----------");
     for(var i in this.productsJsonArray){
       console.log(this.productsJsonArray[i].productId);
       console.log(this.productsJsonArray[i].productName);
       this.productsJsonArray[i].productImage="assets/"+this.productsJsonArray[i].productImage;
       console.log(this.productsJsonArray[i].productImage);
+      console.log("after for loop-----------");
     }
     }
   );
@@ -90,6 +89,9 @@ export class HomepageheaderComponent implements OnInit {
 
   }
 
+  // getCartId(cartJsonArray):void{
+  // console.log("cart ID in HomePageheader is ====="+cartJsonArray.cartId)
+  // }
   moveWishList(){
 
     this.switchPage="page9"
@@ -122,7 +124,7 @@ export class HomepageheaderComponent implements OnInit {
     this.productsArray=productsArrayObj;
     console.log("this is product title "+this.productsArray.productName
   );
-   // this.switchPage= "page7";
+  //this.switchPage= "page7";
   }
  /* productPage(){
     this.switchPage= "page7";
@@ -158,7 +160,8 @@ getStoreItems(): void {
 }
 
 addToCart(id:number):void{
-console.log("this is addtocart() in homepageheader");   
+var Id=id;
+console.log("this is addtocart() in Homepageheader "+Id);   
 this.cartObj.addToCartService(id);
 
 }
@@ -167,6 +170,7 @@ addToWishlist(id:number):void{
   this.wishlistObj.addToWishlistService(id);
   
   }
+
  ngOnInit() {
   this.getProducts();
   this.getStoreItems();

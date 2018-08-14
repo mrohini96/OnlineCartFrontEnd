@@ -4,6 +4,7 @@ import {Products} from './products';
 import {PRODUCTS} from './mockproduct';
 
 import { CartComponent } from './cart/cart.component';
+import {HomepageheaderComponent} from './homepageheader/homepageheader.component';
 import { Observable, of } from 'rxjs';
 import { cart } from './cart';
 import {CART} from './mockcart';
@@ -14,12 +15,17 @@ import { CartProductsArray } from './CartProducts';
 export class CartService {
     public cartJsonArray = cart;
     public cartProductJsonArray= CartProductsArray;
+    public homeObj:HomepageheaderComponent;
     selectedItems:Products[] = [];
   
         getCartDetails(cartJson){
+         
         console.log("Getting cart details-----");
         //this.cartJsonArray=cartJson.cart.cartProducts;
         this.cartJsonArray=cartJson;
+        console.log("Before getCartId() function");
+     //   this.homeObj.getCartId(cartJson);
+        console.log("After getCartId() function");
         this.cartProductJsonArray=cartJson.cartProducts;
         console.log("cart Id is ="+this.cartJsonArray.cartId);
         console.log("User Id is="+this.cartJsonArray.userId);
