@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'Online Shopping Cart';
   logout(){
     console.log("This is logout");
+    localStorage.removeItem('currentUser');
   }
 
   movePage(){

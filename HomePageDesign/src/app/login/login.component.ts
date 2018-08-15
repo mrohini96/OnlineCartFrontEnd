@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.cartObj.getCartDetails(cartJson)
     console.log("status is:"+this.result.status+"message is :"+this.result.message);
     if (status=="true"){
+      localStorage.setItem('currentUser',this.userJson.name);
     this.validate = true;
    }
     else{

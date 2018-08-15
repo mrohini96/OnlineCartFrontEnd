@@ -9,6 +9,7 @@ import { Observable, of } from 'rxjs';
 import { cart } from './cart';
 import {CART} from './mockcart';
 import { CartProductsArray } from './CartProducts';
+import { ProductService } from './product.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,14 +18,41 @@ export class CartService {
     public cartProductJsonArray= CartProductsArray;
     public homeObj:HomepageheaderComponent;
     selectedItems:Products[] = [];
-  
+    public productsJsonArray = PRODUCTS;
+    private productObj:ProductService;
+    result:any;
+
+
+
+    getProducts():void{
+
+      console.log("This is getProducts() in cart service");
+      this.productObj.myApiCallProduct().subscribe(res=>{
+      console.log(JSON.stringify(res) +"test")
+      this.result = res;
+      var status=this.result.status;
+      var message=this.result.message
+      console.log("status of products is in cart service======"+status+"Message of products is in cart service====="+message);
+      this.productsJsonArray=this.result.products;
+      console.log("before for loop in cart service-----------");
+      for(var i in this.productsJsonArray){
+        console.log(this.productsJsonArray[i].productId);
+        console.log(this.productsJsonArray[i].productName);
+        this.productsJsonArray[i].productImage="assets/"+this.productsJsonArray[i].productImage;
+        console.log(this.productsJsonArray[i].productImage);
+        console.log("after for loop in cart service-----------");
+      }
+      }
+    );
+    }
+
         getCartDetails(cartJson){
          
         console.log("Getting cart details-----");
         //this.cartJsonArray=cartJson.cart.cartProducts;
         this.cartJsonArray=cartJson;
         console.log("Before getCartId() function");
-     //   this.homeObj.getCartId(cartJson);
+     // this.homeObj.getCartId(cartJson);
         console.log("After getCartId() function");
         this.cartProductJsonArray=cartJson.cartProducts;
         console.log("cart Id is ="+this.cartJsonArray.cartId);
@@ -38,18 +66,19 @@ export class CartService {
         }
     }
     getItemsForCart():Products[]  {
-     return PRODUCTS;
-
+      console.log("getitemsforcart");
+     return this.productsJsonArray;
     }
 
       getSelectedItems():Products[] {
+        console.log("getSelectedItems()");
       return this.selectedItems;
         }	
     
 
      addToCartService(id:number){
       console.log("inside addtocart service");
-      let item = PRODUCTS.find(ob => ob.productId === id);
+      let item =this.productsJsonArray.find(ob => ob.productId === id);
       if (this.selectedItems.indexOf(item) < 0) {	   
        this.selectedItems.push(item);
        
