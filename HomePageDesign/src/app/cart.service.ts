@@ -46,7 +46,7 @@ export class CartService {
     );
     }
 
-        getCartDetails(cartJson){
+        getCartDetails(cartJson):any{
          
         console.log("Getting cart details-----");
         //this.cartJsonArray=cartJson.cart.cartProducts;
@@ -59,28 +59,34 @@ export class CartService {
         console.log("User Id is="+this.cartJsonArray.userId);
         console.log("Cart Product Count Is="+this.cartJsonArray.cartProductCount);
         console.log("Cart Total Price Is="+this.cartJsonArray.CartTotalPrice);
+        
         for(var i in this.cartProductJsonArray){
           console.log("Cart ID from CartProducts Is===="+this.cartProductJsonArray[i].cartId);
           console.log("Product Id from CartProducts Is===="+this.cartProductJsonArray[i].productId);
           console.log("Product Quantity from CartProducts Is====="+this.cartProductJsonArray[i].productQuantity);
-        }
+        }   
     }
-    getItemsForCart():Products[]  {
+    
+    getProductCount():any{
+      console.log("inside getProductCount() and product count for user ID"+this.cartJsonArray.userId+"is"+this.cartJsonArray.userId);
+      return (this.cartJsonArray.cartProductCount);
+    }
+      getItems():Products[]  {
       console.log("getitemsforcart");
-     return this.productsJsonArray;
-    }
+      return this.productsJsonArray;
+      }
 
       getSelectedItems():Products[] {
-        console.log("getSelectedItems()");
+      console.log("getSelectedItems()");
       return this.selectedItems;
-        }	
+      }	
     
 
-     addToCartService(id:number){
+      addToCartService(id:number){
       console.log("inside addtocart service");
       let item =this.productsJsonArray.find(ob => ob.productId === id);
       if (this.selectedItems.indexOf(item) < 0) {	   
-       this.selectedItems.push(item);
+      this.selectedItems.push(item);
        
     }
      }

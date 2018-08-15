@@ -155,7 +155,7 @@ onSubmit() {
    } 
 
 getStoreItems(): void {
-  this.storeItems = this.cartObj. getItemsForCart();
+  this.storeItems = this.cartObj.getItems();
   this.storeItems=this.wishlistObj.getItemsForWishlist();
 }
 

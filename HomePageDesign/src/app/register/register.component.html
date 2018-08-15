@@ -1,7 +1,7 @@
 
-<div class='row con'>
+<div class='row con' style="margin-left:20px;margin-top:10px">
     <div class='col-xs-10' *ngIf="!register && !isExistingUser">
-      <h2>Registration Form</h2>
+      <h4 style="margin-left:40px;color: blue;margin-bottom: 10px">Registration Form</h4>
       <form [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && submitRegistration(registrationForm.value)" novalidate>
         
         <ul>
@@ -50,7 +50,7 @@
     
         
         
-        <button class='btn btn-primary' type='submit' (click)="onSubmit()">Submit Registration Form</button>
+        <button class='btn btn-primary' type='submit' (click)="onSubmit()">Submit</button>
       </ul>
      
       </form>
@@ -58,7 +58,7 @@
      <!-- <pre>{{registrationForm.value | json}}</pre> -->
     </div>
       
-      <div *ngIf="register">
+      <div style="margin-left:60px" *ngIf="register">
         <h2>Registration Successful! </h2><br>
         welcome {{userregister.firstname}}
        <h4>Please login to continue.<br>
@@ -66,12 +66,12 @@
         <br>
       </div>
 
-      <div *ngIf="isExistingUser">
-        <h2>Registration UnSuccessful! </h2><br>
-       <h4>User already exists Please login to continue Thank you!</h4> 
-        <br>
+      <div style="margin-left:60px" *ngIf="isExistingUser">
+       <h3 style="color: #f31f1f">Registration Unsuccessful! </h3><br>
+       <h4>User already exists.</h4> 
+       <a routerLink="/login" style="color: #1f82f3">Please login to continue</a>
+       <h5>Thank you!</h5>
       </div>
-      
     </div>
   
   

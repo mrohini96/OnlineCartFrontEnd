@@ -38,7 +38,7 @@
   </div>
 </div>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
      
@@ -54,7 +54,7 @@
               <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
               <li *ngIf="!showLogin"><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a  routerLink="/account" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li><a  routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">5</span></li>
+        <li><a  routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{globalObj.data}}{{productCount}}</span></li>
         <li ><a  routerLink="/wishlist" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
         <li><a routerLink="/logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>

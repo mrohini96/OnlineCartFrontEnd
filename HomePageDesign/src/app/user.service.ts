@@ -25,7 +25,6 @@ export class UserService {
     return this.http.get(url);
     //return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/user/login?name=Rohini@gmail.com&password=1234")
     }
-    
   }
 
  

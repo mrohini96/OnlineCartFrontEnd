@@ -1,9 +1,9 @@
-  <div *ngIf="!validate && !validateDetails"> 
-   <h4>Please login to continue</h4>
-   <input type="text" class="dropdown-item" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
-   <input type="password" class="dropdown-item" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
-   <button type="submit" name="userClick" (click)="onSubmit()">Submit</button> 
-   <button type="reset">clear</button>     
+  <div style="margin-left:60px;margin-top:25px" *ngIf="!validate && !validateDetails"> 
+   <h4 style="color: blue">Please login to continue</h4>
+   <input type="text" class="form-control" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
+   <input  type="password" class="form-control" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
+   <button class='btn btn-primary' style="margin-top:5px" type="submit" name="userClick" (click)="onSubmit()">Submit</button>
+   <button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset">clear</button>     
   </div>
   <div *ngIf="validate">   
     Welcome {{userJson.name}}

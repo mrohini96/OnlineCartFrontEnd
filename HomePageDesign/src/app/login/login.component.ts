@@ -37,7 +37,8 @@ export class LoginComponent implements OnInit {
     console.log("status is:"+this.result.status+"message is :"+this.result.message);
     if (status=="true"){
       localStorage.setItem('currentUser',this.userJson.name);
-    this.validate = true;
+      this.validate = true;
+      this.userloggedin=true;
    }
     else{
       this.validateDetails=true;

@@ -25,6 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component'; 
+import { Global } from './globaldata';
+import { CartService } from './cart.service';
+import { ProductService } from './product.service';
+import { RegisterService } from './register.service';
 @NgModule({
   declarations: [
    AppComponent,
@@ -63,7 +67,7 @@ import { AccountComponent } from './account/account.component';
     HttpClientModule
 
   ],
-  providers: [UserService],
-  bootstrap: [AppComponent]
+  providers: [UserService,Global,CartService,ProductService,RegisterService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
