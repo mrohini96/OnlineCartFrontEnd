@@ -13,7 +13,6 @@ import { Global } from '../globaldata';
 export class LoginComponent implements OnInit {
   validate:boolean = false;
   validateDetails:boolean = false; 
-  userloggedin :boolean=false;
   result: any;
   status:any;s
   message:any;
@@ -37,12 +36,14 @@ export class LoginComponent implements OnInit {
     this.cartObj.getCartDetails(cartJson)
     console.log("status is:"+this.result.status+"message is :"+this.result.message);
     if (status=="true"){
-      localStorage.setItem('currentUser',this.userJson.name);
       this.validate = true;
-      this.userloggedin=true;
+      this.globalObj.userloggedin=true;
+      console.log("UserLoggedIn value"+this.globalObj.userloggedin);
+      
    }
     else{
       this.validateDetails=true;
+      this.globalObj.userloggedin=false;
      //this.validate = false;
    }
   }

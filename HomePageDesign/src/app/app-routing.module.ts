@@ -22,7 +22,6 @@ const routes: Routes = [
   {path:'wishlist',component:WishlistComponent},
   {path:'logout',component:LogoutComponent},
   {path:'account',component:AccountComponent}
-
 ];
 
 @NgModule({

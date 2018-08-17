@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Global } from '../globaldata';
 
 @Component({
   selector: 'app-logout',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globalObj:Global) { }
 
   
 
   ngOnInit() {
+  this.globalObj.userloggedin=false;
   }
 
 }

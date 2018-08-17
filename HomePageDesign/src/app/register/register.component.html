@@ -36,7 +36,7 @@
           <input type="password" class="form-control" placeholder="Password" minlength='6' formControlName="password" [(ngModel)]="userregister.password">
           <div class='form-text error' *ngIf="registrationForm.controls.password.touched">
             <div *ngIf="registrationForm.controls.password.hasError('required')">Password is required.</div>
-       <!--     <div *ngIf="registrationForm.controls.password.hasError('minlength')">Password isn't long enough.</div> -->
+        <div *ngIf="registrationForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
           </div>
         </fieldset>
     
@@ -50,7 +50,7 @@
     
         
         
-        <button class='btn btn-primary' type='submit' (click)="onSubmit()">Submit</button>
+        <button class='btn btn-primary' type='submit' [disabled]='!registrationForm.valid' (click)="onSubmit()">Submit</button>
       </ul>
      
       </form>
@@ -61,8 +61,8 @@
       <div style="margin-left:60px" *ngIf="register">
         <h2>Registration Successful! </h2><br>
         welcome {{userregister.firstname}}
-       <h4>Please login to continue.<br>
-        Thank you!</h4> 
+        <a routerLink="/login" style="color: #1f82f3">Please login to continue</a>
+        <h5>Thank you!</h5>
         <br>
       </div>
 
