@@ -5,7 +5,7 @@ import { PRODUCTS } from '../mockproduct';
 import {Products} from '../products';
 import { cart } from '../cart';
 import { CartProductsArray } from '../CartProducts';
-import { HomepageheaderComponent } from '../homepageheader/homepageheader.component';
+
 
 @Component({
   selector: 'app-cart',
@@ -52,6 +52,9 @@ removeItemFromCart(id : number): void {
       console.log("Cart ID from CartProducts Is===="+this.cartProductJsonArray[i].cartId);
       console.log("Product Id from CartProducts Is===="+this.cartProductJsonArray[i].productId);
       console.log("Product Quantity from CartProducts Is====="+this.cartProductJsonArray[i].productQuantity);
+      console.log("Product Name from CartProducts Is===="+this.cartProductJsonArray[i].productName);
+      console.log("Product Description from CartProducts Is===="+this.cartProductJsonArray[i].productDesc);
+      console.log("Product Price from CartProducts Is===="+this.cartProductJsonArray[i].productPrice);
       //getProductDetail(this.cartProductJsonArray[i].productId);
     } 
 }
