@@ -29,7 +29,6 @@ import { Global } from './globaldata';
 import { CartService } from './cart.service';
 import { ProductService } from './product.service';
 import { RegisterService } from './register.service';
-import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
    AppComponent,
@@ -55,9 +54,7 @@ import { NavbarComponent } from './navbar/navbar.component';
    
    LogoutComponent,
    
-   AccountComponent,
-   
-   NavbarComponent,
+   AccountComponent
    
    
   ],

@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     if (status=="true"){
       this.validate = true;
       this.globalObj.userloggedin=true;
+      
       console.log("UserLoggedIn value"+this.globalObj.userloggedin);
       
    }
