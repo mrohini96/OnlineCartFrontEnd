@@ -4,6 +4,8 @@ import { UserService } from './user.service';
 import { LoginComponent } from './login/login.component';
 import { CartService } from './cart.service';
 import { Global } from './globaldata';
+import { cart } from './cart';
+import { CartProductsArray } from './CartProducts';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +13,7 @@ import { Global } from './globaldata';
 })
 export class AppComponent{
   //userloggedin :boolean=false;
-
   showLogin:boolean=false;
-  
   @ViewChild(LoginComponent) login;
   constructor(private router:Router,private userObj:UserService,private cartObj:CartService,private globalObj:Global){
   }
@@ -30,7 +30,8 @@ export class AppComponent{
     this.showLogin = this.login.userloggedin;
   }
   ngOnInit(){
-  console.log("Printing global data=="+this.globalObj.data);
+  this.globalObj.data="Rohini";
+  console.log("changed global data=="+this.globalObj.data);
   this.router.navigate(['']);
   var productCount=this.cartObj.getProductCount();
   console.log("printing product count ==="+productCount);

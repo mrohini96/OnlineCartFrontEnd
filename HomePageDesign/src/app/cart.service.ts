@@ -10,10 +10,12 @@ import { cart } from './cart';
 import {CART} from './mockcart';
 import { CartProductsArray } from './CartProducts';
 import { ProductService } from './product.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+    constructor(private http: HttpClient) { }
     public cartJsonArray = cart;
     public cartProductJsonArray= CartProductsArray;
     public homeObj:HomepageheaderComponent;
@@ -47,13 +49,13 @@ export class CartService {
     }
 
         getCartDetails(cartJson):any{
-         
+        console.log("-----Inside getCartDetails()---")
         console.log("Getting cart details-----");
         //this.cartJsonArray=cartJson.cart.cartProducts;
         this.cartJsonArray=cartJson;
-        console.log("Before getCartId() function");
-     // this.homeObj.getCartId(cartJson);
-        console.log("After getCartId() function");
+        //console.log("Before getCartId() function");
+        //this.homeObj.getCartId(cartJson);
+        //console.log("After getCartId() function");
         this.cartProductJsonArray=cartJson.cartProducts;
         console.log("cart Id is ="+this.cartJsonArray.cartId);
         console.log("User Id is="+this.cartJsonArray.userId);
@@ -64,6 +66,7 @@ export class CartService {
           console.log("Cart ID from CartProducts Is===="+this.cartProductJsonArray[i].cartId);
           console.log("Product Id from CartProducts Is===="+this.cartProductJsonArray[i].productId);
           console.log("Product Quantity from CartProducts Is====="+this.cartProductJsonArray[i].productQuantity);
+
         }   
     }
     
@@ -97,7 +100,11 @@ export class CartService {
          // this.productObj1.splice(0, 1);
       console.log("iTEM HAS been removed");
      }
-    
+     myApiCallCartView(){
+      console.log("this is myapi() in ProductService");
+      let header= new HttpHeaders({})
+      return this.http.get("http://localhost:8080/onlinecart-1.0/onlinecart/cart/view?name=Chinmaya@gmail.com")
+     }
   
 }
 

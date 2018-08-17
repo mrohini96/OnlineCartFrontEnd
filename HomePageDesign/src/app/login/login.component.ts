@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from '../user.service';
 import { Http, Response } from '@angular/http';
 import { CartService } from '../cart.service';
+import { Global } from '../globaldata';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   userJson={"name": "", "pswd": "" };
   cartJsonArray: any;
 
-  constructor (private http :Http,private user:UserService,private cartObj:CartService) { 
+  constructor (private http :Http,private user:UserService,private cartObj:CartService,private globalObj:Global) { 
     console.log("hello this header's constructor");
 
   }
@@ -46,7 +47,6 @@ export class LoginComponent implements OnInit {
    }
   }
 );
-
 console.log("this is after myapicall()");
 }
   ngOnInit() {

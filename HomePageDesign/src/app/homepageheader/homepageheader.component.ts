@@ -61,7 +61,6 @@ export class HomepageheaderComponent implements OnInit {
     }
   );
   }
-
   showLogin: boolean = false;
 
   userJson={"name": "", "pswd": "" };

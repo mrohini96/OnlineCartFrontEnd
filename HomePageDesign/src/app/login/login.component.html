@@ -1,5 +1,5 @@
   <div style="margin-left:60px;margin-top:25px" *ngIf="!validate && !validateDetails"> 
-   <h4 style="color: blue">Please login to continue</h4>
+   <h4 style="color: blue">Please login to continue {{globalObj.data}}</h4>
    <input type="text" class="form-control" name="userName" placeholder="User" [(ngModel)]="userJson.name"> <br>
    <input  type="password" class="form-control" name="userPassword" placeholder="Password" [(ngModel)]="userJson.pswd"> <br>
    <button class='btn btn-primary' style="margin-top:5px" type="submit" name="userClick" (click)="onSubmit()">Submit</button>

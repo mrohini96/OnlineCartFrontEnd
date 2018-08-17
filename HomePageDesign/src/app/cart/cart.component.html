@@ -39,6 +39,9 @@
                                   </li>
                                 </ul>
                             </div>
+                            <h5>Cart total price is:{{cartJsonArray.cartId}}</h5>
+                            <h5 *ngFor="let item of cartProductJsonArray">Product Id is:{{item.productId}} 
+                                Cart Id is{{item.cartId}}Product Qauntity{{item.productQuantity}}</h5>
                  </div>
    
 </div>
