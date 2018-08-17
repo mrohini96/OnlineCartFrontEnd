@@ -6,7 +6,7 @@
    <button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset">clear</button>     
   </div>
   <div *ngIf="validate">   
-    Welcome {{userJson.name}}
+    Welcome {{userJson.name}} {{globalObj.data}}{{globalObj.userloggedin}}
  <!--  <div *ngIf="validate && userloggedin">Welcome {{userJson.name}} ! style="display:block;color: white"-->
   </div>
  <div *ngIf="validateDetails">   

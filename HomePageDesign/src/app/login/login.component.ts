@@ -33,12 +33,12 @@ export class LoginComponent implements OnInit {
     status=this.result.status;
     var cartJson=this.result.cart;
     console.log(cartJson);
-    this.cartObj.getCartDetails(cartJson)
+    //this.cartObj.getCartDetails(cartJson)
     console.log("status is:"+this.result.status+"message is :"+this.result.message);
     if (status=="true"){
       this.validate = true;
       this.globalObj.userloggedin=true;
-      
+      this.globalObj.data="Nivedita";
       console.log("UserLoggedIn value"+this.globalObj.userloggedin);
       
    }
@@ -53,5 +53,4 @@ console.log("this is after myapicall()");
 }
   ngOnInit() {
   }
-
 }

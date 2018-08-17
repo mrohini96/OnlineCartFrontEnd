@@ -51,12 +51,12 @@
         
       </ul> 
       <ul class="nav navbar-nav navbar-right">
-              <li *ngIf="!userloggedin"><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
-              <li *ngIf="!userloggedin"><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li *ngIf="!userloggedin"><a  routerLink="/account" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li *ngIf="!userloggedin"><a routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{productCount}}</span></li>
-        <li *ngIf="!userloggedin"><a  routerLink="/wishlist" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
-        <li *ngIf="!userloggedin"><a routerLink="/logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+              <li *ngIf="!globalObj.userloggedin"><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
+              <li *ngIf="!globalObj.userloggedin"><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li *ngIf="globalObj.userloggedin"><a  routerLink="/account" ><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li *ngIf="globalObj.userloggedin"><a routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{productCount}}</span></li>
+        <li *ngIf="globalObj.userloggedin"><a  routerLink="/wishlist" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
+        <li *ngIf="globalObj.userloggedin"><a (click)="logout()" routerLink="/logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
     </div>
   </div>

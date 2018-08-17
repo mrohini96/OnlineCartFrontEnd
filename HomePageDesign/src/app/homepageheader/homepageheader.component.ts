@@ -173,6 +173,5 @@ addToWishlist(id:number):void{
  ngOnInit() {
   this.getProducts();
   this.getStoreItems();
- 
   }
 }

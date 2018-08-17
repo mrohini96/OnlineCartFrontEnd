@@ -4,8 +4,7 @@ import { UserService } from './user.service';
 import { LoginComponent } from './login/login.component';
 import { CartService } from './cart.service';
 import { Global } from './globaldata';
-import { cart } from './cart';
-import { CartProductsArray } from './CartProducts';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,11 +13,14 @@ import { CartProductsArray } from './CartProducts';
 export class AppComponent implements OnInit{
   
  
-  constructor(private router:Router,private userObj:UserService,private cartObj:CartService,private globalObj:Global){
+  constructor(private router:Router,private globalObj:Global){
   }
   title = 'Online Shopping Cart';
+  logout():any{
+    this.globalObj.userloggedin=false;
+    this.router.navigate(['home']);
+  }
   ngOnInit(){
   this.router.navigate(['']);
-  
   }
 }
