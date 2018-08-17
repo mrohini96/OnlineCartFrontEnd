@@ -9,6 +9,7 @@ import { CategoryService } from '../category.service';
 import { HttpClient } from '@angular/common/http';
 import { Http } from '../../../node_modules/@angular/http';
 import { ProductService } from '../product.service';
+import { Global } from '../globaldata';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -22,7 +23,7 @@ export class CategoriesComponent implements OnInit {
    switchPage = "page1";
    result: any;
    public productsJsonArray = PRODUCTS;
-  constructor(private http :Http,private categoryObj:CategoryService,private productObj:ProductService) { }
+  constructor(private http :Http,private categoryObj:CategoryService,private productObj:ProductService,private globalObj:Global) { }
 
   getProducts():void{
 

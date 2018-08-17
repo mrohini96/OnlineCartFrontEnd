@@ -13,6 +13,7 @@ import { CartService } from '../cart.service';
 import {WishlistService} from '../wishlist.service';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../product.service';
+import { Global } from '../globaldata';
 
 
 
@@ -36,7 +37,7 @@ export class HomepageheaderComponent implements OnInit {
   data : any= {}
   userResp:UserResponse;
   result: any;
-  constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService) { 
+  constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService,private globalObj:Global) { 
   console.log("hello this header's constructor");
   }
 

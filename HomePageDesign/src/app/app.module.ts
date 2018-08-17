@@ -23,7 +23,6 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component'; 
 import { Global } from './globaldata';
 import { CartService } from './cart.service';
@@ -51,8 +50,6 @@ import { RegisterService } from './register.service';
    WishlistComponent,
    
    LoginComponent,
-   
-   LogoutComponent,
    
    AccountComponent
    

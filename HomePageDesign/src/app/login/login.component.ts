@@ -4,6 +4,7 @@ import { UserService } from '../user.service';
 import { Http, Response } from '@angular/http';
 import { CartService } from '../cart.service';
 import { Global } from '../globaldata';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   userJson={"name": "", "pswd": "" };
   cartJsonArray: any;
 
-  constructor (private http :Http,private user:UserService,private cartObj:CartService,private globalObj:Global) { 
+  constructor (private http :Http,private user:UserService,private cartObj:CartService,private globalObj:Global,private router:Router) { 
     console.log("hello this header's constructor");
 
   }
@@ -38,18 +39,22 @@ export class LoginComponent implements OnInit {
     if (status=="true"){
       this.validate = true;
       this.globalObj.userloggedin=true;
-      this.globalObj.data="Nivedita";
+      this.globalObj.data=this.userJson.name;
       console.log("UserLoggedIn value"+this.globalObj.userloggedin);
-      
+      this.router.navigate(['home']);
    }
     else{
       this.validateDetails=true;
       this.globalObj.userloggedin=false;
+      this.router.navigate(['login']);
      //this.validate = false;
    }
   }
 );
-console.log("this is after myapicall()");
+
+}
+loginerr(){
+  this.validateDetails=false;
 }
   ngOnInit() {
   }
