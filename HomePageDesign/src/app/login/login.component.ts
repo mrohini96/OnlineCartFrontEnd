@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   validate:boolean = false;
   validateDetails:boolean = false; 
   result: any;
-  status:any;s
+  status:any;
   message:any;
   userJson={"name": "", "pswd": "" };
   cartJsonArray: any;

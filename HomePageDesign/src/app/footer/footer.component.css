@@ -11,7 +11,8 @@ footer {
       z-index: 9;
   }
   #footer-end {
-    padding: 5px 0
+    padding: 5px 0;
+    
   }
   /*
   footer:before {

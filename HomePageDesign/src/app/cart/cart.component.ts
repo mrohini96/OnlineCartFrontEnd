@@ -66,12 +66,3 @@ removeItemFromCart(id : number): void {
     this.getItemsForCart();
   }
 }
-/*
-saveCart() {
-      if (window.localStorage) {
-        console.log("tfgb",this.cart);
-        sessionStorage.setItem('cart',JSON.stringify(this.cart));        
-      }
-  }
-
-*/

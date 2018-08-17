@@ -18,7 +18,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductpageComponent } from './productpage/productpage.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -46,8 +45,6 @@ import { RegisterService } from './register.service';
    RegisterComponent,
    
    CartComponent,
-   
-   WishlistComponent,
    
    LoginComponent,
    

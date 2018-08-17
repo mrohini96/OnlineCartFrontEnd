@@ -50,13 +50,13 @@
        <li><a routerLink="/categories">Categories</a></li>
         
       </ul> 
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!globalObj.userloggedin"><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
-        <li *ngIf="!globalObj.userloggedin" ><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li *ngIf="globalObj.userloggedin"><a  routerLink="/account" >welcome {{globalObj.data}} <span class="glyphicon glyphicon-user"></span>Your Account</a></li>
-        <li *ngIf="globalObj.userloggedin"><a routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{productCount}}</span></li>
-        <li *ngIf="globalObj.userloggedin"><a  routerLink="/wishlist" ><span class="glyphicon glyphicon-bookmark"></span>WishList</a></li>
-        <li *ngIf="globalObj.userloggedin"><a (click)="logout()" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+      <ul *ngIf="!globalObj.userloggedin" class="nav navbar-nav navbar-right">
+        <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
+        <li><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li> </ul>
+        <ul *ngIf="globalObj.userloggedin" class="nav navbar-nav navbar-right">
+        <li><a  routerLink="/account" ><span style="color: rgb(165, 224, 106)">welcome {{globalObj.data}}!</span> <span style="margin-left: 10px" class="glyphicon glyphicon-user"></span>Your Account</a></li>
+        <li ><a routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{productCount}}</span></li>
+        <li><a routerLink="" (click)="logout()" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
     </div>
   </div>

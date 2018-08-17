@@ -10,7 +10,6 @@ import {PRODUCTS} from '../mockproduct';
 import { UserResponse } from '../user';
 
 import { CartService } from '../cart.service';
-import {WishlistService} from '../wishlist.service';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../product.service';
 import { Global } from '../globaldata';
@@ -37,7 +36,7 @@ export class HomepageheaderComponent implements OnInit {
   data : any= {}
   userResp:UserResponse;
   result: any;
-  constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private wishlistObj:WishlistService,private globalObj:Global) { 
+  constructor (private http :Http, private productObj:ProductService,private user:UserService,private cartObj:CartService,private globalObj:Global) { 
   console.log("hello this header's constructor");
   }
 
@@ -92,11 +91,7 @@ export class HomepageheaderComponent implements OnInit {
   // getCartId(cartJsonArray):void{
   // console.log("cart ID in HomePageheader is ====="+cartJsonArray.cartId)
   // }
-  moveWishList(){
 
-    this.switchPage="page9"
-  
-    }
   
   movePage(){
     this.switchPage = "page2";
@@ -156,7 +151,6 @@ onSubmit() {
 
 getStoreItems(): void {
   this.storeItems = this.cartObj.getItems();
-  this.storeItems=this.wishlistObj.getItemsForWishlist();
 }
 
 addToCart(id:number):void{
@@ -165,11 +159,6 @@ console.log("this is addtocart() in Homepageheader "+Id);
 this.cartObj.addToCartService(id);
 
 }
-addToWishlist(id:number):void{
-  console.log("this is addtowishlist() in homepageheader");   
-  this.wishlistObj.addToWishlistService(id);
-  
-  }
 
  ngOnInit() {
   this.getProducts();

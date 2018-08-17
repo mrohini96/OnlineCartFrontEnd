@@ -7,7 +7,6 @@ import { CategoriesComponent } from './categories/categories.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
 import { AccountComponent } from './account/account.component';
 
 
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'cart',component:CartComponent},
-  {path:'wishlist',component:WishlistComponent},
   {path:'account',component:AccountComponent}
 ];
 
