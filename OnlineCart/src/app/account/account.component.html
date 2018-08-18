@@ -1,4 +1,3 @@
-
 <div style="text-align:left">
     <div class="row ">
 		<div class="col-md-3" >
@@ -8,7 +7,7 @@
 				</div>
 				<div class="profile-usertitle" >
 					<div class="profile-usertitle-name">
-                    {{globalObj.data}} 
+                    {{globalData.userName}} 
 					</div>
 				</div>
 				<div class="profile-usermenu">
@@ -36,33 +35,24 @@
 		<div class="col-md-9" >
             <div *ngIf="accountSetFlag=='account'" >
 					<h4 style="margin-bottom: 40px;margin-top: 40px">Update Your Profile</h4>
-					<div *ngIf="!validate && !validateDetails">
+					<div>
 						<form>
-							<input type="text"  name="name" class="form-control" placeholder="Username" [(ngModel)]="userJson.name"> <br>
-							
-							<input type="text"  name="city" class="form-control" placeholder="City" [(ngModel)]="userJson.city"> <br>
-							
-							<input type="text"  name="state" class="form-control" placeholder="State" [(ngModel)]="userJson.state"> <br>
-							
-							<input  type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="userJson.country"> <br>
-							
-							<input type="text"  name="address1" class="form-control" placeholder="Adrress1" [(ngModel)]="userJson.address1"> <br>
-							
-							<input type="text"  name="address2" class="form-control" placeholder="Adrress2" [(ngModel)]="userJson.address2"> <br>
-							
-							<input type="text"  name="phone" class="form-control" placeholder="Phone" [(ngModel)]="userJson.phone"> <br>
-
+							<input type="text"  name="address" class="form-control" placeholder="Adrress" [(ngModel)]="userJson.userAddress"> <br>
+							<input type="text"  name="city" class="form-control" placeholder="City" [(ngModel)]="userJson.userCity"> <br>
+							<input type="text"  name="state" class="form-control" placeholder="State" [(ngModel)]="userJson.userState"> <br>	
+							<input  type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="userJson.userCountry"> <br>
+							<input type="text"  name="zip" class="form-control" placeholder="Zip" [(ngModel)]="userJson.userZip"> <br>							
+							<input type="text"  name="phone" class="form-control" placeholder="Phone" [(ngModel)]="userJson.userPhone"> <br>
 							<button class='btn btn-primary' style="margin-top:5px" type="submit" (click)="updateAccount()">Save details</button>
 							<button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset">Reset details</button>
 						</form>
 					</div>
 					       <div *ngIf="validate">   
-							Update Successful {{userJson.name}}!
+							    Account updated successfully {{globalData.userName}}!
 						   </div>
 						   <div *ngIf="validateDetails">   
-								Update Unsuccessful {{userJson.name}}!
-						   </div>
-			  
+								Update Unsuccessful {{globalData.userName}}!
+						   </div>	  
 			</div >
 			<div *ngIf="accountSetFlag=='orders'">
 				<h4 style="margin-bottom: 40px;margin-top: 40px">My Orders</h4>
@@ -111,6 +101,7 @@
 		</div>
 	</div>
 </div>
+
 
 		             
 
