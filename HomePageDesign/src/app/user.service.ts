@@ -22,6 +22,13 @@ export class UserService {
     let url=urlstart+"name="+userlogin.name+"&password="+userlogin.pswd;
     return this.http.get(url);
     }
+    myApiCallAccount(userJson){
+      let header= new HttpHeaders({})
+    let urlstart='http://localhost:8080/onlinecart-1.0/onlinecart/user/update?';
+    let url=urlstart+"name="+userJson.name+"&city="+userJson.city+"&state="+userJson.state+"&country="+userJson.country+"&address1="+userJson.address1+"&address2="+userJson.address2+"&phone="+userJson.phone;
+    console.log("Complete url is="+url);
+    return this.http.get(url);
+    }
   }
 
  

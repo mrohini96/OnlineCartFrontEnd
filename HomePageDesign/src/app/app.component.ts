@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
   logout():any{
     this.globalObj.userloggedin=false;
     this.router.navigate(['home']);
+    this.globalObj.data=null;
   }
   ngOnInit(){
   this.router.navigate(['']);

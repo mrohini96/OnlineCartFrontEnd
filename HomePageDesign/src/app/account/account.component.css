@@ -9,19 +9,18 @@ body {
   }
   
   /* Profile container */
-  .profile {
-    margin: 20px 0;
-  }
+ 
   
   /* Profile sidebar */
   .profile-sidebar {
     padding: 20px 0 10px 0;
-    background: #fff;
+    background:  #fff;
   }
   
   .profile-userpic img {
     float: none;
-    margin: 0 auto;
+    margin-left: 40px;
+    /*margin: 0 auto; */
     width: 50%;
     height: 50%;
     -webkit-border-radius: 50% !important;
@@ -30,8 +29,9 @@ body {
   }
   
   .profile-usertitle {
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
+    margin-left: 40px;
   }
   
   .profile-usertitle-name {
@@ -68,6 +68,9 @@ body {
       
   .profile-usermenu {
     margin-top: 30px;
+    margin-left: 40px;
+
+    
   }
   
   .profile-usermenu ul li {
@@ -110,6 +113,8 @@ body {
     padding: 20px;
     background: #fff;
     min-height: 460px;
+    margin-left: 40px;
+    margin-top: 20px;
   }
 
   .container{
@@ -117,3 +122,13 @@ body {
     align-content: center;
 
   }
+  
+ .con{
+  background-color: white;
+  border-radius: 8pt;
+}
+
+.form-control{
+ width: 30%;
+ height: 30px;
+}

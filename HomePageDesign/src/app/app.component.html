@@ -54,14 +54,15 @@
         <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
         <li><a routerLink="/login" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li> </ul>
         <ul *ngIf="globalObj.userloggedin" class="nav navbar-nav navbar-right">
-        <li><a  routerLink="/account" ><span style="color: rgb(165, 224, 106)">welcome {{globalObj.data}}!</span> <span style="margin-left: 10px" class="glyphicon glyphicon-user"></span>Your Account</a></li>
+        <li><div style="color: rgb(165, 224, 106);margin-top: 12px ;margin-right: 2px" >Welcome {{globalObj.data}}!</div></li>
+        <li><a  routerLink="/account" > <span style="margin-left: 10px" class="glyphicon glyphicon-user"></span>Your Account</a></li>
         <li ><a routerLink="/cart" ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{productCount}}</span></li>
         <li><a routerLink="" (click)="logout()" ><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 
 <app-footer></app-footer>
 
 

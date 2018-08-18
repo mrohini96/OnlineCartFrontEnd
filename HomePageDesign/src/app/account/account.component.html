@@ -1,35 +1,30 @@
 
-<div class="container" >
-    <div class="row profile">
-		<div class="col-md-3">
+<div style="text-align:left">
+    <div class="row ">
+		<div class="col-md-3" >
 			<div class="profile-sidebar">
 				<div class="profile-userpic">
 					<img src="../assets/profile.png" class="img-responsive" alt="">
 				</div>
-				<div class="profile-usertitle">
+				<div class="profile-usertitle" >
 					<div class="profile-usertitle-name">
                     {{globalObj.data}} 
 					</div>
 				</div>
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
 						<li>
-							<a href="#">
+							<a (click)="accountSetting()">
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings</a>
 						</li>
 						<li>
-							<a href="#" target="_blank">
+							<a (click)="myOrders()" >
 							<i class="glyphicon glyphicon-ok"></i>
 							Orders </a>
 						</li>
 						<li>
-							<a href="#">
+							<a (click)="accountHelp()">
 							<i class="glyphicon glyphicon-flag"></i>
 							Help </a>
 						</li>
@@ -37,11 +32,89 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-			   YOU ARE A VALUABLE CUSTOMER!
-            </div>
+		
+		<div class="col-md-9" >
+            <div *ngIf="accountSetFlag=='account'" >
+					<h4 style="margin-bottom: 40px;margin-top: 40px">Update Your Profile</h4>
+					<div *ngIf="!validate && !validateDetails">
+						<form>
+							<input type="text"  name="name" class="form-control" placeholder="Username" [(ngModel)]="userJson.name"> <br>
+							
+							<input type="text"  name="city" class="form-control" placeholder="City" [(ngModel)]="userJson.city"> <br>
+							
+							<input type="text"  name="state" class="form-control" placeholder="State" [(ngModel)]="userJson.state"> <br>
+							
+							<input  type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="userJson.country"> <br>
+							
+							<input type="text"  name="address1" class="form-control" placeholder="Adrress1" [(ngModel)]="userJson.address1"> <br>
+							
+							<input type="text"  name="address2" class="form-control" placeholder="Adrress2" [(ngModel)]="userJson.address2"> <br>
+							
+							<input type="text"  name="phone" class="form-control" placeholder="Phone" [(ngModel)]="userJson.phone"> <br>
+
+							<button class='btn btn-primary' style="margin-top:5px" type="submit" (click)="updateAccount()">Save details</button>
+							<button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset">Reset details</button>
+						</form>
+					</div>
+					       <div *ngIf="validate">   
+							Update Successful {{userJson.name}}!
+						   </div>
+						   <div *ngIf="validateDetails">   
+								Update Unsuccessful {{userJson.name}}!
+						   </div>
+			  
+			</div >
+			<div *ngIf="accountSetFlag=='orders'">
+				<h4 style="margin-bottom: 40px;margin-top: 40px">My Orders</h4>
+				<table class="table table-hover text-center bg-faded">
+						<thead class="thead-faded">
+						<tr style="color: blue">
+							<th>Order Number</th>
+							<th style="align-content: center">Product Name</th>
+							<th style="margin-left:2px">Product Quantity</th>				
+						</tr>
+						</thead>
+						<tbody>
+						<tr style="align-content: center">
+							<th	scope="row">TRZ-ONLSTR-1234</th>
+							<td>JBL Earphones</td>
+							<td>2</td>
+						</tr>
+						<tr style="align-content: center">
+								<th	scope="row">TRZ-ONLSTR-5678</th>
+								<td>Sandisk Memory Card</td>
+								<td>5</td>
+						</tr>
+						</tbody>
+					</table>
+			</div>
+
+			<div *ngIf="accountSetFlag=='help'">
+			 <h4 style="margin-bottom: 40px;margin-top: 40px">Help Centre</h4>
+			 <div> 
+			 <b>FAQS</b>	
+			 <ol>
+				 <li ng-href="#">Why my order is not delivered yet?</li>
+				 <li ng-href="#">Why I could not get my refund yet?</li>
+				 <li ng-href="#">How can I update my profile?</li>
+				 <li ng-href="#">How can add multiple products in my cart?</li>
+			 </ol> 
+			 <br>
+			 <br>
+			 <span>Please contact us if any queries.<br>
+				<a href="#">
+					onlinestore@trianz.com
+				</a>
+			 </span>
+			 </div>
+			</div>
 		</div>
 	</div>
 </div>
+
+
+		             
+
+
  
+
