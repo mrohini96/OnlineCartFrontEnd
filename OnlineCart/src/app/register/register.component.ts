@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     console.log("This is submitRegistration()");
     console.log(value);
     console.log("Registration successful")
-    this.register=true;
+    //this.register=true;
   }
 
   onSubmit() {

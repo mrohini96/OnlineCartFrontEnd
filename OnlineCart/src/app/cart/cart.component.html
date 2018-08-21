@@ -1,15 +1,15 @@
-<h1>My Cart</h1>
+<h4 class="heading">My Cart</h4>
 <br><br>
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-                <ul >
-                        <li>
-                                <table class="table table-hover text-center bg-faded">
+        <div *ngIf="globalData.cartProductCount!=0" class="col-md-8">
+                <!--<ul >
+                         <li> -->
+                                <table  class="table table-hover text-center bg-faded">
                                         <thead class="thead-faded">
                                         <tr>
                                             <th>Name</th>
-                                            <th>Amount</th>
+                                            <th>Price</th>
                                             <th>Quantity</th>
                                             <th style="text-align: center">Desc</th>
                                             <th><button class="btn btn-block" (click)=removeAllItemsFromCart(cart.cartId)>Remove All</button></th>
@@ -33,9 +33,12 @@
                                         </tr>
                                         </tbody>
                                     </table>                         
-                                  </li>
-                                </ul>
+                                  <!--</li>
+                                </ul> -->
                             </div>
+                            <div *ngIf="globalData.cartProductCount==0">
+                            <h5> Your cart is empty</h5>
+                           </div>
                  </div>
    
 </div>

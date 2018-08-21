@@ -16,7 +16,7 @@ import { ProductService } from './product.service';
 })
 
 export class AppComponent implements OnInit{
-    
+  validateDetails:boolean = false;   
   isValidationFailure:boolean = false; 
   resultLogin:any;
   userJson = {"name": "", "password": "" };
@@ -39,12 +39,13 @@ export class AppComponent implements OnInit{
       status=this.resultLogin.status;
       var cartJson=this.resultLogin.cart;
       console.log(cartJson);
-      this.cartService.getCartDetails(cartJson)
+      //this.cartService.getCartDetails(cartJson);
       console.log("status is:"+this.resultLogin.status+"message is :"+this.resultLogin.message);
       if (status=="true") {
         this.globalData.loginEnableFlag = true;
         this.globalData.userName = this.userJson.name;
         console.log("*********************GLOBAL DATA data = " + this.globalData.data);
+        this.cartService.getCartDetails(cartJson);
         this.globalData.cartProductCount = this.resultLogin.cart.cartProductCount;
         console.log("*********************GLOBAL DATA cartProductCount = " + this.globalData.cartProductCount);
         // this.globalData.cartProductIds = [1,2,3,4];
@@ -57,7 +58,9 @@ export class AppComponent implements OnInit{
         // this.router.navigate(['home']);
         this.getProducts();
       } else { 
+        this.globalData.loginEnableFlag = false;
         this.isValidationFailure=true;
+        this.validateDetails=true;
       }
     });
     console.log("this is after myApiCallLogin()");
@@ -100,7 +103,15 @@ export class AppComponent implements OnInit{
       }
     });
   }
-
+  getUrl()
+  {
+    return "url('assets/background-image.jpg')";
+  }
+  loginerr(){
+     console.log("loginerr() method begin Validate details value =="+this.validateDetails);
+     this.validateDetails=false;
+     console.log("loginerr() method end Validate details value =="+this.validateDetails);
+  }
   ngOnInit() {
     this.globalData.data = "ABC";
     console.log("Printing global data=="+ this.globalData.data);

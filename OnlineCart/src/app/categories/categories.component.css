@@ -2,6 +2,7 @@
 .selected {
     background-color: #CFD8DC !important;
     color: white;
+    margin-left: 4px;
   }
   .categories1{
     margin: 0 0 2em 0;
@@ -12,12 +13,13 @@
   .categories1 li {
     cursor: pointer;
     position: relative;
-    left: 0;
+    left: 0px;
     background-color: #EEE;
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
-    border-radius: 4px;
+    border-radius: 2px;
+    text-align:left;
   }
   .categories1 li.selected:hover {
     background-color: #BBD8DC !important;
@@ -46,6 +48,9 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
+  .panel-primary>.panel-heading{
+    background-color:rgb(45, 43, 122);
+    }
 
 
 

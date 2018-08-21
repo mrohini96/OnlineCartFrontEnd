@@ -20,6 +20,7 @@ import { GlobalData } from '../globaldata';
 
 export class HomepageheaderComponent implements OnInit {
   // public productsJsonArray = PRODUCTS;
+ 
   productsArray: Product;
   storeItems: Product[] = [];
   public cartJSON: any;
@@ -122,6 +123,7 @@ export class HomepageheaderComponent implements OnInit {
     console.log("this is addProductToCart() in Homepageheader " + productId);   
 
     console.log("this is after addProductToCart()") ;
+   
 
   }
 

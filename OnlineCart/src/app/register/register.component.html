@@ -1,7 +1,7 @@
 
-<div class='row con' style="margin-left:20px;margin-top:10px">
+<span class='row con' style="margin-left:20px;margin-top:10px">
     <div class='col-xs-10' *ngIf="!register && !isExistingUser">
-      <h4 style="margin-left:40px;color: blue;margin-bottom: 10px">Registration Form</h4>
+      <h4 style="margin-left:40px;color: black;margin-bottom: 10px">Registration Form</h4>
       <form [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && submitRegistration(registrationForm.value)" novalidate>
         
         <ul>
@@ -36,7 +36,7 @@
           <input type="password" class="form-control" placeholder="Password" minlength='6' formControlName="password" [(ngModel)]="userregister.password">
           <div class='form-text error' *ngIf="registrationForm.controls.password.touched">
             <div *ngIf="registrationForm.controls.password.hasError('required')">Password is required.</div>
-       <!--     <div *ngIf="registrationForm.controls.password.hasError('minlength')">Password isn't long enough.</div> -->
+            <div *ngIf="registrationForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
           </div>
         </fieldset>
     
@@ -50,16 +50,29 @@
     
         
         
-        <button class='btn btn-primary' type='submit' (click)="onSubmit()">Submit</button>
+        <button class='btn btn-primary' type='submit' [disabled]='!registrationForm.valid' (click)="onSubmit()">Submit</button>
       </ul>
      
       </form>
-      
-     <!-- <pre>{{registrationForm.value | json}}</pre> -->
     </div>
-      
+    <div style="margin-left:60px" *ngIf="register">
+      <h2 style="color: #62f562f8">Registration Successful! </h2><br>
+      <span style="color: #048304">welcome {{userregister.firstname}}</span>
+      <a routerLink="/login" style="color: #1be41b">Please login to continue</a>
+      <h5 style="color: #1be41b">Thank you!</h5>
+      <br>
+    </div>
+
+    <div style="margin-left:60px" *ngIf="isExistingUser">
+     <h3 style="color: #f31f1f">Registration Unsuccessful! </h3><br>
+     <h4 style="color: #f31f1f">User already exists.</h4> 
+     <a routerLink="/login" style="color: #1be41b">Please login to continue</a>
+     <h5 style="color: #1be41b">Thank you!</h5>
+    </div>
+  </span>
+     <!-- <pre>{{registrationForm.value | json}}</pre> 
       <div style="margin-left:60px" *ngIf="register">
-        <h2>Registration Successful! </h2><br>
+       <h2>Registration Successful! </h2><br>
         welcome {{userregister.firstname}}
        <h4>Please login to continue.<br>
         Thank you!</h4> 
@@ -71,8 +84,8 @@
        <h4>User already exists.</h4> 
        <a routerLink="/login" style="color: #1f82f3">Please login to continue</a>
        <h5>Thank you!</h5>
-      </div>
-    </div>
+      </div> -->
+    
   
   
   
