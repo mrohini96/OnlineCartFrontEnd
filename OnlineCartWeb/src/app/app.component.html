@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Cart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    /* Remove the jumbotron's default bottom margin  */
+     .jumbotron {
+      margin-bottom: 0;
+      
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="jumbotron" >
+  <div class="container text-center">
+    <h1>Online Store</h1>      
+    <p>Buy Now Just with One Click</p>
+  </div>
+</div>
+
+<nav class="navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     
+      <img src = "assets/logo.png" alt="icon" height="25px"/>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/home" (click)="onHome()">Home</a></li>
+        <li><a routerLink="/categories">Categories</a></li>
+      </ul> 
+      <ul *ngIf="!globalData.loginEnableFlag" class="nav navbar-nav navbar-right">
+        <li><input type="text" class="form-control" style="margin-right:8px" name="userName" placeholder="User" [(ngModel)]="userJson.name"></li>
+        <li><input type="password" class="form-control" name="userPassword" placeholder="Password" [(ngModel)]="userJson.password"></li>
+        <li><a routerLink="" (click)="onLogin()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
+      </ul>  
+      <ul *ngIf="globalData.loginEnableFlag" class="nav navbar-nav navbar-right">
+        <li><div style="color: rgb(165, 224, 106);margin-top: 12px ;margin-right: 2px" >Welcome {{globalData.userName}}!</div></li> 
+        <li><a routerLink="/account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+        <li><a routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a><span class="badge badge-notify">{{globalData.cartProductCount}}</span></li>
+        <!--<li><a routerLink="/wishlist"><span class="glyphicon glyphicon-bookmark"></span> WishList</a></li>-->
+        <li><a routerLink="" (click)="onLogout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

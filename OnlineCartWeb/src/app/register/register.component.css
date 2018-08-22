@@ -1,0 +1,14 @@
+.error {
+    color: #FF4500;
+    font-size: small;
+  }
+
+ .con{
+     background-color: white;
+     border-radius: 8pt;
+ }
+
+ .form-control{
+    width: 25%;
+    height: 34px;
+ }
