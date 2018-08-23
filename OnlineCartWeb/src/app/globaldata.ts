@@ -20,4 +20,6 @@ export class GlobalData{
     // Custom Global Objects for sharing and updating based on state 
     productsJsonArray: Product[] = PRODUCTS;
 
+    buyEnableFlag: boolean = false;
+
 }

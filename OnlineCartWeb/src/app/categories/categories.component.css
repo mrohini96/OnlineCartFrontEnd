@@ -1,7 +1,7 @@
 /* ProductsComponent's private CSS styles */
 .selected {
   background-color: #CFD8DC !important;
-  color: white;
+  color: rgb(2, 0, 0);
   margin-left: 4px;
 }
 .categories1{

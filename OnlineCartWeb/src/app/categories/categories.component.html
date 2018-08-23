@@ -26,135 +26,220 @@
 <div class="container" [ngSwitch]="true">    
  <div *ngSwitchCase="switchPage === 'page1'" >
   <div *ngIf="selectedcategory=='Electronics'" >
-    <div class="col-sm-2" *ngFor="let product of productsJsonArray"> 
+    <div class="col-sm-2" *ngFor="let product of productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
         <div *ngIf="product.categoryName =='Electronics'">
            <div class="panel panel-primary">
              <div class="panel-heading">{{product.productName}}</div>
              <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
              <div class="panel-footer">
-                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                   <a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                       <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                   </a> 
-                   <div *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                   <br>
-                   <a (click)="productPage()" >
-                      see more
-                  </a>
+                    <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                    <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                        <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:50px; font-size:18px"></span>
+                    </a> </span>
+                    <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
+                    <br>
            </div>     
           </div>
          </div>
          </div>
+
+         <br><br><br>
+      <div *ngIf="productsArray">
+              <h2><i>{{productsArray.productName}}</i></h2><br>
+              <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+              <label><i>Product Description::</i>
+                  <span>{{productsArray.productDesc}}</span>
+              </label><br>
+              
+              <label> <i>Price::</i>
+              <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+              </label><br>
+              
+              <label> <i>Available Qauntity::</i>
+                  <span>{{productsArray.availableQuantity}}</span>
+              </label><br>
+      </div>
+              <br><br>
         </div>
   
         <div *ngIf="selectedcategory=='Fashion'">
-            <div class="col-sm-2" *ngFor="let product of productsJsonArray"> 
+            <div class="col-sm-2" *ngFor="let product of productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
                 <div *ngIf="product.categoryName =='Fashion'">
                    <div class="panel panel-primary">
                      <div class="panel-heading">{{product.productName}}</div>
                      <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                      <div class="panel-footer">
-                         <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                         <a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                            <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                         </a> 
-                         <div *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>           
-                         <br>
-                         <a (click)="productPage()" >
-                              see more
-                         </a>
-                   </div>     
+                        <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                        <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                            <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:50px; font-size:18px"></span>
+                        </a> </span>
+                        <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
+                        <br>
+               </div>     
                   </div>
                  </div>
                  </div>
+                 <br><br><br>
+                 <div *ngIf="productsArray">
+                         <h2><i>{{productsArray.productName}}</i></h2><br>
+                         <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+                         <label><i>Product Description::</i>
+                             <span>{{productsArray.productDesc}}</span>
+                         </label><br>
+                         
+                         <label> <i>Price::</i>
+                         <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+                         </label><br>
+                         
+                         <label> <i>Available Qauntity::</i>
+                             <span>{{productsArray.availableQuantity}}</span>
+                         </label><br>
+                 </div>
+                         <br><br>
            </div> 
                      
            <div *ngIf="selectedcategory=='Furniture'">
-              <div class="col-sm-2" *ngFor="let product of productsJsonArray"> 
+              <div class="col-sm-2" *ngFor="let product of productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
                   <div *ngIf="product.categoryName =='Furniture'">
                      <div class="panel panel-primary">
                        <div class="panel-heading">{{product.productName}}</div>
                        <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                        <div class="panel-footer">
-                           <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                           <a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                                <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                           </a> 
-                           <div *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                           <br>
-                           <a (click)="productPage()" >
-                                see more
-                           </a>
-                     </div>     
+                        <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                        <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                            <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:50px; font-size:18px"></span>
+                        </a> </span>
+                        <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
+                        <br>
+               </div>   
                     </div>
                    </div>
                    </div>
+                   <br><br><br>
+                   <div *ngIf="productsArray">
+                           <h2><i>{{productsArray.productName}}</i></h2><br>
+                           <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+                           <label><i>Product Description::</i>
+                               <span>{{productsArray.productDesc}}</span>
+                           </label><br>
+                           
+                           <label> <i>Price::</i>
+                           <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+                           </label><br>
+                           
+                           <label> <i>Available Qauntity::</i>
+                               <span>{{productsArray.availableQuantity}}</span>
+                           </label><br>
+                   </div>
+                           <br><br>
              </div>  
              
              <div *ngIf="selectedcategory== 'Grocery'">
-                <div class="col-sm-2" *ngFor="let product of productsJsonArray"> 
+                <div class="col-sm-2" *ngFor="let product of productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
                     <div *ngIf="product.categoryName =='Grocery'">
                        <div class="panel panel-primary">
                          <div class="panel-heading">{{product.productName}}</div>
                          <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                          <div class="panel-footer">
-                             <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                             <a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                                </a> 
-                                <div *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                                <br>                                            
-                                <a (click)="productPage()" >
-                                  see more
-                                </a>
-                       </div>     
+                            <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                            <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                                <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:50px; font-size:18px"></span>
+                            </a> </span>
+                            <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
+                            <br>
+                   </div>     
                       </div>
                      </div>
                      </div>
+                     <br><br><br>
+                     <div *ngIf="productsArray">
+                             <h2><i>{{productsArray.productName}}</i></h2><br>
+                             <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+                             <label><i>Product Description::</i>
+                                 <span>{{productsArray.productDesc}}</span>
+                             </label><br>
+                             
+                             <label> <i>Price::</i>
+                             <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+                             </label><br>
+                             
+                             <label> <i>Available Qauntity::</i>
+                                 <span>{{productsArray.availableQuantity}}</span>
+                             </label><br>
+                     </div>
+                             <br><br>
                </div>    
 
                <div *ngIf="selectedcategory=='HomeAppliances'">
-                  <div class="col-sm-2" *ngFor="let product of productsJsonArray"> 
+                  <div class="col-sm-2" *ngFor="let product of productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
                       <div *ngIf="product.categoryName =='HomeAppliances'">
                          <div class="panel panel-primary">
                            <div class="panel-heading">{{product.productName}}</div>
                            <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                            <div class="panel-footer">
-                               <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                               <a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                                    <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                                </a> 
-                                <div *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                                <br>
-                                <a (click)="productPage()" >
-                                    see more
-                                </a>
-                         </div>     
+                            <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                            <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                                <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:50px; font-size:18px"></span>
+                            </a> </span>
+                            <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
+                            <br>
+                          </div>     
                         </div>
                        </div>
                        </div>
+                       <br><br><br>
+                       <div *ngIf="productsArray">
+                               <h2><i>{{productsArray.productName}}</i></h2><br>
+                               <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+                               <label><i>Product Description::</i>
+                                   <span>{{productsArray.productDesc}}</span>
+                               </label><br>
+                               
+                               <label> <i>Price::</i>
+                               <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+                               </label><br>
+                               
+                               <label> <i>Available Qauntity::</i>
+                                   <span>{{productsArray.availableQuantity}}</span>
+                               </label><br>
+                       </div>
+                               <br><br>
                  </div>    
 
                  <div *ngIf="selectedcategory=='GoGreen'">
-                    <div class="col-sm-2" *ngFor="let product of productsJsonArray"> 
+                    <div class="col-sm-2" *ngFor="let product of productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
                         <div *ngIf="product.categoryName =='GoGreen'">
                            <div class="panel panel-primary">
                              <div class="panel-heading">{{product.productName}}</div>
                              <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
                              <div class="panel-footer">
-                                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                                 <a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                                        <div class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                                 </a> 
-                                 <div *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></div>
-                                 <br>
-                                 <a (click)="productPage()" >
-                                    see more
-                                 </a>
-                           </div>     
+                                <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                                <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                                    <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:50px; font-size:18px"></span>
+                                </a> </span>
+                                <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
+                                <br>
+                       </div>    
                           </div>
                          </div>
-                         </div>     
+                         </div> 
+                         <br><br><br>
+                         <div *ngIf="productsArray">
+                                 <h2><i>{{productsArray.productName}}</i></h2><br>
+                                 <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+                                 <label><i>Product Description::</i>
+                                     <span>{{productsArray.productDesc}}</span>
+                                 </label><br>
+                                 
+                                 <label> <i>Price::</i>
+                                 <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+                                 </label><br>
+                                 
+                                 <label> <i>Available Qauntity::</i>
+                                     <span>{{productsArray.availableQuantity}}</span>
+                                 </label><br>
+                         </div>
+                                 <br><br>    
                   </div>
 
 </div>

@@ -31,7 +31,7 @@ export class CategoriesComponent implements OnInit {
   cartProductsJsonArray: CartProducts[] = CARTPRODUCTS;
   cartProductIds: number[] = [];
   resultAddProductToCart: any;
-
+  productsArray: Product;
   constructor(private http:Http, private categoryService:CategoryService, private productService:ProductService, private cartService:CartService, private globalData:GlobalData) { }
 
   getProducts(): void {
@@ -136,10 +136,13 @@ export class CategoriesComponent implements OnInit {
   imagepage2(){
     this.switchPage= "page6";
   }
-
-  productPage(){
-    this.switchPage= "page7";
+  productPage(productsArrayObj :Product){
+    this.productsArray=productsArrayObj;
+    console.log("this is product title "+this.productsArray.productName);
   }
+  //productPage(){
+  //  this.switchPage= "page7";
+  //}
 
   onSelectCategory(category:Categories): void {
     this.selectedcategory = category;
