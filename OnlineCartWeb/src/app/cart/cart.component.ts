@@ -8,6 +8,7 @@ import { CARTPRODUCTS } from '../mockcartproducts';
 import { PRODUCTS } from '../mockproduct';
 import { Product } from '../product';
 import { GlobalData } from '../globaldata';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,7 @@ import { GlobalData } from '../globaldata';
 
 export class CartComponent implements OnInit {
 
-  constructor(private cartService:CartService, private globalData: GlobalData) {}
+  constructor(private cartService:CartService, private globalData: GlobalData, private orderService:OrderService) {}
 
   public cartJSON: any;
   cart: Cart = CART;
@@ -29,6 +30,10 @@ export class CartComponent implements OnInit {
   resultBuyAllItem: any;
   orderCreationFlag: boolean = false;
   currentOrderTrackingNumber: any;
+  ordersJson:any=[];
+  orderJson={"userId":0, "orderId":0, "orderAmount":0, "orderShipAddress":"", "orderCity":"", "orderState":"", "orderCountry":"", "orderZip":"", "orderEmail":"", "orderPhone":"", "orderDate":"", "orderTrackingNumber":"", "orderDetails":[]}
+  ordersJsonArray:any=[];
+  result:any;
  
   ngOnInit(): void {
     this.orderCreationFlag = false;
@@ -150,6 +155,7 @@ export class CartComponent implements OnInit {
     let productQuantity = cartProduct.productQuantity;
     this.buyOneItemFromCart(userId, cartId, productId, productQuantity);
   }
+
   buyOneItemFromCart(userId: number, cartId: number, productId: number, productQuantity:number): void {
     console.log("this is before  buyOneItemFromCart()");
     this.cartService.myApiCallBuyItem(userId, cartId, productId, productQuantity).subscribe(res=>{
@@ -159,7 +165,11 @@ export class CartComponent implements OnInit {
       console.log("Inside subscribe status is = " + this.resultBuyItem.status);
       if (this.resultBuyItem.status=="true") {
         this.globalData.cartProductCount -= 1;
-        this.currentOrderTrackingNumber = this.resultBuyItem.order.orderTrackingNumber;
+
+        //this.currentOrderTrackingNumber=this.myOrders();
+        //console.log("tracking number"+this.currentOrderTrackingNumber)
+
+        //this.currentOrderTrackingNumber = this.resultBuyItem.order.orderTrackingNumber;
         this.orderCreationFlag = true;
         console.log("Inside subscribe True status is = " + this.resultBuyItem.status);
         // Reset cart
@@ -167,17 +177,21 @@ export class CartComponent implements OnInit {
         let count: number = 0;
         for (var i in this.globalData.cartProductIds) {
           if (this.globalData.cartProductIds[i]==productId) {
-            this.globalData.cartProductIds.splice(count,1);           
+            this.globalData.cartProductIds.splice(count,1); 
             break;
           }
           count++
         }
+
+        
+
         console.log("this.globalData.cartProductIds after delete = " + this.globalData.cartProductIds);
       } else{
         console.log("Inside subscribe False status is ="+this.resultBuyItem.status);
       }
     });
     console.log("this is after buyOneItemFromCart()");
+    
   }
 
   // CART Page - Buy All button click will craete and order for all cart items and remove all the products from cart
@@ -193,7 +207,7 @@ export class CartComponent implements OnInit {
       if (this.resultBuyAllItem.status=="true") {
         this.globalData.cartProductIds = [];
         this.globalData.cartProductCount = 0;
-        this.currentOrderTrackingNumber = this.resultBuyAllItem.order.orderTrackingNumber;
+        //this.currentOrderTrackingNumber = this.resultBuyAllItem.order.orderTrackingNumber;
         this.orderCreationFlag = true;
         console.log("Inside subscribe True status is = " + this.resultBuyAllItem.status);
         // Reset cart
@@ -205,4 +219,22 @@ export class CartComponent implements OnInit {
    console.log("this is after buyAllItemsFromCart()");
   }
 
+  
+  /*myOrders():any{
+    this.orderService.myApiCallMyOrders().subscribe(res=>{
+      console.log(JSON.stringify(res) +"test")
+      this.result = res;
+      status=this.result.status;
+      if (status=="true") {
+        this.ordersJson = this.result.orders;
+        for(var i in this.ordersJson) {
+          this.orderJson.orderTrackingNumber = this.ordersJson[i].orderTrackingNumber;
+          console.log("Tracking number========="+this.orderJson.orderTrackingNumber );
+        }
+      } else {
+      }
+    })
+    return this.orderJson.orderTrackingNumber;
+  }
+*/
 }

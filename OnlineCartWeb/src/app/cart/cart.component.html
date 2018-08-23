@@ -39,13 +39,16 @@
    
 </div>
 <br>
-<div *ngIf="globalData.cartProductCount==0" class="container" style="margin-left:100px; width:1800px; color:red">
+<div *ngIf="globalData.cartProductCount==0" class="container" style="margin-left:100px; width:1800px; color:rgb(0, 0, 0)">
 Cart is empty. Please add items to cart from product page to create an order
 </div>
 <br>
-<div *ngIf="orderCreationFlag" class="container" style="margin-left:100px; width:1800px; color:blue">
+<!--<div *ngIf="orderCreationFlag" class="container" style="margin-left:100px; width:1800px; color:blue">
 Order created successfully. Order Tracking Number is <b>{{currentOrderTrackingNumber}}.</b>
+</div> -->
+<div *ngIf="orderCreationFlag" class="container" style="margin-left:100px; width:1800px; color:blue">
+Order created successfully.
+<a routerLink="/account">Check your account for order history.</a>
 </div>
-
 
 

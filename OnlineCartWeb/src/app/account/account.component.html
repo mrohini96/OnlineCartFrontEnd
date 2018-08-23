@@ -72,14 +72,15 @@
 							<td style="align-content: left; width:70%">
 								<table>
 									<tr style="color: blue">
+										<th style="align-content: center; width:30px">Quantity</th>
 										<th style="align-content: center; width:60px">Name</th>
 										<th style="align-content: center; width:100px">Description</th>
-										<th style="align-content: center; width:30px">Quantity</th>	
+										
 									</tr>
 									<tr *ngFor="let orderDetailItem of item.orderDetails" style="color: blue">
+										<td style="align-content: center">{{orderDetailItem.productQuantity}}</td>
 										<td style="align-content: center">{{orderDetailItem.productName}}</td>
-										<td style="align-content: center">{{orderDetailItem.productDesc}}</td>
-										<td style="align-content: center">{{orderDetailItem.productQuantity}}</td>	
+									    <td style="align-content: center">{{orderDetailItem.productDesc}}</td>		
 									</tr>
 								</table> 
 							</td>
