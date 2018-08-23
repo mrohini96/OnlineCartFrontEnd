@@ -54,3 +54,6 @@ nav a.active {
   width:150px;
   height:25px;
 }
+.navbar-inverse {
+  background-color: black
+}

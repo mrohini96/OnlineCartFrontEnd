@@ -17,7 +17,7 @@ import { ProductService } from './product.service';
 })
 
 export class AppComponent implements OnInit{
-    
+  validateDetails:boolean = false;   
   isValidationFailure:boolean = false; 
   resultLogin:any;
   userJson = {"name": "", "password": "" };
@@ -39,12 +39,13 @@ export class AppComponent implements OnInit{
       this.resultLogin = res;
       console.log("Result status is"+this.resultLogin.status);
       status=this.resultLogin.status;
+      var cartJson=this.resultLogin.cart;
       //var cartJson=this.resultLogin.cart;
       //console.log(cartJson);
       // this.cartService.getCartDetails(cartJson);
       console.log("status is:"+this.resultLogin.status+"message is :"+this.resultLogin.message);
       if (status=="true") {
-        var cartJson=this.resultLogin.cart;
+        
         console.log(cartJson);
         this.cartService.getCartDetails(cartJson);
         this.globalData.loginEnableFlag = true;
@@ -62,6 +63,8 @@ export class AppComponent implements OnInit{
         // this.router.navigate(['home']);
         this.getProducts();
       } else { 
+        this.globalData.loginEnableFlag = false;
+        this.validateDetails=true;
         this.isValidationFailure=true;
       }
     });
@@ -109,7 +112,15 @@ export class AppComponent implements OnInit{
   onHome(): void {
     // this.getProducts();
   }
-
+  getUrl()
+  {
+    return "url('assets/background-image.jpg')";
+  }
+  loginerr(){
+     console.log("loginerr() method begin Validate details value =="+this.validateDetails);
+     this.validateDetails=false;
+     console.log("loginerr() method end Validate details value =="+this.validateDetails);
+  }
   ngOnInit() {
     this.globalData.data = "ABC";
     console.log("Printing global data=="+ this.globalData.data);
