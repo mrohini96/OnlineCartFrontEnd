@@ -56,18 +56,18 @@
     </form>
   </div>
   <div style="margin-left:60px" *ngIf="register">
-    <h2 style="color: #62f562f8">Registration Successful! </h2><br>
-    <span style="color: #048304">welcome {{userregister.firstname}}</span>
-    <a routerLink="/login" style="color: #1be41b">Please login to continue</a>
-    <h5 style="color: #1be41b">Thank you!</h5>
+    <h2 style="color: #0f640ff8">Registration Successful! </h2><br>
+    <span style="color:#0f640ff8">welcome {{userregister.firstname}}</span>
+    <a routerLink="/home" style="color: #0f640ff8">Please login to continue</a>
+    <h5 style="color: #0f640ff8">Thank you!</h5>
     <br>
   </div>
 
   <div style="margin-left:60px" *ngIf="isExistingUser">
    <h3 style="color: #f31f1f">Registration Unsuccessful! </h3><br>
    <h4 style="color: #f31f1f">User already exists.</h4> 
-   <a routerLink="/login" style="color: #1be41b">Please login to continue</a>
-   <h5 style="color: #1be41b">Thank you!</h5>
+   <a routerLink="/home" style="color:#0f640ff8">Please login to continue</a>
+   <h5 style="color:#0f640ff8">Thank you!</h5>
   </div>
 </span>
    <!-- <pre>{{registrationForm.value | json}}</pre> 

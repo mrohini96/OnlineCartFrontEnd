@@ -60,8 +60,9 @@ export class RegisterComponent implements OnInit {
         this.isExistingUser=true;
         console.log("Inside subscribe False register status is ="+this.register);
       }
+    //  console.log("Outside subscribe status is ="+this.resultRegister.status);
     });
-    console.log("Outside subscribe status is ="+this.resultRegister.status);
+  
   }
 
   ngOnInit() {
