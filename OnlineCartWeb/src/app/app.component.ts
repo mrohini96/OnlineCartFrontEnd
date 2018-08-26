@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
   productsArray: Product;
   resultProduct: any;
 
-  constructor(private router:Router,private userService:UserService,private cartService:CartService,private productService:ProductService,private globalData:GlobalData) {
+  constructor(private router:Router,private userService:UserService,private cartService:CartService,private productService:ProductService,public globalData:GlobalData) {
   }
   
   title = 'Online Shopping Cart';

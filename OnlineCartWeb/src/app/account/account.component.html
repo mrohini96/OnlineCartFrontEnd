@@ -57,7 +57,10 @@
 			</div >
 			<div *ngIf="accountSetFlag=='orders'">
 				<h4 style="margin-bottom: 40px;margin-top: 40px"><b>My Orders</b></h4>
-				<table class="table table-hover text-center bg-faded">
+				<div *ngIf="!globalData.buyEnableFlag">
+                    You have no orders!
+				</div>
+				<table *ngIf="globalData.buyEnableFlag" class="table table-hover text-center bg-faded">
 						<thead class="thead-faded">
 						<tr style="color: blue">
 							<th style="align-content: left; width:100px">Order Tracking No#</th>

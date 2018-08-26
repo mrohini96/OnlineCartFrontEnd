@@ -9,6 +9,7 @@ import { PRODUCTS } from '../mockproduct';
 import { Product } from '../product';
 import { GlobalData } from '../globaldata';
 import { OrderService } from '../order.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +19,7 @@ import { OrderService } from '../order.service';
 
 export class CartComponent implements OnInit {
 
-  constructor(private cartService:CartService, private globalData: GlobalData, private orderService:OrderService) {}
+  constructor(private cartService:CartService,private router:Router, public globalData: GlobalData, private orderService:OrderService) {}
 
   public cartJSON: any;
   cart: Cart = CART;
@@ -237,4 +238,8 @@ export class CartComponent implements OnInit {
     return this.orderJson.orderTrackingNumber;
   }
 */
+updateAddress(){
+  alert("Please provide address to make an order");
+  this.router.navigate(['account']);
+}
 }

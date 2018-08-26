@@ -44,7 +44,7 @@
          </div>
 
          <br><br><br>
-      <div *ngIf="productsArray">
+      <div  *ngIf="productsArray">
               <h2><i>{{productsArray.productName}}</i></h2><br>
               <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
               <label><i>Product Description::</i>
@@ -189,8 +189,8 @@
                        </div>
                        <br><br><br>
                        <div *ngIf="productsArray">
-                               <h2><i>{{productsArray.productName}}</i></h2><br>
-                               <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+                        <span><h2><i>{{productsArray.productName}}</i></h2><br></span>
+                               <span><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></span>
                                <label><i>Product Description::</i>
                                    <span>{{productsArray.productDesc}}</span>
                                </label><br>

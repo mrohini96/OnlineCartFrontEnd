@@ -31,7 +31,7 @@ export class AccountComponent implements OnInit {
   orderDetailJsonArray: OrderDetail[]=ORDERDETAILS;
   myOrderDetailJsonArray: any=[];
 
-  constructor(private globalData:GlobalData, private userService:UserService, private orderService:OrderService) { }
+  constructor(public globalData:GlobalData, private userService:UserService, private orderService:OrderService) { }
   
   updateAccount(): void{
     console.log("City Name is="+this.userJson.userCity);
@@ -44,6 +44,7 @@ export class AccountComponent implements OnInit {
       console.log("status is:"+this.result.status+"message is :"+this.result.message);
       if (status=="true") {
         this.validate=true;
+        this.globalData.buyEnableFlag=true;
       } else{
         this.validateDetails=false;
       }

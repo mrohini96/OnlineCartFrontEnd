@@ -32,7 +32,7 @@ export class CategoriesComponent implements OnInit {
   cartProductIds: number[] = [];
   resultAddProductToCart: any;
   productsArray: Product;
-  constructor(private http:Http, private categoryService:CategoryService, private productService:ProductService, private cartService:CartService, private globalData:GlobalData) { }
+  constructor(private http:Http, private categoryService:CategoryService, private productService:ProductService, private cartService:CartService, public globalData:GlobalData) { }
 
   getProducts(): void {
     console.log("This is getProducts()");
