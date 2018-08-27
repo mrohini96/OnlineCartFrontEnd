@@ -101,6 +101,7 @@ export class AccountComponent implements OnInit {
           this.orderJson.orderEmail = this.ordersJson[i].orderEmail;
           this.orderJson.orderPhone = this.ordersJson[i].orderPhone;
           this.orderJson.orderTrackingNumber = this.ordersJson[i].orderTrackingNumber;
+          this.orderJson.orderDate=this.ordersJson[i].orderDate;
           this.orderDetailJsonArray = this.ordersJson[i].orderDetails;
           for (var j in this.orderDetailJsonArray) {
             this.orderDetailJson.orderId = this.orderDetailJsonArray[j].orderId;
@@ -140,5 +141,4 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
     this.getUserDetail();
   }
-
 }

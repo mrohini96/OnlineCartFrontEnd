@@ -63,15 +63,17 @@
 				<table *ngIf="globalData.buyEnableFlag" class="table table-hover text-center bg-faded">
 						<thead class="thead-faded">
 						<tr style="color: blue">
-							<th style="align-content: left; width:100px">Order Tracking No#</th>
-							<th style="align-content: left; width:75px">Order Amount</th>
+							<th style="align-content: left; width:200px">Order Tracking No#</th>
+							<th style="align-content: left; width:100px">Order Date</th>
+							<th style="align-content: left; width:200px">Order Amount</th>
 							<th style="align-content: left; width:600px">Order Detail</th>			
 						</tr>
 						</thead>
 						<tbody>
 						<tr *ngFor="let item of ordersJsonArray" style="align-content: center">
-							<td	style="align-content: left; width:110px" scope="row">{{item.orderTrackingNumber}}</td>
-							<td	style="align-content: left; width:75px" scope="row">{{item.orderAmount}}</td>
+							<td	style="align-content: left; width:200px" scope="row">{{item.orderTrackingNumber}}</td>
+							<td	style="align-content: left; width:110px" scope="row">{{item.orderDate}}</td>
+							<td	style="align-content: left; width:200px" scope="row">{{item.orderAmount}}</td>
 							<td style="align-content: left; width:70%">
 								<table>
 									<tr style="color: blue">
