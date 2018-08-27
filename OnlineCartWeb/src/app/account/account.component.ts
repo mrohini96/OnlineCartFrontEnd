@@ -89,6 +89,7 @@ export class AccountComponent implements OnInit {
       status=this.result.status;
       console.log("status is:"+this.result.status+"message is :"+this.result.message);
       if (status=="true") {
+        this.globalData.buyEnableFlag=true;
         this.ordersJson = this.result.orders;
         for(var i in this.ordersJson) {
           this.orderJson.orderId = this.ordersJson[i].orderId;
@@ -140,5 +141,6 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.getUserDetail();
+    this.myOrders();
   }
 }
