@@ -44,22 +44,6 @@
          </div>
 
          <br><br><br>
-      <div  *ngIf="productsArray">
-              <h2><i>{{productsArray.productName}}</i></h2><br>
-              <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
-              <label><i>Product Description::</i>
-                  <span>{{productsArray.productDesc}}</span>
-              </label><br>
-              
-              <label> <i>Price::</i>
-              <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
-              </label><br>
-              
-              <label> <i>Available Qauntity::</i>
-                  <span>{{productsArray.availableQuantity}}</span>
-              </label><br>
-      </div>
-              <br><br>
         </div>
   
         <div *ngIf="selectedcategory=='Fashion'">
@@ -75,12 +59,12 @@
                         </a> </span>
                         <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:55px; font-size:18px"></span>
                         <br>
-               </div>     
+                    </div>     
                   </div>
                  </div>
                  </div>
                  <br><br><br>
-                 <div *ngIf="productsArray">
+               <!--  <div *ngIf="productsArray">
                          <h2><i>{{productsArray.productName}}</i></h2><br>
                          <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
                          <label><i>Product Description::</i>
@@ -94,7 +78,7 @@
                          <label> <i>Available Qauntity::</i>
                              <span>{{productsArray.availableQuantity}}</span>
                          </label><br>
-                 </div>
+                 </div> -->
                          <br><br>
            </div> 
                      
@@ -116,7 +100,7 @@
                    </div>
                    </div>
                    <br><br><br>
-                   <div *ngIf="productsArray">
+                   <!--<div *ngIf="productsArray">
                            <h2><i>{{productsArray.productName}}</i></h2><br>
                            <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
                            <label><i>Product Description::</i>
@@ -130,7 +114,7 @@
                            <label> <i>Available Qauntity::</i>
                                <span>{{productsArray.availableQuantity}}</span>
                            </label><br>
-                   </div>
+                   </div> -->
                            <br><br>
              </div>  
              
@@ -152,21 +136,21 @@
                      </div>
                      </div>
                      <br><br><br>
-                     <div *ngIf="productsArray">
-                             <h2><i>{{productsArray.productName}}</i></h2><br>
+                    <!-- <div *ngIf="productsArray">
+                             <h2><b>{{productsArray.productName}}</b></h2><br>
                              <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
-                             <label><i>Product Description::</i>
-                                 <span>{{productsArray.productDesc}}</span>
+                             <label><b>Product Description:  </b>
+                                 <span style="color: rgb(92, 88, 88)">{{productsArray.productDesc}}</span>
                              </label><br>
                              
-                             <label> <i>Price::</i>
-                             <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+                             <label> <b>Price:  </b>
+                             <span style="color: rgb(92, 88, 88)"><i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}</span>
                              </label><br>
                              
-                             <label> <i>Available Qauntity::</i>
-                                 <span>{{productsArray.availableQuantity}}</span>
+                             <label> <b>Available Qauntity: </b>
+                                 <span style="color: rgb(92, 88, 88)">{{productsArray.availableQuantity}}</span>
                              </label><br>
-                     </div>
+                     </div>-->
                              <br><br>
                </div>    
 
@@ -188,8 +172,8 @@
                        </div>
                        </div>
                        <br><br><br>
-                       <div *ngIf="productsArray">
-                        <span><h2><i>{{productsArray.productName}}</i></h2><br></span>
+                     <!--  <div *ngIf="productsArray">
+                        <h2><i>{{productsArray.productName}}</i></h2><br>
                                <span><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></span>
                                <label><i>Product Description::</i>
                                    <span>{{productsArray.productDesc}}</span>
@@ -202,7 +186,7 @@
                                <label> <i>Available Qauntity::</i>
                                    <span>{{productsArray.availableQuantity}}</span>
                                </label><br>
-                       </div>
+                       </div> -->
                                <br><br>
                  </div>    
 
@@ -224,7 +208,7 @@
                          </div>
                          </div> 
                          <br><br><br>
-                         <div *ngIf="productsArray">
+                     <!--    <div *ngIf="productsArray">
                                  <h2><i>{{productsArray.productName}}</i></h2><br>
                                  <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
                                  <label><i>Product Description::</i>
@@ -238,11 +222,11 @@
                                  <label> <i>Available Qauntity::</i>
                                      <span>{{productsArray.availableQuantity}}</span>
                                  </label><br>
-                         </div>
+                         </div> -->
                                  <br><br>    
                   </div>
-
 </div>
+
 <div *ngSwitchCase="switchPage === 'page7'">
     <app-productpage></app-productpage>
 </div>    
@@ -251,4 +235,19 @@
 <p>default</p>
 </div>
 
+</div>
+<div *ngIf="productsArray" style="margin-left:2%; margin-right: 200px">
+        <h2><i>{{productsArray.productName}}</i></h2><br>
+        <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+        <label><i>Product Description::</i>
+            <span>{{productsArray.productDesc}}</span>
+        </label><br>
+        
+        <label> <i>Price::</i>
+        <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+        </label><br>
+        
+        <label> <i>Available Qauntity::</i>
+            <span>{{productsArray.availableQuantity}}</span>
+        </label><br>
 </div>

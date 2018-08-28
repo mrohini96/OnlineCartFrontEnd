@@ -49,6 +49,7 @@ export class AccountComponent implements OnInit {
         this.validateDetails=false;
       }
     });
+   
   }
 
   //{"userId":1,"userEmail":"Chinmaya@gmail.com","password":"password","firstName":"Chinmaya",
@@ -73,13 +74,16 @@ export class AccountComponent implements OnInit {
         this.userJson.userZip = this.result.user.userZip;
         this.userJson.userPhone = this.result.user.userPhone;
       } else {
-        
+
       }
     });
   }
 
   accountSetting(){
     this.accountSetFlag='account';
+    this.ordersJsonArray=[];
+    this.validate=false;
+    this.getUserDetail();
   }
 
   myOrders(){
@@ -88,9 +92,9 @@ export class AccountComponent implements OnInit {
       this.result = res;
       console.log("Result status is"+this.result.status);
       status=this.result.status;
+      this.ordersJsonArray=[];
       console.log("status is:"+this.result.status+"message is :"+this.result.message);
       if (status=="true") {
-        this.globalData.buyEnableFlag=true;
         this.ordersJson = this.result.orders;
         for(var i in this.ordersJson) {
           this.orderJson.orderId = this.ordersJson[i].orderId;
@@ -120,8 +124,8 @@ export class AccountComponent implements OnInit {
           this.myOrderDetailJsonArray = [];
           this.ordersJsonArray.push(this.orderJson);
           this.cleanOrderJson(this.orderJson);
-
         }
+        console.log("Array length="+this.ordersJsonArray.length);
         this.accountSetFlag='orders';   
       } else {
       }
@@ -138,10 +142,14 @@ export class AccountComponent implements OnInit {
 
   accountHelp(){
     this.accountSetFlag='help';
+    this.ordersJsonArray=[];
+    this.validate=false;
+    this.getUserDetail();
   }
 
   ngOnInit() {
     this.getUserDetail();
-    this.myOrders();
+    this.accountSetFlag='account';
+
   }
 }

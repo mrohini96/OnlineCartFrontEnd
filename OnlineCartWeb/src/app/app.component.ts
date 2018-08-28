@@ -17,7 +17,7 @@ import { ProductService } from './product.service';
 })
 
 export class AppComponent implements OnInit{
-  validateDetails:boolean = false;   
+  InvalidateDetails:boolean = false;   
   isValidationFailure:boolean = false; 
   resultLogin:any;
   userJson = {"name": "", "password": "" };
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit{
         this.getProducts();
       } else { 
         this.globalData.loginEnableFlag = false;
-        this.validateDetails=true;
+        this.InvalidateDetails=true;
         this.isValidationFailure=true;
       }
     });
@@ -117,9 +117,10 @@ export class AppComponent implements OnInit{
     return "url('assets/background-image.jpg')";
   }
   loginerr(){
-     console.log("loginerr() method begin Validate details value =="+this.validateDetails);
-     this.validateDetails=false;
-     console.log("loginerr() method end Validate details value =="+this.validateDetails);
+     console.log("loginerr() method begin Validate details value =="+this.InvalidateDetails);
+     this.InvalidateDetails=false;
+     console.log("loginerr() method end Validate details value =="+this.InvalidateDetails);
+      
   }
   ngOnInit() {
     this.globalData.data = "ABC";

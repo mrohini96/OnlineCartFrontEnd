@@ -240,6 +240,7 @@ export class CartComponent implements OnInit {
 */
 updateAddress(){
   alert("Please provide address to make an order");
+  console.log("please set Account details");
   this.router.navigate(['account']);
 }
 }

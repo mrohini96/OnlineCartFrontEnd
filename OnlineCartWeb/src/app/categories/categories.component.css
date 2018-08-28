@@ -7,7 +7,7 @@
 .categories1{
   margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
   width: 15em;
 }
 .categories1 li {
@@ -16,9 +16,10 @@
   left: 0px;
   background-color: #EEE;
   margin: .5em;
+  margin-left: 2px;
   padding: .3em 0;
   height: 1.6em;
-  border-radius: 2px;
+  border-radius: 3px;
   text-align:left;
 }
 .categories1 li.selected:hover {

@@ -36,15 +36,15 @@
             <div *ngIf="accountSetFlag=='account'" >
 					<h4 style="margin-bottom: 40px;margin-top: 40px"><b>Update your profile</b></h4>
 					<div>
-						<form>
+						<form class="form-group">
 							<input type="text"  name="address" class="form-control" placeholder="Address" [(ngModel)]="userJson.userAddress"> <br>
 							<input type="text"  name="city" class="form-control" placeholder="City" [(ngModel)]="userJson.userCity"> <br>
 							<input type="text"  name="state" class="form-control" placeholder="State" [(ngModel)]="userJson.userState"> <br>	
 							<input  type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="userJson.userCountry"> <br>
 							<input type="text"  name="zip" class="form-control" placeholder="Zip" [(ngModel)]="userJson.userZip"> <br>							
 							<input type="text"  name="phone" class="form-control" placeholder="Phone" [(ngModel)]="userJson.userPhone"> <br>
-							<button class='btn btn-primary' style="margin-top:5px" type="submit" (click)="updateAccount()">Save details</button>
-							<button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset">Reset details</button>
+							<button class='btn btn-primary' style="margin-top:5px" type="submit" [disabled]="userJson.userAddress===''||userJson.userCity===''||userJson.userState===''|| userJson.userCountry===''|| userJson.userZip===''|| userJson.userPhone===''" (click)="updateAccount()" >Save details</button>
+							<button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset" >Reset details</button>
 						</form>
 					</div>
 					<br>
@@ -55,12 +55,10 @@
 						Update Unsuccessful <b>{{globalData.userName}}!</b>
 					</div>	  
 			</div >
-			<div *ngIf="accountSetFlag=='orders'">
+			<div *ngIf="accountSetFlag=='orders' && ordersJsonArray.length!=0">
 				<h4 style="margin-bottom: 40px;margin-top: 40px"><b>My Orders</b></h4>
-				<div *ngIf="!globalData.buyEnableFlag">
-                    You have no orders!
-				</div>
-				<table *ngIf="globalData.buyEnableFlag" class="table table-hover text-center bg-faded">
+			
+				<table class="table table-hover text-center bg-faded">
 						<thead class="thead-faded">
 						<tr style="color: blue">
 							<th style="align-content: left; width:200px">Order Tracking No#</th>
@@ -93,6 +91,10 @@
 							</td>
 						</tr>
 					</table>
+			</div>
+			<div *ngIf="accountSetFlag=='orders' && ordersJsonArray.length==0"  style="margin-top: 8px">
+				<h4 style="margin-bottom: 40px;margin-top: 40px"><b>My Orders</b></h4>
+				You have no orders!
 			</div>
 
 			<div *ngIf="accountSetFlag=='help'">

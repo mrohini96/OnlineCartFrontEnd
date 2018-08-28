@@ -47,11 +47,20 @@
         <li><a routerLink="/categories">Categories</a></li>
       </ul> 
       <ul *ngIf="!globalData.loginEnableFlag" class="nav navbar-nav navbar-right">
-        <li><input type="text" class="form-control" style="margin-right:8px" name="userName" placeholder="User" [(ngModel)]="userJson.name" autofocus></li>
+          <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
+      </ul>
+      <ul *ngIf="!globalData.loginEnableFlag && !InvalidateDetails" class="nav navbar-nav navbar-right">
+        <li><input type="text" class="form-control" style="margin-right:8px" name="userName" placeholder="User" [(ngModel)]="userJson.name" [autofocus]="true"></li>
         <li><input type="password" class="form-control" name="userPassword" placeholder="Password" [(ngModel)]="userJson.password"></li>
         <li><a routerLink="" (click)="onLogin()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
       </ul>  
+      <ul *ngIf="InvalidateDetails"  style="margin-right: 8px" class="nav navbar-nav navbar-right">  
+          <li ><div style="color: #d81717">
+              Invalid Username/Password!
+              <a (click)="loginerr()" style="color: white;cursor: pointer">Click here to try again</a>
+      </div></li> 
+      </ul> 
+     
       <ul *ngIf="globalData.loginEnableFlag" class="nav navbar-nav navbar-right">
         <li><div style="color: rgb(165, 224, 106);margin-top: 12px ;margin-right: 2px" >Welcome {{globalData.userName}}!</div></li> 
         <li><a routerLink="/account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
@@ -59,10 +68,7 @@
         <!--<li><a routerLink="/wishlist"><span class="glyphicon glyphicon-bookmark"></span> WishList</a></li>-->
         <li><a routerLink="" (click)="onLogout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
       </ul>
-      <span *ngIf="validateDetails">   
-        <span style="color: #d81717; margin-left: 20px">Invalid Username/Password!
-        <a (click)="loginerr()" style="color: white;margin-left: 1px; cursor: pointer">Click here to try again</a></span>
-        </span>
+      
     </div>
   </div>
 </nav>
