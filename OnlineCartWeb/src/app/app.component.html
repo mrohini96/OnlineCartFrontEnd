@@ -59,10 +59,10 @@
         <!--<li><a routerLink="/wishlist"><span class="glyphicon glyphicon-bookmark"></span> WishList</a></li>-->
         <li><a routerLink="" (click)="onLogout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
       </ul>
-      <div *ngIf="validateDetails">   
-        <span style="color: #d81717; margin-left: 4px">Invalid Username/Password!</span>
-        <a (click)="loginerr()" style="color: white;margin-left: 2px; cursor: pointer">Click here to try again</a>
-      </div>
+      <span *ngIf="validateDetails">   
+        <span style="color: #d81717; margin-left: 20px">Invalid Username/Password!
+        <a (click)="loginerr()" style="color: white;margin-left: 1px; cursor: pointer">Click here to try again</a></span>
+        </span>
     </div>
   </div>
 </nav>

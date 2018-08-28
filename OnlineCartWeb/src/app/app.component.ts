@@ -30,7 +30,7 @@ export class AppComponent implements OnInit{
   
   title = 'Online Shopping Cart';
 
-  onLogin():void { 
+  onLogin():void {
     console.log("appBaseUrl : " + environment.appBaseUrl);
     console.log("First Name is = " + this.userJson.name);
     console.log("this is before myApiCallLogin()");

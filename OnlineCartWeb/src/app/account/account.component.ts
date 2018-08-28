@@ -73,6 +73,7 @@ export class AccountComponent implements OnInit {
         this.userJson.userZip = this.result.user.userZip;
         this.userJson.userPhone = this.result.user.userPhone;
       } else {
+        
       }
     });
   }
