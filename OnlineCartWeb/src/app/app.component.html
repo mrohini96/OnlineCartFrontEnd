@@ -47,7 +47,7 @@
         <li><a routerLink="/categories">Categories</a></li>
       </ul> 
       <ul *ngIf="!globalData.loginEnableFlag" class="nav navbar-nav navbar-right">
-        <li><input type="text" class="form-control" style="margin-right:8px" name="userName" placeholder="User" [(ngModel)]="userJson.name"></li>
+        <li><input type="text" class="form-control" style="margin-right:8px" name="userName" placeholder="User" [(ngModel)]="userJson.name" autofocus></li>
         <li><input type="password" class="form-control" name="userPassword" placeholder="Password" [(ngModel)]="userJson.password"></li>
         <li><a routerLink="" (click)="onLogin()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a routerLink="/register"><span class="glyphicon glyphicon-user" placement="top" ngbTooltip="Tooltip on top"></span> Sign Up</a></li>
