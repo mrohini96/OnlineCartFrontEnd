@@ -1,7 +1,7 @@
 <div class="container" [ngSwitch]="true">    
     <div *ngSwitchCase="switchPage === 'page1'" >
       <div  style="cursor: pointer;"class="col-sm-3" *ngFor="let product of globalData.productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
-       <div *ngIf="product.categoryName=='Electronics' || product.categoryName=='Fashion' || product.categoryName=='Furniture' ">
+       <div *ngIf="product.availableQuantity!=0 && product.categoryName=='Electronics' || product.categoryName=='Fashion' || product.categoryName=='Furniture' ">
         <div class="panel panel-primary">
           <div class="panel-heading">{{product.productName}}</div>
           <div class="panel-body"><img src="{{product.productImage}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
@@ -15,6 +15,22 @@
         </div>   
        </div>
       </div>
+
+      <div *ngIf="product.availableQuantity==0">
+            <div class="panel panel-primary">
+              <div class="panel-heading">{{product.productName}} <span style="color: rgb(247, 41, 41)"> Outofstock!!</span></div>
+              <div class="panel-body"><img src="{{product.productImage}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
+              <div class="panel-footer">
+                <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
+                    <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
+                </a> </span>
+                <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
+                <br>
+            </div>   
+           </div>
+          </div>
+
     </div>
   <br><br>
   

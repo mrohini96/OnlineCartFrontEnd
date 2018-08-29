@@ -37,12 +37,12 @@
 					<h4 style="margin-bottom: 40px;margin-top: 40px"><b>Update your profile</b></h4>
 					<div>
 						<form class="form-group">
-							<input type="text"  name="address" class="form-control" placeholder="Address" [(ngModel)]="userJson.userAddress"> <br>
-							<input type="text"  name="city" class="form-control" placeholder="City" [(ngModel)]="userJson.userCity"> <br>
-							<input type="text"  name="state" class="form-control" placeholder="State" [(ngModel)]="userJson.userState"> <br>	
-							<input  type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="userJson.userCountry"> <br>
-							<input type="text"  name="zip" class="form-control" placeholder="Zip" [(ngModel)]="userJson.userZip"> <br>							
-							<input type="text"  name="phone" class="form-control" placeholder="Phone" [(ngModel)]="userJson.userPhone"> <br>
+							<input type="text"  name="address" class="form-control" placeholder="Address" [(ngModel)]="userJson.userAddress" required/> <br>
+							<input type="text"  name="city" class="form-control" placeholder="City" [(ngModel)]="userJson.userCity" required/> <br>
+							<input type="text"  name="state" class="form-control" placeholder="State" [(ngModel)]="userJson.userState" required/> <br>	
+							<input  type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="userJson.userCountry" required/> <br>
+							<input type="text"  name="zip" class="form-control" placeholder="Zip" [(ngModel)]="userJson.userZip" required/> <br>							
+							<input type="text"  name="phone" class="form-control" placeholder="Phone" [(ngModel)]="userJson.userPhone" required/> <br>
 							<button class='btn btn-primary' style="margin-top:5px" type="submit" [disabled]="userJson.userAddress===''||userJson.userCity===''||userJson.userState===''|| userJson.userCountry===''|| userJson.userZip===''|| userJson.userPhone===''" (click)="updateAccount()" >Save details</button>
 							<button class='btn btn-primary' style="margin-left:12px;margin-top:5px" type="reset" >Reset details</button>
 						</form>

@@ -10,6 +10,8 @@ import { Product } from '../product';
 import { GlobalData } from '../globaldata';
 import { OrderService } from '../order.service';
 import { Router } from '../../../node_modules/@angular/router';
+import { ProductService } from '../product.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-cart',
@@ -19,7 +21,7 @@ import { Router } from '../../../node_modules/@angular/router';
 
 export class CartComponent implements OnInit {
 
-  constructor(private cartService:CartService,private router:Router, public globalData: GlobalData, private orderService:OrderService) {}
+  constructor(private cartService:CartService, private userService:UserService, private router:Router, public globalData: GlobalData, private orderService:OrderService) {}
 
   public cartJSON: any;
   cart: Cart = CART;
@@ -35,10 +37,13 @@ export class CartComponent implements OnInit {
   orderJson={"userId":0, "orderId":0, "orderAmount":0, "orderShipAddress":"", "orderCity":"", "orderState":"", "orderCountry":"", "orderZip":"", "orderEmail":"", "orderPhone":"", "orderDate":"", "orderTrackingNumber":"", "orderDetails":[]}
   ordersJsonArray:any=[];
   result:any;
+  userJson={"userEmail": "", "firstName": "", "lastName": "", "userAddress": "","userCity": "","userState": "", "userCountry": "","userZip": "","userPhone": ""};
  
   ngOnInit(): void {
     this.orderCreationFlag = false;
     this.getCartItems();
+    this.getUserDetail();
+    
   }
 
   // CART Page - On loading the cart page load all the cart items and display
@@ -220,27 +225,49 @@ export class CartComponent implements OnInit {
    console.log("this is after buyAllItemsFromCart()");
   }
 
+
+ 
+
   
-  /*myOrders():any{
-    this.orderService.myApiCallMyOrders().subscribe(res=>{
-      console.log(JSON.stringify(res) +"test")
-      this.result = res;
-      status=this.result.status;
-      if (status=="true") {
-        this.ordersJson = this.result.orders;
-        for(var i in this.ordersJson) {
-          this.orderJson.orderTrackingNumber = this.ordersJson[i].orderTrackingNumber;
-          console.log("Tracking number========="+this.orderJson.orderTrackingNumber );
-        }
-      } else {
-      }
-    })
-    return this.orderJson.orderTrackingNumber;
-  }
-*/
 updateAddress(){
   alert("Please provide address to make an order");
   console.log("please set Account details");
   this.router.navigate(['account']);
 }
+
+
+getUserDetail(): void {
+  console.log("this is getUserDetail()");
+  this.userService.myApiCallGetUserDetail().subscribe(res=>{
+    console.log(JSON.stringify(res) +"test")
+    this.result = res;
+    console.log("Result status is"+this.result.status);
+    status=this.result.status;
+    console.log("status is:"+this.result.status+"message is :"+this.result.message);
+    if (status=="true") {
+      this.userJson.userEmail = this.result.user.userEmail;
+      this.userJson.firstName = this.result.user.firstName;
+      this.userJson.lastName = this.result.user.lastName;
+      this.userJson.userAddress = this.result.user.userAddress;
+      this.userJson.userCity = this.result.user.userCity;
+      this.userJson.userState = this.result.user.userState;
+      this.userJson.userCountry = this.result.user.userCountry;
+      this.userJson.userZip = this.result.user.userZip;
+      this.userJson.userPhone = this.result.user.userPhone;
+
+      if( this.userJson.userAddress==undefined && this.userJson.userCity==undefined &&this.userJson.userState==undefined && this.userJson.userCountry==undefined && this.userJson.userZip==undefined && this.userJson.userPhone==undefined){
+        this.globalData.buyEnableFlag=false;
+      }
+      else{
+        this.globalData.buyEnableFlag=true;
+      }
+
+
+    } else {
+
+    }
+  });
+}
+
+
 }

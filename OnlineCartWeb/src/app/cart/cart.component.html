@@ -30,8 +30,9 @@
                                             <td><button type="button" class="btn btn-default btn-sm" (click)="removeItemFromCart(item)">
                                                     <span class="glyphicon glyphicon-remove"></span>Remove 
                                             </button></td>
-                                            <td *ngIf="!globalData.buyEnableFlag"><button class="btn btn-block" (click)="updateAddress()">Buy</button></td>
-                                            <td *ngIf="globalData.buyEnableFlag"><button class="btn btn-block" (click)="buyItemFromCart(item)">Buy</button></td>
+                                            <td *ngIf="!globalData.buyEnableFlag "><button class="btn btn-block" (click)="updateAddress()">Buy</button></td>
+                                            <td *ngIf="globalData.buyEnableFlag "><button class="btn btn-block" (click)="buyItemFromCart(item)">Buy</button></td>
+                                            
                                         </tr>
                                         </tbody>
                                     </table>                         

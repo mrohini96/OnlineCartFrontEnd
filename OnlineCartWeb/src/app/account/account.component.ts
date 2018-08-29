@@ -73,6 +73,7 @@ export class AccountComponent implements OnInit {
         this.userJson.userCountry = this.result.user.userCountry;
         this.userJson.userZip = this.result.user.userZip;
         this.userJson.userPhone = this.result.user.userPhone;
+
       } else {
 
       }
