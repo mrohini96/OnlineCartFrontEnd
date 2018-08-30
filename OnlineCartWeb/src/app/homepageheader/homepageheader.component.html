@@ -18,18 +18,13 @@
 
       <div *ngIf="product.availableQuantity==0">
             <div class="panel panel-primary">
-              <div class="panel-heading">{{product.productName}} <span style="color: rgb(247, 41, 41)"> Outofstock!!</span></div>
+              <div class="panel-heading">{{product.productName}} <span style="color: rgb(247, 41, 41); margin-left: 45px"> Outofstock!!</span></div>
               <div class="panel-body"><img src="{{product.productImage}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
               <div class="panel-footer">
                 <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
-                <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag" (click)="addProductToCart(product.productId)">
-                    <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
-                </a> </span>
-                <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag" class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
-                <br>
             </div>   
            </div>
-          </div>
+        </div>
 
     </div>
   <br><br>
