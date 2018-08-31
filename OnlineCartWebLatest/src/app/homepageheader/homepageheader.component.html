@@ -1,0 +1,87 @@
+<div class="container" [ngSwitch]="true">    
+    <div *ngSwitchCase="switchPage === 'page1'" >
+      <div  style="cursor: pointer;"class="col-sm-3" *ngFor="let product of globalData.productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
+       <div *ngIf="product.categoryName=='Electronics' || product.categoryName=='Fashion' || product.categoryName=='Furniture' ">
+        <div class="panel panel-primary">
+          <div class="panel-heading">{{product.productName}}</div>
+          <div class="panel-body"><img src="{{product.productImage}}"  class="img-responsive" style="width:120%; align-content: center" alt="Image"></div>
+          <div class="panel-footer">
+            <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+            <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag && product.availableQuantity>0" (click)="addProductToCart(product.productId)">
+                <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
+            </a> </span>
+            <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag && product.availableQuantity>0" class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
+            <span *ngIf="product.availableQuantity==0" style="color: rgb(247, 41, 41);margin-left:90px"><b>Outofstock!!</b></span>
+            <br>
+        </div>   
+       </div>
+      </div>
+    </div>
+    <br><br><br>
+    <div style="margin-left:95%">
+        <a (click)="imagepage2()" style="color: white;cursor: pointer;">
+            <span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span>       
+        </a>
+    </div>
+    <br><br><br>
+    <div style="margin-left:2%" *ngIf="productsArray && showProductDetail">
+        <h2><b>{{productsArray.productName}}</b></h2><br>
+        <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+            <label><b>Product Description:  </b>
+                <span>{{productsArray.productDesc}}</span>
+            </label><br> 
+            <label> <b>Price:  </b>
+                <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+            </label><br>
+            <label> <b>Available Qauntity:  </b>
+                <span>{{productsArray.availableQuantity}}</span>
+            </label>
+        <br>
+    </div>
+  
+  </div>
+  
+    <div *ngSwitchCase="switchPage === 'page6'">
+        <div style="cursor: pointer;" class="col-sm-3" *ngFor="let product of globalData.productsJsonArray"  [class.selected]="product === productsArray" (click)="productPage(product)"> 
+          <div *ngIf=" product.categoryName=='Grocery' || product.categoryName=='HomeAppliances' || product.categoryName=='GoGreen'">
+          <div class="panel panel-primary">
+            <div class="panel-heading">{{product.productName}}</div>
+            <div class="panel-body"><img src="{{product.productImage}}" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer">
+                <i style="font-size:15px" class="fa">&#xf155;</i>{{product.productPrice}}
+                <span><a *ngIf="globalData.loginEnableFlag && !product.productCartEnableFlag && product.availableQuantity>0" (click)="addProductToCart(product.productId)">
+                    <span class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
+                </a> </span>
+                <span *ngIf="globalData.loginEnableFlag && product.productCartEnableFlag && product.availableQuantity>0" class="glyphicon glyphicon-shopping-cart"  style="margin-left:150px; font-size:18px"></span>
+                <span *ngIf="product.availableQuantity==0" style="color: rgb(247, 41, 41);margin-left:90px"><b>Outofstock!!</b></span>
+                <br>
+            </div> 
+         </div>
+        </div>
+      </div>
+      <br><br><br>
+      <div style="margin-left:2%">
+        <a (click)="goBack()" style="color: white;cursor: pointer;">
+                <span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-left"></span>       
+        </a>
+      </div>
+      <br><br><br>
+      <div style="margin-left:1%" *ngIf="productsArray && showProductDetail">
+              <h2><b>{{productsArray.productName}}</b></h2><br>
+              <div><img src="{{productsArray.productImage}}" alt="{{productsArray.productName}} | image"> <br><br></div>
+              <label><b>Product Description:  </b>
+                <span>{{productsArray.productDesc}}</span>
+              </label><br>
+              
+              <label> <b>Price: </b>
+                <i style="font-size:15px" class="fa">&#xf155;</i>{{productsArray.productPrice}}
+              </label><br>
+              
+              <label> <b>Available Qauntity:  </b>
+                <span>{{productsArray.availableQuantity}}</span>
+              </label><br>
+      </div>
+              
+    </div>
+  </div>  
+  

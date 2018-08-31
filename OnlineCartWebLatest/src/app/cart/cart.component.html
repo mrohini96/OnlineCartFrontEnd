@@ -1,0 +1,61 @@
+<div style="margin-left:100px"><h2>My Cart</h2></div>
+<div *ngIf="globalData.cartProductCount>0" class="container" style="margin-left:60px; width:1800px">
+    <div class="row">
+        <div class="col-md-8">
+                <ul >
+                        <li>
+                                <table class="table table-hover text-center bg-faded">
+                                        <thead class="thead-faded">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th style="text-align: center; width:800px">Description</th>
+                                            <th><button class="btn btn-block" (click)=removeAllItemsFromCart(cart.cartId)>Remove All</button></th>
+                                            <th *ngIf="!buyFlag"><button class="btn btn-block" (click)="updateUserAccountToBuy()">Buy All</button></th>
+                                            <th *ngIf="buyFlag"><button class="btn btn-block" (click)="buyAllItemsFromCart(cart.cartId)">Buy All</button></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr *ngFor="let item of cartProducts">
+                                            <th	scope="row">{{item.productName}}</th>
+                                            <td> <i style="font-size:15px" class="fa">&#xf155;</i>{{item.productPrice}}</td>
+                                            <td> <select [(ngModel)]="item.productQuantity" (change)="updateProductQuantity(item)">
+                                                    <option *ngFor="let items of [1,2,3,4,5]" value={{items}}>
+                                                        {{items}}
+                                                    </option>
+                                                </select></td>
+                                            <td style="text-align: left; width:750px">{{item.productDesc}}</td>
+                                            <td><button type="button" class="btn btn-default btn-sm" (click)="removeItemFromCart(item)">
+                                                    <span class="glyphicon glyphicon-remove"></span>Remove 
+                                            </button></td>
+                                            <td *ngIf="!buyFlag"><button class="btn btn-block" (click)="updateUserAccountToBuy()">Buy</button></td>
+                                            <td *ngIf="buyFlag"><button class="btn btn-block" (click)="buyItemFromCart(item)">Buy</button></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>                         
+                                  </li>
+                                </ul>
+                            </div>
+                 </div>
+   
+</div>
+<br>
+<div *ngIf="globalData.cartProductCount==0" class="container" style="margin-left:100px; width:1800px; color:rgb(0, 0, 0)">
+    Cart is empty. Please add items to cart from product page to create an order.
+</div>
+<br>
+<div *ngIf="orderCreationFlag" class="container" style="margin-left:100px; width:1800px; color:blue">
+    Your Order created successfully. <a routerLink="/account">Check your Account for order history.</a> <br>
+    Order Tracking Number: <b>{{currentOrderTrackingNumber}}.</b> <br>
+    Order Date: <b>{{currentOrderDate}}.</b> <br>
+    Order Amount: <b><i style="font-size:15px" class="fa">&#xf155;</i>{{currentOrderAmount}}.</b> 
+</div>
+<div *ngIf="productQuantityInvalidFlag" class="container" style="margin-left:100px; width:1800px; color:blue">
+    Please revise Cart Quantity based on Available Quantity for the [Product|Products] before clicking [Buy/Buy All] button. <br>
+    <li *ngFor="let item of buyInvalidCartProducts">
+        Product: <b>{{item.productName}}</b>, Cart Quantity: <b>{{item.productQuantity}}</b>, Available Quantity: <b>{{item.availableQuantity}}</b> <br>
+    </li> 
+</div>
+
+
